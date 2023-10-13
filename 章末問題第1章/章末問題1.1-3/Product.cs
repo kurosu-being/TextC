@@ -25,9 +25,9 @@ namespace Henkou {
             return (int)(Price * 0.1);
         }
 
-        ////税込み価格を求める
-        //public int GetPriceIncludingTax(){
-        //    return Price + GetTax();
-        //}
+        //税込み価格を求める
+        public int GetPriceIncludingTax(){
+            return Price + GetTax();
+        }
     }
 }

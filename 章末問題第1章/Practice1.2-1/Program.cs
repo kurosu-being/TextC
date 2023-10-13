@@ -6,23 +6,18 @@ using System.Threading.Tasks;
 
 namespace Practice1._2_1 {
     class Program {
-        //MyClassとMyStructの2つの方を引数にとるメソッドPrintObjectsを定義してください。PrintObjectsメソッドでは、2つのオブジェクトの内容（プロパティの値)をコンソールに表示するようにしてください。なお、PrintObjectsメソッドはProgramクラスのメソッドとして定義してください。、
+        //Practice1.2-1　MyClassとMyStructの2つの方を引数にとるメソッドPrintObjectsを定義してください。PrintObjectsメソッドでは、2つのオブジェクトの内容（プロパティの値)をコンソールに表示するようにしてください。なお、PrintObjectsメソッドはProgramクラスのメソッドとして定義してください。
+        //Practice1.2-2　MainメソッドでPrintObjectsを呼び出すコードを書いてください。MyClass,MyStructオブジェクトの値は、自由に決めてかまいません。
         static void Main(string[] args) {
-            MyClass myClass = new MyClass { X = "1", Y = 2 };
+            MyClass myClass = new MyClass { X = 1, Y = 2 };
             MyStruct myStruct = new MyStruct { X = 1, Y = 2 };
             PrintObjects(myClass,myStruct);
-            MyClass myClass2 = new MyClass { X = "10", Y = 20 };
-            MyStruct myStruct2 = new MyStruct { X = 100, Y = 200 };
-            PrintObjects(myClass2, myStruct2);
             Console.ReadLine();
         }
-
-
-
-        public static void PrintObjects(MyClass MC, MyStruct myStruct) {
+        public static void PrintObjects(MyClass MC, MyStruct MS) {
             Console.WriteLine("X =" + MC.X +"Y =" + MC.Y);
-            Console.WriteLine(myStruct.X + myStruct.Y);
-            
+            Console.WriteLine("X =" + MS.X + "Y =" + MS.Y);
+
         }
        
     }
