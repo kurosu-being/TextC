@@ -13,8 +13,8 @@ namespace Practice1._3_1 {
             };
             Console.WriteLine("{0}は、{1}年{2}組に所属しています", student.Name, student.Grade, student.ClassNumber);
 
-            Person person = student;
-            object obj = student;
+            Person G_person = student;
+            object G_obj = student;
         }
     }
 }

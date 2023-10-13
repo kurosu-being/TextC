@@ -15,11 +15,11 @@ namespace Practice1._2_1 {
             Console.WriteLine(myStruct.X + "," + myStruct.Y);
             Console.ReadLine();
         }
-        public static void PrintObjects(MyClass MC, MyStruct MS) {
-            MC.X *= 2;
-            MC.Y *= 2;
-            MS.X *= 2;
-            MS.Y *= 2;
+        public static void PrintObjects(MyClass vMC, MyStruct vMS) {
+            vMC.X *= 2;
+            vMC.Y *= 2;
+            vMS.X *= 2;
+            vMS.Y *= 2;
         }
 
     }

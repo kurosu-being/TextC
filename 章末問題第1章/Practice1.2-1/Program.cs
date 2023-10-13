@@ -14,9 +14,9 @@ namespace Practice1._2_1 {
             PrintObjects(myClass,myStruct);
             Console.ReadLine();
         }
-        public static void PrintObjects(MyClass MC, MyStruct MS) {
-            Console.WriteLine("X =" + MC.X +"Y =" + MC.Y);
-            Console.WriteLine("X =" + MS.X + "Y =" + MS.Y);
+        public static void PrintObjects(MyClass vMC, MyStruct vMS) {
+            Console.WriteLine("X =" + vMC.X +"Y =" + vMC.Y);
+            Console.WriteLine("X =" + vMS.X + "Y =" + vMS.Y);
 
         }
        
