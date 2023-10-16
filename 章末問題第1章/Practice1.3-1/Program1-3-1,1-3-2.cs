@@ -6,8 +6,8 @@ namespace Practice1._3_1 {
         //Practice1.3-2　Studentクラスのインスタンスを生成するコードを書いてください。このとき、すべてのプロパティに値を設定してください。
         //Practice1.3-3 2で生成したインスタンスの各プロパティの値をコンソールに出力するコードを書いてください。
         static void Main(string[] args) {
-            Student wtudent = new Student();
-            Console.WriteLine("{0}は、{1}年{2}組に所属しています", wtudent.Name, wtudent.Grade, wtudent.ClassNumber);
+            Student wStudent = new Student();
+            Console.WriteLine("{0}は、{1}年{2}組に所属しています", wStudent.Name, wStudent.Grade, wStudent.ClassNumber);
         }
     }
 }

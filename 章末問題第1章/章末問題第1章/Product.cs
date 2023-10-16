@@ -15,13 +15,16 @@
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="code"></param>
-        /// <param name="name"></param>
-        /// <param name="price"></param>
-        public Product(int code, string name, int price) {
-            this.Code = code;
-            this.Name = name;
-            this.Price = price;
+        /// 商品コード
+        /// <param name="vCode"></param>
+        /// 商品名
+        /// <param name="vName"></param>
+        /// 商品価格（税抜き）
+        /// <param name="vPrice"></param>
+        public Product(int vCode, string vName, int vPrice) {
+            this.Code = vCode;
+            this.Name = vName;
+            this.Price = vPrice;
         }
         /// <summary>
         /// 消費税を求める（消費税率は10%）
