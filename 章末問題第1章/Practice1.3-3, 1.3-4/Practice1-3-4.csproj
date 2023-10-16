@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B24B9AE4-A65C-4E61-9451-E077CCEE2DC2}</ProjectGuid>
+    <ProjectGuid>{91053AD5-2F41-4675-80C6-2F88DB650B14}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Practice1._2_1</RootNamespace>
-    <AssemblyName>Practice1.2-1</AssemblyName>
+    <RootNamespace>Practice1._3_3__1._3_4</RootNamespace>
+    <AssemblyName>Practice1.3-3, 1.3-4</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,8 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MyClass.cs" />
-    <Compile Include="Program1.2-1,1.2-2.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="Program1-3-4.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Student.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
