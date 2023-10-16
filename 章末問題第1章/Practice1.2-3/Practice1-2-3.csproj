@@ -44,7 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MyClass.cs" />
+<<<<<<< HEAD:章末問題第1章/Practice1.2-3/Practice1-2-3.csproj
     <Compile Include="Program1-2-3.cs" />
+=======
+    <Compile Include="Program1.2-3.cs" />
+>>>>>>> origin/feature/chapter1:章末問題第1章/Practice1.2-3/Practice1.2-3.csproj
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

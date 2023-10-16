@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using System;
 
 namespace Practice1._3_1 {
@@ -10,5 +11,12 @@ namespace Practice1._3_1 {
             this.Grade = 3;
             this.ClassNumber = 10;
         }
+=======
+﻿namespace Practice1._3_1 {
+    class Student : Person {
+        public int Grade { get; set; }
+        public int ClassNumber { get; set; }
+
+>>>>>>> origin/feature/chapter1
     }
 }
