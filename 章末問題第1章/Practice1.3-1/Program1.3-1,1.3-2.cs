@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Practice1._3_1 {
     class Program {
@@ -10,10 +6,10 @@ namespace Practice1._3_1 {
         //Practice1.3-2　Studentクラスのインスタンスを生成するコードを書いてください。このとき、すべてのプロパティに値を設定してください。
         //Practice1.3-3 2で生成したインスタンスの各プロパティの値をコンソールに出力するコードを書いてください。
         static void Main(string[] args) {
-            Student student = new Student{
-                Name = "黒子", Birthday = new DateTime(2000, 2, 2),Grade = 3, ClassNumber = 10,
+            Student wtudent = new Student {
+                Name = "黒子", Birthday = new DateTime(2000, 2, 2), Grade = 3, ClassNumber = 10,
             };
-            Console.WriteLine("{0}は、{1}年{2}組に所属しています",student.Name, student.Grade, student.ClassNumber);
+            Console.WriteLine("{0}は、{1}年{2}組に所属しています", wtudent.Name, wtudent.Grade, wtudent.ClassNumber);
         }
     }
 }
