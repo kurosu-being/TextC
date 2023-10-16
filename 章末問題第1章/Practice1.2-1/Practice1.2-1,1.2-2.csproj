@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9CD55C80-7E54-42F6-B304-8C2584443B77}</ProjectGuid>
+    <ProjectGuid>{B24B9AE4-A65C-4E61-9451-E077CCEE2DC2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>章末問題1._1_3</RootNamespace>
-    <AssemblyName>章末問題1.1-3</AssemblyName>
+    <RootNamespace>Practice1._2_1</RootNamespace>
+    <AssemblyName>Practice1.2-1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Product.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="MyClass.cs" />
+    <Compile Include="Program1.2-1,1.2-2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
