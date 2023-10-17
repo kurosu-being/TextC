@@ -5,7 +5,7 @@ namespace Henkou {
         /// <summary>
         /// 商品コード
         /// </summary>
-        public int Code { get; private set; }
+        public int Code { get;}
         /// <summary>
         /// <商品名>
         /// </summary>
