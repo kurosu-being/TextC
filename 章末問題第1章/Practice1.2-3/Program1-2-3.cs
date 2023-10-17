@@ -14,8 +14,8 @@ namespace Practice1._2_1 {
         /// <summary>
         /// クラス・構造体のプロパティの値を2倍に変更するメソッド
         /// </summary>
-        /// <param name="vMC">クラスの引数</param>
-        /// <param name="vMS">構造体の引数</param>
+        /// <param name="vMC">クラス</param>
+        /// <param name="vMS">構造体</param>
         public static void PrintObjects(MyClass vMC, MyStruct vMS) {
             vMC.X *= 2;
             vMC.Y *= 2;
