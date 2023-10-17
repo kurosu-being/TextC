@@ -1,4 +1,6 @@
-﻿namespace Henkou {
+﻿using System;
+
+namespace Henkou {
     public class Product {
         /// <summary>
         /// 商品コード
@@ -32,7 +34,7 @@
         /// 商品価格の消費税をを消費税10%で計算した値
         /// <returns>int</returns>
         public int GetTax() {
-            return (int)(Price * 0.1);
+            return (int)Math.Round(Price * 0.1);
         }
     }
 }
