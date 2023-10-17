@@ -1,10 +1,14 @@
 ﻿namespace Practice1._2_1 {
-    //クラス
+    /// <summary>
+    /// クラス
+    /// </summary>
     class MyClass {
         public int X { get; set; }
         public int Y { get; set; }
     }
-    //構造体
+    /// <summary>
+    /// 構造体
+    /// </summary>
     struct MyStruct {
         public int X { get; set; }
         public int Y { get; set; }

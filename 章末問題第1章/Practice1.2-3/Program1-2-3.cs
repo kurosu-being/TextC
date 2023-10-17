@@ -11,6 +11,13 @@ namespace Practice1._2_1 {
             Console.WriteLine(wMyStruct.X + "," + wMyStruct.Y);
             Console.ReadLine();
         }
+        /// <summary>
+        /// クラス・構造体のプロパティの値を2倍に変更するメソッド
+        /// </summary>
+        /// クラスの引数
+        /// <param name="vMC"></param>
+        /// 構造体の引数
+        /// <param name="vMS"></param>
         public static void PrintObjects(MyClass vMC, MyStruct vMS) {
             vMC.X *= 2;
             vMC.Y *= 2;

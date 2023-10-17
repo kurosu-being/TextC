@@ -13,13 +13,13 @@
         /// </summary>
         public int Price { get; set; }
         /// <summary>
-        /// コンストラクタ
+        /// Productクラスのコンストラクタ
         /// </summary>
-        /// 商品コード
+        /// 商品コードの引数
         /// <param name="vCode"></param>
-        /// 商品名
+        /// 商品名の引数
         /// <param name="vName"></param>
-        /// 商品価格（税抜き）
+        /// 商品価格（税抜き）の引数
         /// <param name="vPrice"></param>
         public Product(int vCode, string vName, int vPrice) {
             this.Code = vCode;

@@ -10,7 +10,13 @@ namespace Practice1._2_1 {
             PrintObjects(wMyClass, wMyStruct);
             Console.ReadLine();
         }
-
+        /// <summary>
+        /// 2つのオブジェクトの内容（プロパティの値)をコンソールに表示するメソッド
+        /// </summary>
+        /// クラスの引数
+        /// <param name="vMC"></param>
+        /// 構造体の引数
+        /// <param name="vMS"></param>
         public static void PrintObjects(MyClass vMC, MyStruct vMS) {
             Console.WriteLine("X =" + vMC.X + "Y =" + vMC.Y);
             Console.WriteLine("X =" + vMS.X + "Y =" + vMS.Y);

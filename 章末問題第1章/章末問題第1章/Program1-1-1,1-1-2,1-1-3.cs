@@ -1,5 +1,5 @@
-﻿using System;
-using Henkou;
+﻿using Henkou;
+using System;
 
 
 namespace 章末問題第1章 {
