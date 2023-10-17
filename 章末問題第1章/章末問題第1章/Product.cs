@@ -16,13 +16,9 @@ namespace Henkou {
         public int Price { get; set; }
         /// <summary>
         /// Productクラスのコンストラクタ
-        /// </summary>
-        /// 商品コードの引数
-        /// <param name="vCode"></param>
-        /// 商品名の引数
-        /// <param name="vName"></param>
-        /// 商品価格（税抜き）の引数
-        /// <param name="vPrice"></param>
+        /// <param name="vCode">商品コード</param>
+        /// <param name="vName">商品名</param>
+        /// <param name="vPrice">商品価格（税抜き</param>
         public Product(int vCode, string vName, int vPrice) {
             this.Code = vCode;
             this.Name = vName;
