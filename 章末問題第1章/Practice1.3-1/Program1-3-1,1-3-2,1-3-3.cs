@@ -7,10 +7,10 @@ namespace Practice1._3_1 {
         //Practice1.3-3 2で生成したインスタンスの各プロパティの値をコンソールに出力するコードを書いてください。
         static void Main(string[] args) {
             Student wStudent = new Student("黒子", new DateTime(2000, 2, 2), 3, 10);
-            var name = wStudent.Name;
-            var grade = wStudent.Grade;
-            var classnumber = wStudent.ClassNumber;
-            Console.WriteLine($"{name}は、{grade}年{classnumber}組に所属しています");
+            var wName = wStudent.Name;
+            var wGrade = wStudent.Grade;
+            var wGlassnumber = wStudent.ClassNumber;
+            Console.WriteLine($"{wName}は、{wGrade}年{wGlassnumber}組に所属しています");
         }
     }
 }

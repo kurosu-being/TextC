@@ -13,14 +13,10 @@ namespace Practice1._3_1 {
         /// <summary>
         /// Studentクラスのコンストラクタ
         /// </summary>
-        /// 名前の引数
-        /// <param name="vName"></param>
-        /// 日付の引数
-        /// <param name="vDay"></param>
-        /// 学年の引数
-        /// <param name="vGrade"></param>
-        /// 組の引数
-        /// <param name="vClassNumber"></param>
+        /// <param name="vName">名前</param>
+        /// <param name="vDay">日付</param>
+        /// <param name="vGrade">学年</param>
+        /// <param name="vClassNumber">組</param>
         public Student(string vName, DateTime vDay, int vGrade, int vClassNumber) {
             this.Name = vName;
             this.Birthday = vDay;
