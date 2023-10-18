@@ -27,8 +27,7 @@ namespace Henkou {
         /// <summary>
         /// 消費税を求める（消費税率は10%）
         /// /// </summary>
-        /// 商品価格の消費税をを消費税10%で計算した値
-        /// <returns>int</returns>
+        /// <returns>i商品価格の消費税をを消費税10%で計算した値</returns>
         public int GetTax() {
             return (int)Math.Round(Price * 0.1);
         }
