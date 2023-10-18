@@ -13,7 +13,7 @@ namespace 演習問題第1章問3_1_3_2_3_3 {
         /// <summary>
         /// 今日と生まれた日を比較し、日付に応じて算出し年齢を取得するメソッド
         /// </summary>
-        /// <returns> 今日と生まれた日を比較し、日付に応じて算出した年齢</returns>
+        /// <returns>年齢</returns>
         public int GetAge() {
             DateTime wToday = DateTime.Today;
             int wAge = wToday.Year - Birthday.Year;

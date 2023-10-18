@@ -7,9 +7,6 @@ namespace 演習問題第1章問3_1_3_2_3_3 {
         //Practice1.3-3 2で生成したインスタンスの各プロパティの値をコンソールに出力するコードを書いてください。
         static void Main(string[] args) {
             Student wStudent = new Student("黒子", new DateTime(2000, 2, 2), 3, 10);
-            //var wName = wStudent.Name;
-            //var wGrade = wStudent.Grade;
-            //var wClassnumber = wStudent.ClassNumber;
             Console.WriteLine($"{wStudent.Name}は、{wStudent.Grade}年{wStudent.ClassNumber}組に所属しています");
         }
     }
