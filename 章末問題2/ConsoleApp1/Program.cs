@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace 章末問題第2章 {
+namespace ConsoleApp1 {
     class Program {
         static void Main(string[] args) {
         }

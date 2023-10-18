@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2F551894-079C-48ED-982C-AC7078D9EE42}</ProjectGuid>
+    <ProjectGuid>{C9E08DEE-6997-4DA1-A321-281B585A11BB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>章末問題第2章</RootNamespace>
-    <AssemblyName>章末問題第2章</AssemblyName>
+    <RootNamespace>ConsoleApp1</RootNamespace>
+    <AssemblyName>ConsoleApp1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
