@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Practice2_2_1 {
+﻿namespace Practice2_2_1 {
     public static class ConvertFeet {
         private const double C_Ratio = 0.0254;
 
@@ -13,7 +7,7 @@ namespace Practice2_2_1 {
         /// </summary>
         /// <param name="vMeter">メートル距離</param>
         /// <returns>インチ距離</returns>
-        public static double FromMeter(double vMeter){
+        public static double FromMeter(double vMeter) {
             return vMeter * 0.0254;
         }
     }
