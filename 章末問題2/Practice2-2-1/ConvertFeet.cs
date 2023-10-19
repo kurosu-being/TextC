@@ -1,5 +1,5 @@
 ﻿namespace Practice2_2_1 {
-    public static class ConvertFeet {
+    public static class ConvertInch {
         private const double C_Ratio = 0.0254;
 
         /// <summary>
