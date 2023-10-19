@@ -46,6 +46,7 @@
     <Compile Include="CountSales.cs" />
     <Compile Include="Program2-3-1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sale.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
