@@ -3,14 +3,14 @@ using System.IO;
 
 namespace Practice2_3_1 {
     public class CountSales {
-        private IEnumerable<FSale> ISales;
+        private IEnumerable<FSale> Sales;
 
         /// <summary>
         /// CountSalesのコンストラクタ
         /// </summary>
         /// <param name="vFilePath"></param>
         public CountSales(string vFilePath) {
-            ISales = ReadSales(vFilePath);
+            Sales = ReadSales(vFilePath);
         }
         /// <summary>
         /// 売上データを読み込み、Saleオブジェクトのリストを返す
@@ -37,7 +37,7 @@ namespace Practice2_3_1 {
         /// <returns>商品カテゴリ別売上</returns>
         public IDictionary<string, int> GetPerItemSales() {
             var wDict = new Dictionary<string, int>();
-            foreach (var sale in ISales) {
+            foreach (var sale in Sales) {
                 if (wDict.ContainsKey(sale.ProductCategory))
                     wDict[sale.ProductCategory] += sale.Amount;
                 else
