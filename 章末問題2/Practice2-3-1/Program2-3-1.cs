@@ -6,8 +6,8 @@ namespace Practice2_3_1 {
         static void Main(string[] args) {
             var wSales = new CountSales("sales.csv");
             var wAmountPerItem = wSales.GetPerItemSales();
-            foreach (var obj in wAmountPerItem) {
-                Console.WriteLine($"{obj.Key}は合計{obj.Value}円です");
+            foreach (var wObj in wAmountPerItem) {
+                Console.WriteLine($"{wObj.Key}は合計{wObj.Value}円です");
             }
         }
     }

@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Practice2_3_1 {
     public class CountSales {
-        private IEnumerable<Sale> ISales;
+        private IEnumerable<FSale> ISales;
 
         /// <summary>
         /// CountSalesのコンストラクタ
@@ -17,12 +17,12 @@ namespace Practice2_3_1 {
         /// </summary>
         /// <param name="vFilePath">売上データ</param>
         /// <returns>Saleオブジェクトのリスト</returns>
-        private static IEnumerable<Sale> ReadSales(string vFilePath) {
-            var wSales = new List<Sale>();
+        private static IEnumerable<FSale> ReadSales(string vFilePath) {
+            var wSales = new List<FSale>();
             var wLines = File.ReadLines(vFilePath);
             foreach (var Line in wLines) {
                 var wItems = Line.Split(',');
-                var wSale = new Sale {
+                var wSale = new FSale {
                     ShopName = wItems[0],
                     ProductCategory = wItems[1],
                     Amount = int.Parse(wItems[2])

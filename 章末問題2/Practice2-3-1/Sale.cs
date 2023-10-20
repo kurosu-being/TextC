@@ -1,5 +1,5 @@
 ﻿namespace Practice2_3_1 {
-    class Sale {
+    class FSale {
         /// <summary>
         /// 店舗名
         /// </summary>
