@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Practice3_1_1 {
     class Program {
@@ -11,7 +8,7 @@ namespace Practice3_1_1 {
             //Practice3-1-1 List<T>のExistsメソッドを使い、8か9で割り切れる数があるかどうかを調べ、その結果をコンソールに出力してください。
             //ビーイングのコーディング規約に則り、問題文のnumbersをwNumbersに変更しました。
             var wNumbers = new List<int> { 12, 87, 94, 14, 53, 20, 40, 35, 76, 91, 31, 17, 48 };
-            var wExsits = wNumbers.Exists( s => s % 9 == 0 || s % 8 == 0 );
+            var wExsits = wNumbers.Exists(s => s % 9 == 0 || s % 8 == 0);
             Console.WriteLine(wExsits);
         }
     }
