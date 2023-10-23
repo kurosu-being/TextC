@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Practice3_2_2 {
     class Program {
@@ -10,7 +8,7 @@ namespace Practice3_2_2 {
         static void Main(string[] args) {
             var wNames = new List<string> { "Tokyo", "ONew Delhi", "Bangkok", "London", "Paris", "Berlin", "Canberra", "Hong Kong" };
             var wCount = wNames.Count(s => s.Contains("o"));
-                Console.WriteLine(wCount);
+            Console.WriteLine(wCount);
+        }
     }
-}
 }
