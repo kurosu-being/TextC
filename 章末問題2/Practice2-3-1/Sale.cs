@@ -1,4 +1,7 @@
 ﻿namespace Practice2_3_1 {
+    /// <summary>
+    /// 売上情報のクラス
+    /// </summary>
     class Sale {
         /// <summary>
         /// 店舗名

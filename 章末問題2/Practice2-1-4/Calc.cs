@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Practice2_1_4 {
-    class Calc {
+﻿namespace Practice2_1_4 {
+    /// <summary>
+    /// 時間計算のクラス
+    /// </summary>
+    class Calculator {
         /// <summary>
         /// 分を計算するメソッド
         /// </summary>
         /// <param name="vLength">曲の長さ</param>
         /// <returns>曲の分/returns>
-        public static int MinuteLength(int vLength){
+        public static int CalculateMinute(int vLength) {
             return vLength / 60;
         }
         /// <summary>
@@ -19,7 +16,7 @@ namespace Practice2_1_4 {
         /// </summary>
         /// <param name="vLength">曲の長さ</param>
         /// <returns>曲の秒数</returns>
-        public static int SecondLength(int vLength){
+        public static int CalculateSecond(int vLength) {
             return vLength % 60;
         }
     }

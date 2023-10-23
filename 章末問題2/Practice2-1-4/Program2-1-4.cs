@@ -8,11 +8,11 @@ namespace Practice2_1_4 {
             Song wSong2 = new Song("アイドル", "YOASOBI", 275);
             Song wSong3 = new Song("天体観測", "BUMP OF CHICKEN", 1190);
             //配列songsに格納
-            Song[] songs = { wSong1, wSong2, wSong3 };
+            Song[] wSongs = { wSong1, wSong2, wSong3 };
             // 配列に格納されたSongクラスのインスタンスをコンソールに出力
-            foreach (Song wSong in songs) {
-                int wShowMinute = Calc.MinuteLength(wSong.Length);
-                int wShowSecond = Calc.SecondLength(wSong.Length);
+            foreach (Song wSong in wSongs) {
+                int wShowMinute = Calculator.CalculateMinute(wSong.Length);
+                int wShowSecond = Calculator.CalculateSecond(wSong.Length);
                 Console.WriteLine($"{wSong.Title}という曲のアーティストは {wSong.ArtistName}で曲の長さは{wShowMinute:D1}:{wShowSecond:D2}です");
             }
         }

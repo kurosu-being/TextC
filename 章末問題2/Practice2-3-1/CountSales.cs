@@ -2,6 +2,9 @@
 using System.IO;
 
 namespace Practice2_3_1 {
+    /// <summary>
+    /// 売上計算のクラス
+    /// </summary>
     public class CountSales {
         private IEnumerable<Sale> FSales;
 
@@ -20,8 +23,8 @@ namespace Practice2_3_1 {
         private static IEnumerable<Sale> ReadSales(string vFilePath) {
             var wSales = new List<Sale>();
             var wLines = File.ReadLines(vFilePath);
-            foreach (var Line in wLines) {
-                var wItems = Line.Split(',');
+            foreach (var wLine in wLines) {
+                var wItems = wLine.Split(',');
                 var wSale = new Sale {
                     ShopName = wItems[0],
                     ProductCategory = wItems[1],
@@ -37,11 +40,11 @@ namespace Practice2_3_1 {
         /// <returns>商品カテゴリ別売上</returns>
         public IDictionary<string, int> GetPerItemSales() {
             var wDict = new Dictionary<string, int>();
-            foreach (var sale in FSales) {
-                if (wDict.ContainsKey(sale.ProductCategory))
-                    wDict[sale.ProductCategory] += sale.Amount;
+            foreach (var wSale in FSales) {
+                if (wDict.ContainsKey(wSale.ProductCategory))
+                    wDict[wSale.ProductCategory] += wSale.Amount;
                 else
-                    wDict[sale.ProductCategory] = sale.Amount;
+                    wDict[wSale.ProductCategory] = wSale.Amount;
             }
             return wDict;
         }

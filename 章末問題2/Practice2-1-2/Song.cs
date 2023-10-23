@@ -1,4 +1,7 @@
 ﻿namespace Practice2_1_2 {
+    /// <summary>
+    /// 歌のクラス
+    /// </summary>
     class Song {
         /// <summary>
         /// 歌のタイトル
