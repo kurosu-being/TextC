@@ -7,7 +7,6 @@ namespace Practice2_3_1 {
     /// </summary>
     public class CountSales {
         private IEnumerable<Sale> FSales;
-
         /// <summary>
         /// CountSalesのコンストラクタ
         /// </summary>
