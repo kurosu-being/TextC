@@ -8,7 +8,7 @@ namespace Practice3_2_1 {
         //"Tokyo","New Delhi", "Bangkok", "London", "Paris", "Berlin","Canberra"."Hong Kong",
         //};
         //このリストに対して、ラムダ式を使い次のコードを書いてください。
-        //Practice3-2-1 コンソールから入力した歳名が何番目に格納されているかList<T>のFindINdexメソッドを使って調べ、その結果おｗコンソールに出力してください。見つからなかったら、-1を出力してください。なお、コンソールの入力にはConsole.ReadLineメソッドを利用してください。
+        //Practice3-2-1 コンソールから入力した歳名が何番目に格納されているかList<T>のFindINdexメソッドを使って調べ、その結果をコンソールに出力してください。見つからなかったら、-1を出力してください。なお、コンソールの入力にはConsole.ReadLineメソッドを利用してください。
         //コーディング規約に則りnames →　wNamesに変更
         static void Main(string[] args) {
             var wNames = new List<string> { "Tokyo", "New Delhi", "Bangkok", "London", "Paris", "Berlin", "Canberra", "Hong Kong" };
