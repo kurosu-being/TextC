@@ -8,7 +8,7 @@
         /// </summary>
         /// <param name="vLength">曲の長さ</param>
         /// <returns>曲の分/returns>
-        public static int CalculateMinute(int vLength) {
+        public static int ConvertMinute(int vLength) {
             return vLength / 60;
         }
         /// <summary>
@@ -16,7 +16,7 @@
         /// </summary>
         /// <param name="vLength">曲の長さ</param>
         /// <returns>曲の秒数</returns>
-        public static int CalculateSecond(int vLength) {
+        public static int ConvertSecond(int vLength) {
             return vLength % 60;
         }
     }

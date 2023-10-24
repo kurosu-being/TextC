@@ -11,8 +11,8 @@ namespace Practice2_1_4 {
             Song[] wSongs = { wSong1, wSong2, wSong3 };
             // 配列に格納されたSongクラスのインスタンスをコンソールに出力
             foreach (Song wSong in wSongs) {
-                int wShowMinute = Calculator.CalculateMinute(wSong.Length);
-                int wShowSecond = Calculator.CalculateSecond(wSong.Length);
+                int wShowMinute = Calculator.ConvertMinute(wSong.Length);
+                int wShowSecond = Calculator.ConvertSecond(wSong.Length);
                 Console.WriteLine($"{wSong.Title}という曲のアーティストは {wSong.ArtistName}で曲の長さは{wShowMinute:D1}:{wShowSecond:D2}です");
             }
         }

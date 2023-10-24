@@ -5,13 +5,13 @@ namespace Practice2_3_1 {
     /// <summary>
     /// 売上計算のクラス
     /// </summary>
-    public class CountSales {
+    public class SalesCounter {
         private IEnumerable<Sale> FSales;
         /// <summary>
         /// CountSalesのコンストラクタ
         /// </summary>
         /// <param name="vFilePath"></param>
-        public CountSales(string vFilePath) {
+        public SalesCounter(string vFilePath) {
             FSales = ReadSales(vFilePath);
         }
         /// <summary>
