@@ -14,11 +14,8 @@ namespace Practice3_2_1 {
             var wNames = new List<string> { "Tokyo", "New Delhi", "Bangkok", "London", "Paris", "Berlin", "Canberra", "Hong Kong" };
             string wInputuser = Console.ReadLine();
             var wIndex = wNames.FindIndex(s => s == wInputuser);
-            if (wIndex != -1) {
-                Console.WriteLine($"インデックス番号は {wIndex}");
-            } else {
-                Console.WriteLine("-1");
-            }
+            string wMessage = (wIndex >= 0) ? $"インデックス番号は {wIndex}" : "-1";
+            Console.WriteLine($"{wMessage}");
         }
     }
 }
