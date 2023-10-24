@@ -8,7 +8,7 @@
             var wDay3 = new YearMonth(2005, 2);
             var wDay4 = new YearMonth(2023, 10);
             var wDay5 = new YearMonth(2045, 7);
-            var wLangs = new YearMonth[] { wDay1, wDay2, wDay3, wDay4, wDay5, };
+            var wYearMonths = new YearMonth[] {wDay1, wDay2, wDay3, wDay4, wDay5,};
         }
     }
 }
