@@ -1,6 +1,6 @@
 ﻿namespace Practice4_1_1 {
     /// <summary>
-    /// 年(Year)と月(Month)の2つのプロパティを持つクラス
+    /// 年月計算クラス
     /// </summary>
     class YearMonth {
         /// <summary>
@@ -12,7 +12,7 @@
         /// </summary>
         public int Month { get; private set; }
         /// <summary>
-        /// コンストラクタ
+        /// YearMonthのコンストラクタ
         /// </summary>
         /// <param name="vYear">年</param>
         /// <param name="vMonth">月</param>

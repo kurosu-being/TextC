@@ -1,4 +1,10 @@
-﻿namespace Practice4_2_1 {
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practice4_2_3 {
     /// <summary>
     /// 年月計算クラス
     /// </summary>
@@ -21,7 +27,7 @@
             set { Is21stCentury = value; }
         }
         /// <summary>
-        /// YearMonthのコンストラクタ
+        /// YearMonthのYearMonthのコンストラクタ
         /// </summary>
         /// <param name="vYear">年</param>
         /// <param name="vMonth">月</param>
@@ -47,3 +53,4 @@
         }
     }
 }
+
