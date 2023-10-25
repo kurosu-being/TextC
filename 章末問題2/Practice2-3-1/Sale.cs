@@ -15,5 +15,10 @@
         /// 売上高
         /// </summary>
         public int Amount { get; set; }
+        public Sale(string vShopName, string vProductCategory, int wAmout){
+            this.ShopName = vShopName;
+            this.ProductCategory = vProductCategory;
+            this.Amount = wAmout;
+}
     }
 }

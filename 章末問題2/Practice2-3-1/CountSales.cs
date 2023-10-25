@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Practice2_3_1 {
     /// <summary>
     /// 売上計算のクラス
     /// </summary>
     public class SalesCounter {
-        private IEnumerable<Sale> FSales;
+        private readonly IEnumerable<Sale> FSales;
         /// <summary>
         /// CountSalesのコンストラクタ
         /// </summary>
@@ -21,14 +22,9 @@ namespace Practice2_3_1 {
         /// <returns>Saleオブジェクトのリスト</returns>
         private static IEnumerable<Sale> ReadSales(string vFilePath) {
             var wSales = new List<Sale>();
-            var wLines = File.ReadLines(vFilePath);
-            foreach (var wLine in wLines) {
+            foreach (var wLine in File.ReadLines(vFilePath)) {
                 var wItems = wLine.Split(',');
-                var wSale = new Sale {
-                    ShopName = wItems[0],
-                    ProductCategory = wItems[1],
-                    Amount = int.Parse(wItems[2])
-                };
+                var wSale = new Sale(wItems[0], wItems[1], int.Parse(wItems[2]));
                 wSales.Add(wSale);
             }
             return wSales;
@@ -38,14 +34,8 @@ namespace Practice2_3_1 {
         /// </summary>
         /// <returns>商品カテゴリ別売上</returns>
         public IDictionary<string, int> GetPerItemSales() {
-            var wDict = new Dictionary<string, int>();
-            foreach (var wSale in FSales) {
-                if (wDict.ContainsKey(wSale.ProductCategory))
-                    wDict[wSale.ProductCategory] += wSale.Amount;
-                else
-                    wDict[wSale.ProductCategory] = wSale.Amount;
-            }
-            return wDict;
+            return FSales.GroupBy(x => x.ProductCategory)
+                   .ToDictionary(x => x.Key, x => x.Sum(s => s.Amount));
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Practice2_1_4_追加問題_ {
     class Program {
@@ -12,11 +13,10 @@ namespace Practice2_1_4_追加問題_ {
             Song[] wSongs = { wSong1, wSong2, wSong3 };
             // 追加問題１Songクラスのインスタンスを生成
             Song wSong4 = new Song("君が代", "林広守", 240);
-            // 配列のサイズを拡張して新しい曲を追加
-            Array.Resize(ref wSongs, wSongs.Length + 1);
-            wSongs[wSongs.Length - 1] = wSong4;
-            // 配列に格納されたSongクラスのインスタンスをコンソールに出力
-            foreach (Song wSong in wSongs) {
+            List<Song> wList = new List<Song>(wSongs);
+            wList.Add(wSong4);
+            //Listに格納されたSongクラスのインスタンスをコンソールに出力
+            foreach (Song wSong in wList) {
                 //追加問題2 TimeSpan構造体を利用
                 TimeSpan wTimeSpan = TimeSpan.FromSeconds(wSong.Length);
                 Console.WriteLine($"{wSong.Title}という曲のアーティストは {wSong.ArtistName}で曲の長さは{wTimeSpan.Minutes:D1}:{wTimeSpan.Seconds:D2}です");
