@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Practice4_2_4 {
+﻿namespace Practice4_2_4 {
     /// <summary>
     /// 年月計算クラス
     /// </summary>
@@ -39,14 +33,12 @@ namespace Practice4_2_4 {
         /// 1か月後を求めるメソッド
         /// </summary>
         /// <returns>1か月後の年と日</returns>
-        public YearMonth AddOneMonth() {
-            int wNewYear = this.Year;
-            int wNewMonth = this.Month++;
-            if (wNewMonth > 12) {
-                wNewMonth = 1;
-                wNewYear++;
+        public void AddOneMonth() {
+            this.Month++;
+            if (this.Month > 12) {
+                this.Month = 1;
+                this.Year++;
             }
-            return new YearMonth(wNewYear, wNewMonth);
         }
         public override string ToString() {
             return ($"{Year}年{Month}月 ");

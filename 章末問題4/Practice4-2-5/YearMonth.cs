@@ -1,4 +1,10 @@
-﻿namespace Practice4_2_1 {
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practice4_2_5 {
     /// <summary>
     /// 年月計算クラス
     /// </summary>
@@ -21,7 +27,7 @@
             set { Is21stCentury = value; }
         }
         /// <summary>
-        /// YearMonthのコンストラクタ
+        /// YearMonthのYearMonthのコンストラクタ
         /// </summary>
         /// <param name="vYear">年</param>
         /// <param name="vMonth">月</param>
@@ -33,7 +39,7 @@
         /// 1か月後を求めるメソッド
         /// </summary>
         /// <returns>1か月後の年と日</returns>
-        public void AddOneMonth() {
+        public  void  AddOneMonth() {
             this.Month++;
             if (this.Month > 12) {
                 this.Month = 1;
@@ -45,3 +51,4 @@
         }
     }
 }
+
