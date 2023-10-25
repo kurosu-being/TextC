@@ -22,7 +22,7 @@ namespace Practice2_3_1 {
         /// <returns>Saleオブジェクトのリスト</returns>
         private static IEnumerable<Sale> ReadSales(string vFilePath) {
             var wSales = new List<Sale>();
-            foreach (var wLine in File.ReadLines(vFilePath)) {
+            foreach (string wLine in File.ReadLines(vFilePath)) {
                 var wItems = wLine.Split(',');
                 var wSale = new Sale(wItems[0], wItems[1], int.Parse(wItems[2]));
                 wSales.Add(wSale);
