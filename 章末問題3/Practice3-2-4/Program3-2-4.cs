@@ -8,11 +8,11 @@ namespace Practice3_2_4 {
         static void Main(string[] args) {
             var wCityNames = new List<string> { "Tokyo", "ONew Delhi", "Bangkok", "London", "Paris", "Berlin", "Canberra", "Hong Kong", "Edmonton" };
             //wCityNames.Where(s => s.FirstOrDefault() == 'B')?.Select(s => s.Length)の記述が長いと判断したため、変数を定義しました。
-            var wFirstS = wCityNames.Where(s => s.FirstOrDefault() == 'B')?.Select(s => s.Length);
+            var wFirstS = wCityNames.Where(s => s.FirstOrDefault() == 'B').Select(s => s.Length);
             foreach (int wMessage in wFirstS) {
                 Console.WriteLine(wMessage);
             }
-            var wLastN = wCityNames.Where(s => s.LastOrDefault() == 'n')?.OrderBy(x => x[0]);
+            var wLastN = wCityNames.Where(s => s.LastOrDefault() == 'n').OrderBy(x => x[0]);
             foreach (string wMessage2 in wLastN) {
                 Console.WriteLine(wMessage2);
             }
