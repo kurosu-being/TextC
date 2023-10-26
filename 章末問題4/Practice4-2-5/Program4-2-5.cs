@@ -24,6 +24,11 @@ namespace Practice4_2_5 {
             }
             Console.WriteLine($"最初に見つかった21世紀の年: {(wFirst21YearMonth != null ? wFirst21YearMonth.Year.ToString() + "年" : "見つかりませんでした")}");
         }
+        /// <summary>
+        /// 21世紀の年月を探すメソッド
+        /// </summary>
+        /// <param name="wYearMonths">年月</param>
+        /// <returns>21世紀の年月</returns>
         public static YearMonth FindFirst21YearMonth(YearMonth[] wYearMonths) {
             foreach (YearMonth wYearMonth in wYearMonths) {
                 if (wYearMonth.Is21stCentury) {
