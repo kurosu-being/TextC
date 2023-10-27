@@ -14,7 +14,7 @@ namespace Practice3_2_1 {
             var wCityNames = new List<string> { "Tokyo", "New Delhi", "Bangkok", "London", "Paris", "Berlin", "Canberra", "Hong Kong" };
             string wInput = Console.ReadLine();
             var wIndex = wCityNames.FindIndex(s => s == wInput);
-            string wMessage = (wIndex >= 0) ? $"インデックス番号は {wIndex}" : "-1";
+            string wMessage = (wIndex >= 0) ? $"インデックス番号は {wIndex}" : "その都市は登録されていません";
             Console.WriteLine(wMessage);
         }
     }
