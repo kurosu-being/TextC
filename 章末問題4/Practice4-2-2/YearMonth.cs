@@ -18,7 +18,6 @@
             get {
                 return Year >= 2001 && Year <= 2100;
             }
-            set { Is21stCentury = value; }
         }
         /// <summary>
         /// YearMonthのコンストラクタ
@@ -39,7 +38,7 @@
 
             if (wNewMonth > 12) {
                 wNewMonth = 1;
-                wNewYear++;
+                ++wNewYear;
             }
             return new YearMonth(wNewYear, wNewMonth);
         }

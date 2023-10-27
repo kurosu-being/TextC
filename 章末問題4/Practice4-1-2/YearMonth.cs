@@ -18,7 +18,6 @@
             get {
                 return Year >= 2001 && Year <= 2100;
             }
-            set { Is21stCentury = value; }
         }
         /// <summary>
         /// YearMonthのコンストラクタ

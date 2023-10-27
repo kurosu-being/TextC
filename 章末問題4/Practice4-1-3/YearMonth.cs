@@ -18,7 +18,6 @@
             get {
                 return Year >= 2001 && Year <= 2100;
             }
-            set { Is21stCentury = value; }
         }
         /// <summary>
         /// YearMonthのコンストラクタ
@@ -32,16 +31,15 @@
         /// <summary>
         /// 1か月後を求めるメソッド
         /// </summary>
-        /// <returns>1か月後の年と日</returns>
+        /// <returns>1か月後の年と月</returns>
         public YearMonth AddOneMonth() {
             int wNewYear = this.Year;
             int wNewMonth = this.Month + 1;
 
             if (wNewMonth > 12) {
                 wNewMonth = 1;
-                wNewYear++;
+                ++wNewYear;
             }
-       
             return new YearMonth(wNewYear, wNewMonth);
         }
     }

@@ -1,4 +1,6 @@
-﻿namespace Practice4_2_4 {
+﻿using System.Linq;
+
+namespace Practice4_2_4 {
     /// <summary>
     /// 年月計算クラス
     /// </summary>
@@ -18,7 +20,6 @@
             get {
                 return Year >= 2001 && Year <= 2100;
             }
-            set { Is21stCentury = value; }
         }
         /// <summary>
         /// YearMonthのコンストラクタ
@@ -36,19 +37,26 @@
         public override string ToString() {
             return ($"{Year}年{Month}月 ");
         }
-
         /// <summary>
-        /// 21世紀の年月を探すメソッド
+        /// 1か月後を求めるメソッド
+        /// </summary>
+        /// <returns>1か月後の年と日</returns>
+        public YearMonth AddOneMonth() {
+            int wNewYear = this.Year;
+            int wNewMonth = this.Month + 1;
+            if (wNewMonth > 12) {
+                wNewMonth = 1;
+                ++wNewYear;
+            }
+            return new YearMonth(wNewYear, wNewMonth);
+        }
+        /// <summary>
+        /// 最初の21世紀の年月を探すメソッド
         /// </summary>
         /// <param name="wYearMonths">年月</param>
         /// <returns>21世紀の年月</returns>
         public static YearMonth FindFirst21YearMonth(YearMonth[] wYearMonths) {
-            foreach (YearMonth wYearMonth in wYearMonths) {
-                if (wYearMonth.Is21stCentury) {
-                    return wYearMonth;
-                }
-            }
-            return null;
+            return wYearMonths.FirstOrDefault(x => x.Is21stCentury) ?? null;
         }
     }
 }

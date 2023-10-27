@@ -1,6 +1,6 @@
 ﻿namespace Practice4_2_1 {
     class Program {
-        //Practice4-1で定義したYearMonthクラスを使って、次のコードを書いてください。また、本章で学習したイディオムが使えるところでは、イディオムを使ってください。
+        //問題4.1で定義したYearMonthクラスを使って、次のコードを書いて下さい。本章で学んだイディオムが使えるところでは、イディオムを使ってください。
         //Practice4-2-1 YearMonthを要素に持つ配列を定義し、初期値として5つのYearMonthオブジェクトをセットしてください。
         static void Main(string[] args) {
             var wDay1 = new YearMonth(2000, 3);

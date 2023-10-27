@@ -5,7 +5,7 @@ namespace Practice4_2_4 {
         //Practice4-2-4 Practice4-2-3で作成したメソッドを呼び出し、最初に見つかった21世紀のデータの年を表示してください。見つからなければ、21世紀のデータはありませんと表示してください。
         static void Main(string[] args) {
             var wDay1 = new YearMonth(2000, 3);
-            var wDay2 = new YearMonth(2005, 12);
+            var wDay2 = new YearMonth(200, 12);
             var wDay3 = new YearMonth(2004, 2);
             var wDay4 = new YearMonth(2030, 10);
             var wDay5 = new YearMonth(2450, 7);

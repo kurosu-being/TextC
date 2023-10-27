@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Practice4_2_5 {
+﻿namespace Practice4_2_5 {
     /// <summary>
     /// 年月計算クラス
     /// </summary>
@@ -24,7 +18,6 @@ namespace Practice4_2_5 {
             get {
                 return Year >= 2001 && Year <= 2100;
             }
-            set { Is21stCentury = value; }
         }
         /// <summary>
         /// YearMonthのコンストラクタ
@@ -36,19 +29,6 @@ namespace Practice4_2_5 {
             this.Month = vMonth;
         }
         /// <summary>
-        /// 1か月後を求めるメソッド
-        /// </summary>
-        /// <returns>1か月後の年と日</returns>
-        public YearMonth AddOneMonth() {
-            int wNewYear = this.Year;
-            int wNewMonth = this.Month + 1;
-            if (wNewMonth > 12) {
-                wNewMonth = 1;
-                wNewYear++;
-            }
-            return new YearMonth(wNewYear, wNewMonth);
-        }
-        /// <summary>
         /// 書式を"2017年8月"の形に直すメソッド
         /// </summary>
         /// <returns>指定書式に変更した年月</returns>
@@ -56,17 +36,15 @@ namespace Practice4_2_5 {
             return ($"{Year}年{Month}月 ");
         }
         /// <summary>
-        /// 21世紀の年月を探すメソッド
+        /// 1か月後を求めるメソッド
         /// </summary>
-        /// <param name="wYearMonths">年月</param>
-        /// <returns>21世紀の年月</returns>
-        public static YearMonth FindFirst21YearMonth(YearMonth[] wYearMonths) {
-            foreach (YearMonth wYearMonth in wYearMonths) {
-                if (wYearMonth.Is21stCentury) {
-                    return wYearMonth;
-                }
+        /// <returns>1か月後の年と日</returns>
+        public void AddOneMonth() {
+            this.Month++;
+            if (this.Month > 12) {
+                this.Month = 1;
+                ++this.Year;
             }
-            return null;
         }
     }
 }
