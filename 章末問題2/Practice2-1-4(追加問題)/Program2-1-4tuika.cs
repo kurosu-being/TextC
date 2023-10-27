@@ -10,7 +10,7 @@ namespace Practice2_1_4_追加問題_ {
             Song wSong2 = new Song("アイドル", "YOASOBI", 275);
             Song wSong3 = new Song("天体観測", "BUMP OF CHICKEN", 1190);
             //配列songsに格納
-            List<Song> wList =new List<Song> { wSong1, wSong2, wSong3 };
+            List<Song> wList = new List<Song> { wSong1, wSong2, wSong3 };
             // 追加問題１Songクラスのインスタンスを生成
             Song wSong4 = new Song("君が代", "林広守", 240);
             wList.Add(wSong4);
