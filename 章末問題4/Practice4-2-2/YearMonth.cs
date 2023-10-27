@@ -33,13 +33,20 @@
         /// 1か月後を求めるメソッド
         /// </summary>
         /// <returns>1か月後の年と日</returns>
-        public void AddOneMonth() {
-            this.Month++;
-            if (this.Month > 12) {
-                this.Month = 1;
-                this.Year++;
+        public YearMonth AddOneMonth() {
+            int wNewYear = this.Year;
+            int wNewMonth = this.Month + 1;
+
+            if (wNewMonth > 12) {
+                wNewMonth = 1;
+                wNewYear++;
             }
+            return new YearMonth(wNewYear, wNewMonth);
         }
+        /// <summary>
+        /// 書式を"2017年8月"の形に直すメソッド
+        /// </summary>
+        /// <returns>指定書式に変更した年月</returns>
         public override string ToString() {
             return ($"{Year}年{Month}月 ");
         }

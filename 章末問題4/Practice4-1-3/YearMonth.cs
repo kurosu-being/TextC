@@ -33,12 +33,16 @@
         /// 1か月後を求めるメソッド
         /// </summary>
         /// <returns>1か月後の年と日</returns>
-        public void AddOneMonth() {
-            this.Month++;
-            if (this.Month > 12) {
-                this.Month = 1;
-                this.Year++;
+        public YearMonth AddOneMonth() {
+            int wNewYear = this.Year;
+            int wNewMonth = this.Month + 1;
+
+            if (wNewMonth > 12) {
+                wNewMonth = 1;
+                wNewYear++;
             }
+       
+            return new YearMonth(wNewYear, wNewMonth);
         }
     }
 }

@@ -10,21 +10,8 @@ namespace Practice4_2_4 {
             var wDay4 = new YearMonth(2030, 10);
             var wDay5 = new YearMonth(2450, 7);
             var wYearMonths = new YearMonth[] { wDay1, wDay2, wDay3, wDay4, wDay5, };
-            var wFirst21YearMonth = FindFirst21YearMonth(wYearMonths);
+            var wFirst21YearMonth = YearMonth.FindFirst21YearMonth(wYearMonths);
             Console.WriteLine($"最初に見つかった21世紀の年: {(wFirst21YearMonth != null ? wFirst21YearMonth.Year.ToString() + "年" : "見つかりませんでした")}");
-        }
-        /// <summary>
-        /// 21世紀の年月を探すメソッド
-        /// </summary>
-        /// <param name="wYearMonths">年月</param>
-        /// <returns>21世紀の年月</returns>
-        public static YearMonth FindFirst21YearMonth(YearMonth[] wYearMonths) {
-            foreach (YearMonth wYearMonth in wYearMonths) {
-                if (wYearMonth.Is21stCentury) {
-                    return wYearMonth;
-                }
-            }
-            return null;
         }
     }
 }

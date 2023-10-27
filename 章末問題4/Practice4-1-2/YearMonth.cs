@@ -21,7 +21,7 @@
             set { Is21stCentury = value; }
         }
         /// <summary>
-        /// YearMonthのYearMonthのコンストラクタ
+        /// YearMonthのコンストラクタ
         /// </summary>
         /// <param name="vYear">年</param>
         /// <param name="vMonth">月</param>
