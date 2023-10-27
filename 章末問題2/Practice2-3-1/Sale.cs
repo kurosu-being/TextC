@@ -20,11 +20,11 @@
         /// </summary>
         /// <param name="vShopName">店舗名</param>
         /// <param name="vProductCategory">商品カテゴリ</param>
-        /// <param name="wAmout">売上高</param>
-        public Sale(string vShopName, string vProductCategory, int wAmout){
+        /// <param name="vAmout">売上高</param>
+        public Sale(string vShopName, string vProductCategory, int vAmout) {
             this.ShopName = vShopName;
             this.ProductCategory = vProductCategory;
-            this.Amount = wAmout;
-}
+            this.Amount = vAmout;
+        }
     }
 }

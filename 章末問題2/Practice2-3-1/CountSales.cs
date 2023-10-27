@@ -33,9 +33,7 @@ namespace Practice2_3_1 {
         /// 商品カテゴリ別売上を求めるメソッド
         /// </summary>
         /// <returns>商品カテゴリ別売上</returns>
-        public IDictionary<string, int> GetPerItemSales() {
-            return FSales.GroupBy(x => x.ProductCategory)
+        public IDictionary<string, int> GetPerItemSales() => FSales.GroupBy(x => x.ProductCategory)
                    .ToDictionary(x => x.Key, x => x.Sum(s => s.Amount));
-        }
     }
 }
