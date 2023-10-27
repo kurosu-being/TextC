@@ -40,7 +40,6 @@
                 wNewMonth = 1;
                 ++wNewYear;
             }
-
             return new YearMonth(wNewYear, wNewMonth);
         }
         /// <summary>
