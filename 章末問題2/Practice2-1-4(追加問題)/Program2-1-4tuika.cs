@@ -9,13 +9,12 @@ namespace Practice2_1_4_追加問題_ {
             Song wSong1 = new Song("白日", "KingGnu", 241);
             Song wSong2 = new Song("アイドル", "YOASOBI", 275);
             Song wSong3 = new Song("天体観測", "BUMP OF CHICKEN", 1190);
-            //配列songsに格納
-            List<Song> wList = new List<Song> { wSong1, wSong2, wSong3 };
+            List<Song> wSongs = new List<Song> { wSong1, wSong2, wSong3 };
             // 追加問題１Songクラスのインスタンスを生成
             Song wSong4 = new Song("君が代", "林広守", 240);
-            wList.Add(wSong4);
+            wSongs.Add(wSong4);
             //Listに格納されたSongクラスのインスタンスをコンソールに出力
-            foreach (Song wSong in wList) {
+            foreach (Song wSong in wSongs) {
                 //追加問題2 TimeSpan構造体を利用
                 TimeSpan wTimeSpan = TimeSpan.FromSeconds(wSong.Length);
                 Console.WriteLine($"{wSong.Title}という曲のアーティストは {wSong.ArtistName}で曲の長さは{wTimeSpan.Minutes:D1}:{wTimeSpan.Seconds:D2}です");
