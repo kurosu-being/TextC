@@ -7,7 +7,7 @@
     <ProjectGuid>{40992B20-17F7-42B0-9946-80A1404FAE86}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Practice5_2_1</RootNamespace>
-    <AssemblyName>Practice5_2_1</AssemblyName>
+    <AssemblyName>Practice5-2-1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Program5-2-1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
