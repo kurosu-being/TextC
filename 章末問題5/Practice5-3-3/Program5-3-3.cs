@@ -6,7 +6,7 @@ namespace Practice5_3_3 {
         static void Main(string[] args) {
             string wSentence = "Jackdaws love my big sphinx quartz.";
             string[] wWord = wSentence.Split(' ');
-            //
+            //単語数（wWord.Length）を表示
             Console.WriteLine(wWord.Length);
         }
     }
