@@ -7,7 +7,7 @@ namespace Practice5_3_1 {
 
     class Program {
         static void Main(string[] args) {
-            string wSentence = "Jackdaws love my big sphinx quartz.";
+            string wSentence = "Jackdaws love my big sphinx quartz";
             int wCount = wSentence.Count(x => x == ' ');
         }
     }
