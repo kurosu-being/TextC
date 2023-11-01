@@ -27,8 +27,7 @@ namespace Practice5_4_1 {
             (.*?) : '.' が任意の1文字を表し、*? という組み合わせで、文字列が部分一致することを示します。
             (;|$) ;  ';'または文字列の終わりであることを示します
 
-            この表現によりwMatch に一致する部分を格納し、その値を wMatch.Groups[1].Value で取得しています。
-            （Groups[0]には正規表現全体に一致するテキスト、Groups[1]に{vKey}=(.*?)に一致する文字列、Groups[2]には';'または文字列の終わりが含まれる？）*/
+            この表現によりwMatch に一致する部分を格納し、その値を wMatch.Groups[1].Value で取得しています。*/
             string wPattern = $"{vKey}=(.*?)(;|$)";
             
             Match wMatch = Regex.Match(vSentence, wPattern);
