@@ -12,8 +12,8 @@ namespace Practice4_2_5 {
                 new YearMonth(2023, 10),
                 new YearMonth(2045, 7)
             };
-            var wNewYearMonths = wYearMonths.Select(x => x.AddOneMonth());
-            var wSortYearMonths = wNewYearMonths.OrderBy(x => new DateTime(x.Year, x.Month, 1)).ToArray();
+
+            var wSortYearMonths = wYearMonths.Select(x => x.AddOneMonth()).OrderBy(x => x).ToArray();
             foreach (var wYearMonth in wSortYearMonths) {
                 Console.WriteLine(wYearMonth.ToString());
             }

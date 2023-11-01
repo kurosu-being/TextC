@@ -53,7 +53,7 @@ namespace Practice4_2_4 {
         /// <param name="wYearMonths">年月</param>
         /// <returns>21世紀の年月</returns>
         public static YearMonth First21YearMonth(IEnumerable<YearMonth> wYearMonths) {
-            return wYearMonths.FirstOrDefault(x => x.Is21stCentury) ?? null;
+            return wYearMonths.FirstOrDefault(x => x.Is21stCentury);
         }
     }
 }
