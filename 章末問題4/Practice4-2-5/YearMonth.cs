@@ -52,11 +52,11 @@ namespace Practice4_2_5 {
         /// <param name="vOther">判断する別のオブジェクト</param>
         /// <returns>判断した結果を表す数値</returns>
         public int CompareTo(YearMonth vOther) =>
-       this.Year > vOther.Year ? 1
-       : this.Year < vOther.Year ? -1
-       : this.Month > vOther.Month ? 1
-       : this.Month < vOther.Month ? -1
-       : 0;
+            this.Year > vOther.Year ? 1
+            : this.Year < vOther.Year ? -1
+            : this.Month > vOther.Month ? 1
+            : this.Month < vOther.Month ? -1
+            : 0;
     }
 }
 
