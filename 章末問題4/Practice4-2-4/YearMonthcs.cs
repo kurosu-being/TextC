@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Practice4_2_4 {
     /// <summary>
@@ -8,19 +9,15 @@ namespace Practice4_2_4 {
         /// <summary>
         /// 年
         /// </summary>
-        public int Year { get; private set; }
+        public int Year { get; }
         /// <summary>
         /// 月
         /// </summary>
-        public int Month { get; private set; }
+        public int Month { get; }
         /// <summary>
         /// 21世紀
         /// </summary>
-        public bool Is21stCentury {
-            get {
-                return Year >= 2001 && Year <= 2100;
-            }
-        }
+        public bool Is21stCentury => 2001 <= Year && Year <= 2100;
         /// <summary>
         /// YearMonthのコンストラクタ
         /// </summary>
@@ -55,7 +52,7 @@ namespace Practice4_2_4 {
         /// </summary>
         /// <param name="wYearMonths">年月</param>
         /// <returns>21世紀の年月</returns>
-        public static YearMonth FindFirst21YearMonth(YearMonth[] wYearMonths) {
+        public static YearMonth First21YearMonth(IEnumerable<YearMonth> wYearMonths) {
             return wYearMonths.FirstOrDefault(x => x.Is21stCentury) ?? null;
         }
     }

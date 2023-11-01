@@ -6,11 +6,11 @@
         /// <summary>
         /// 年
         /// </summary>
-        public int Year { get; private set; }
+        public int Year { get; }
         /// <summary>
         /// 月
         /// </summary>
-        public int Month { get; private set; }
+        public int Month { get; }
         /// <summary>
         /// YearMonthのコンストラクタ
         /// </summary>
