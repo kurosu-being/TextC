@@ -29,7 +29,7 @@ namespace Practice5_4_1 {
 
             この表現によりwMatch に一致する部分を格納し、その値を wMatch.Groups[1].Value で取得しています。*/
             string wPattern = $"{vKey}=(.*?)(;|$)";
-            
+
             Match wMatch = Regex.Match(vSentence, wPattern);
             return wMatch.Success ? wMatch.Groups[1].Value : "見つかりません";
         }
