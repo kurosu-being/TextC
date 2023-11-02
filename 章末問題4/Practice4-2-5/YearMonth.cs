@@ -30,9 +30,7 @@ namespace Practice4_2_5 {
         /// 書式を"2017年8月"の形に直すメソッド
         /// </summary>
         /// <returns>指定書式に変更した年月</returns>
-        public override string ToString() {
-            return ($"{Year}年{Month}月 ");
-        }
+        public override string ToString() => $"{this.Year}年{this.Month}月";
         /// <summary>
         /// 1か月後を求めるメソッド
         /// </summary>

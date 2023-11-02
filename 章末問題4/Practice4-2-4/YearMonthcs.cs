@@ -31,9 +31,7 @@ namespace Practice4_2_4 {
         /// 書式を"2017年8月"の形に直すメソッド
         /// </summary>
         /// <returns>指定書式に変更した年月</returns>
-        public override string ToString() {
-            return ($"{Year}年{Month}月 ");
-        }
+        public override string ToString() => $"{this.Year}年{this.Month}月";
         /// <summary>
         /// 1か月後を求めるメソッド
         /// </summary>
@@ -50,10 +48,10 @@ namespace Practice4_2_4 {
         /// <summary>
         /// 最初の21世紀の年月を探すメソッド
         /// </summary>
-        /// <param name="wYearMonths">年月</param>
+        /// <param name="vYearMonths">年月</param>
         /// <returns>21世紀の年月</returns>
-        public static YearMonth First21YearMonth(IEnumerable<YearMonth> wYearMonths) {
-            return wYearMonths.FirstOrDefault(x => x.Is21stCentury);
+        public static YearMonth First21YearMonth(IEnumerable<YearMonth> vYearMonths) {
+            return vYearMonths.FirstOrDefault(x => x.Is21stCentury);
         }
     }
 }
