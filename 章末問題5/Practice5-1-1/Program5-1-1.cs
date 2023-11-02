@@ -6,7 +6,7 @@ namespace Practice5_1_1 {
     コンソールからの入力の時は、Console.ReadLineメソッドを利用してください。*/
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine("[○○,■■」という形で2つの文字列を入力してください");
+            Console.WriteLine("「○○,■■」という形で2つの文字列を入力してください");
             string wInput = Console.ReadLine();
             string[] wInputArray = wInput.Split(',');
             if (wInputArray.Length == 2) {

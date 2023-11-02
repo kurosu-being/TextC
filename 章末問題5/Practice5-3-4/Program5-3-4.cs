@@ -7,9 +7,8 @@ namespace Practice5_3_4 {
         static void Main(string[] args) {
             string wSentence = "Jackdaws love my big sphinx quartz";
             string[] wWords = wSentence.Split(' ');
-            var wUnderFourWords = wWords.Where(x => x.Length <= 4);
             //4文字以下の単語をコンソールに列挙
-            foreach (var wWord in wUnderFourWords) {
+            foreach (var wWord in wWords.Where(x => x.Length <= 4)) {
                 Console.WriteLine(wWord);
             }
         }
