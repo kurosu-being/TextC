@@ -7,7 +7,7 @@
         /// <summary>
         /// 価格
         /// </summary>
-        public int Price { get; }
+        public int Price { get; private set; }
         /// <summary>
         /// ページ数
         /// </summary>
