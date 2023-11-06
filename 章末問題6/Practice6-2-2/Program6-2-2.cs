@@ -16,8 +16,8 @@ namespace Practice6_2_2 {
                 new Book ( "私でも分かったASP.NET MVC", 3200, 453 ),
                 new Book ( "C#プログラミングの常識", 2540, 348 ),
             };
-            var wCount = wBooks.Count(x => x.Title.Contains("C#"));
-            Console.WriteLine($"タイトルに\"C#\"が含まれる書籍の数: {wCount}冊");
+
+            Console.WriteLine($"タイトルに\"C#\"が含まれる書籍の数: {wBooks.Count(x => x.Title.Contains("C#"))}冊");
         }
     }
 }

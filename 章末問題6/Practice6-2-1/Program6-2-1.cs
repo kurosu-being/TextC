@@ -34,9 +34,9 @@ namespace Practice6_2_1 {
             };
             var wTargetBook = wBooks.FirstOrDefault(x => x.Title == "ワンダフル・C#ライフ");
             //価格はカンマ付き数字に変換しています
-            Console.WriteLine(wTargetBook != null
-    ? $"書籍「{wTargetBook.Title}」の価格は {wTargetBook.Price.ToString("#,0")}円でページ数は{wTargetBook.Pages}Pです"
-    : "指定したタイトルの書籍が見つかりませんでした.");
+            string wMessage = wTargetBook != null 
+                ? $"書籍「{wTargetBook.Title}」の価格は {wTargetBook.Price.ToString("#,0")}円でページ数は{wTargetBook.Pages}Pです" :"指定したタイトルの書籍が見つかりませんでした.";
+            Console.WriteLine(wMessage);
         }
     }
 }

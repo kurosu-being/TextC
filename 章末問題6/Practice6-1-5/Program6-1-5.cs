@@ -6,8 +6,8 @@ namespace Practice6_1_5 {
     class Program {
         static void Main(string[] args) {
             var wNumbers = new int[] { 5, 10, 17, 9, 3, 21, 10, 40, 21, 3, 35 };
-            int wCount = wNumbers.Distinct().Count(x => x > 10);
-            Console.WriteLine($"10より大きい値:{wCount}");
+
+            Console.WriteLine($"10より大きい値:{wNumbers.Distinct().Count(x => x > 10)}");
         }
     }
 }
