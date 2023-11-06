@@ -15,9 +15,9 @@
         /// <summary>
         /// Bookのコンストラクタ
         /// </summary>
-        /// <param name="vTitle"></param>
-        /// <param name="vPrice"></param>
-        /// <param name="vPages"></param>
+        /// <param name="vTitle">タイトル</param>
+        /// <param name="vPrice">価格</param>
+        /// <param name="vPages">ページ数</param>
         public Book(string vTitle, int vPrice, int vPages) {
             this.Title = vTitle;
             this.Price = vPrice;
