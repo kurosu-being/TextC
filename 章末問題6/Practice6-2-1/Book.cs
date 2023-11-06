@@ -3,15 +3,15 @@
         /// <summary>
         /// タイトル
         /// </summary>
-        public string Title { get; set; }
+        public string Title { get; }
         /// <summary>
         /// 価格
         /// </summary>
-        public int Price { get; set; }
+        public int Price { get; }
         /// <summary>
         /// ページ数
         /// </summary>
-        public int Pages { get; set; }
+        public int Pages { get; }
         /// <summary>
         /// Bookのコンストラクタ
         /// </summary>

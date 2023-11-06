@@ -16,9 +16,9 @@ namespace Practice6_2_5 {
                 new Book ( "私でも分かったASP.NET MVC", 3200, 453 ),
                 new Book ( "C#プログラミングの常識", 2540, 348 ),
             };
-            var wTargetMaxPages = wBooks.Where(x => x.Price < 4000).Max(x => x.Pages);
+            var wTargetMaxPage = wBooks.Where(x => x.Price < 4000).Max(x => x.Pages);
 
-            Console.WriteLine($"価格が4000円未満の本の中で最大ページ数: {wTargetMaxPages}P");
+            Console.WriteLine($"価格が4000円未満の本の中で最大ページ数: {wTargetMaxPage}P");
         }
     }
 }

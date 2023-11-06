@@ -16,9 +16,9 @@ namespace Practice6_2_7 {
                 new Book ( "私でも分かったASP.NET MVC", 3200, 453 ),
                 new Book ( "C#プログラミングの常識", 2540, 348 ),
             };
-            var wTopThreePrice = wBooks.Where(x => x.Title.Contains("C#") && x.Pages <= 500);
+            var wTargetTitles = wBooks.Where(x => x.Title.Contains("C#") && x.Pages <= 500);
             Console.WriteLine("タイトルに「C#」が含まれていてかつ500ページ以下の本");
-            foreach (var wBook in wTopThreePrice) {
+            foreach (var wBook in wTargetTitles) {
                 Console.WriteLine($"書籍: {wBook.Title}");
             }
 
