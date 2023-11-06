@@ -16,9 +16,9 @@ namespace Practice6_2_4 {
                 new Book ( "私でも分かったASP.NET MVC", 3200, 453 ),
                 new Book ( "C#プログラミングの常識", 2540, 348 ),
             };
-            var wFirstTargetTitle = wBooks.FirstOrDefault(x => x.Price >= 4000);
 
-            Console.WriteLine($"価格が4000円以上の本で最初に見つかった書籍のタイトル: {wFirstTargetTitle.Title}");
+            string wTargetBookTitle = wBooks.FirstOrDefault(x => x.Price >= 4000) != null ? $"価格が4000円以上の本で最初に見つかった書籍のタイトル: {wBooks.FirstOrDefault(x => x.Price >= 4000).Title}" : "4000円以上の書籍はありません。";
+            Console.WriteLine(wTargetBookTitle);
         }
     }
 }

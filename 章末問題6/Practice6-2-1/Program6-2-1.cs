@@ -32,11 +32,12 @@ namespace Practice6_2_1 {
                 new Book ( "私でも分かったASP.NET MVC", 3200, 453 ),
                 new Book ( "C#プログラミングの常識", 2540, 348 ),
             };
+
             var wTargetBook = wBooks.FirstOrDefault(x => x.Title == "ワンダフル・C#ライフ");
             //価格はカンマ付き数字に変換しています
-            string wMessage = wTargetBook != null 
-                ? $"書籍「{wTargetBook.Title}」の価格は {wTargetBook.Price.ToString("#,0")}円でページ数は{wTargetBook.Pages}Pです" :"指定したタイトルの書籍が見つかりませんでした.";
-            Console.WriteLine(wMessage);
+            string wBookInfomation = wTargetBook != null
+                ? $"書籍「{wTargetBook.Title}」の価格は {wTargetBook.Price.ToString("#,0")}円でページ数は{wTargetBook.Pages}Pです" : "指定したタイトルの本が見つかりませんでした.";
+            Console.WriteLine(wBookInfomation);
         }
     }
 }

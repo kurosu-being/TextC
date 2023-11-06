@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace Practice6_2_3 {
-    //Practice6-2-3 booksの中で、タイトルに"C#"が含まれている書籍の平均ページ数を求めてるコードを書いて下さい。
+    //Practice6-2-3 booksの中で、タイトルに"C#"が含まれている書籍の平均ページ数を求めるコードを書いて下さい。
     class Program {
         static void Main(string[] args) {
             var wBooks = new List<Book>
@@ -16,9 +16,8 @@ namespace Practice6_2_3 {
                 new Book ( "私でも分かったASP.NET MVC", 3200, 453 ),
                 new Book ( "C#プログラミングの常識", 2540, 348 ),
             };
-            var wAveragePages = wBooks.Where(x => x.Title.Contains("C#")).Average(x => x.Pages);
 
-            Console.WriteLine($"タイトルに「C#」が含まれる書籍の平均ページ数: {wAveragePages}P");
+            Console.WriteLine($"タイトルに「C#」が含まれる書籍の平均ページ数: {wBooks.Where(x => x.Title.Contains("C#")).Average(x => x.Pages)}P");
         }
     }
 }

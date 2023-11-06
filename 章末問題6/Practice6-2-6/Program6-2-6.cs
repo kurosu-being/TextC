@@ -16,12 +16,10 @@ namespace Practice6_2_6 {
                 new Book ( "私でも分かったASP.NET MVC", 3200, 453 ),
                 new Book ( "C#プログラミングの常識", 2540, 348 ),
             };
-            var wTopPrices = wBooks.Where(x => x.Pages >= 400).OrderByDescending(x => x.Price);
-            Console.WriteLine("ページ数が400ページ以上の書籍を、価格が高い順に表示");
-            foreach (var wBook in wTopPrices) {
-                Console.WriteLine($"書籍: {wBook.Title} 価格:{wBook.Price.ToString("#,0")}円");
-            }
-
+            var wTargetBooks = wBooks.Where(x => x.Pages >= 400).OrderByDescending(x => x.Price).ToList();
+            Console.WriteLine(wTargetBooks.Any()
+                ? "ページ数が400ページ以上の書籍を、価格が高い順に表示\n" + string.Join("\n", wTargetBooks.Select(x => $"書籍: {x.Title} 価格:{x.Price.ToString("#,0")}円"))
+                : "ページ数が400ページ以上の書籍は存在しません。");
         }
     }
 }
