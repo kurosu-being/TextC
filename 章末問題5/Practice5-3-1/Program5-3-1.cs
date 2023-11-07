@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace Practice5_3_1 {
     /* "Jackdaws love my big sphinx quartz."という文字列があります。この文字列に対して、
@@ -14,7 +13,11 @@ namespace Practice5_3_1 {
 
             Console.WriteLine($"空白文字の個数: {wCount}");
         }
-
+        /// <summary>
+        /// 空白をカウントするメソッド
+        /// </summary>
+        /// <param name="vInput">受けとる文字列</param>
+        /// <returns>空白の個数</returns>
         static int CountSpaces(string vInput) {
             int wCount = 0;
             foreach (char wChar in vInput) {

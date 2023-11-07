@@ -22,8 +22,12 @@ namespace Practice5_4_1_Split {
             Console.WriteLine($"誕生年: {wNovelistT.Born}年");
 
         }
-        
-
+        /// <summary>
+        /// 対応するKeyを探すメソッド
+        /// </summary>
+        /// <param name="vParts"></param>
+        /// <param name="vKey"></param>
+        /// <returns></returns>
         static string GetPartsValue(string[] vParts, string vKey) {
             foreach (string wPart in vParts) {
                 string[] wKeyValue = wPart.Split('=');
