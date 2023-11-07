@@ -33,5 +33,6 @@ namespace Practice5_4_1 {
             Match wMatch = Regex.Match(vSentence, wPattern);
             return wMatch.Success ? wMatch.Groups[1].Value : "見つかりません";
         }
+
     }
 }

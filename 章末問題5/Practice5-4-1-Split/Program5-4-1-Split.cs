@@ -13,7 +13,16 @@ namespace Practice5_4_1_Split {
             Console.WriteLine($"作家  : {wNovelist}");
             Console.WriteLine($"代表作: {wBestWork}");
             Console.WriteLine($"誕生年: {wBorn}年");
+
+            //追加のお題（wNovelistを既に使っているのでwNovelistTに命名を変更しています）
+            var wNovelistT = new Novelist(wSentence);
+
+            Console.WriteLine($"作家  : {wNovelistT.Writer}");
+            Console.WriteLine($"代表作: {wNovelistT.BestWork}");
+            Console.WriteLine($"誕生年: {wNovelistT.Born}年");
+
         }
+        
 
         static string GetPartsValue(string[] vParts, string vKey) {
             foreach (string wPart in vParts) {
