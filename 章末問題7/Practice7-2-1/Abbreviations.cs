@@ -2,15 +2,76 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Practice7_2_1 {
     class Abbreviations {
-        private Dictionary<string, string> _FDict = new Dictionary<string, string>();
+        // ディクショナリの初期化
+        private Dictionary<string, string> FDict = new Dictionary<string, string>();
 
-        public Abbreviations(){
-            var wLines = FileStyleUriParser.ReadAllLines("Abbreviations.txt");
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        public Abbreviations() {
+            var wLines = File.ReadAllLines("Abbreviations.txt");
+            FDict = wLines.Select(x => x.Split('=')).ToDictionary(x => x[0], x => x[1]);
+        }
+
+        /// <summary>
+        /// 要素を追加するメソッド
+        /// </summary>
+        /// <param name="vAbbr">要素のキー</param>
+        /// <param name="vJapanese">要素の値</param>
+        public void Add(string vAbbr, string vJapanese) {
+            FDict[vAbbr] = vJapanese;
+        }
+
+        /// <summary>
+        ///インデクサ-省略語をキーに取る
+        /// </summary>
+        /// <param name="vAbbr">省略語</param>
+        /// <returns>正式名</returns>
+        public string this[string vAbbr] {
+            get {
+                return FDict.ContainsKey(vAbbr) ? FDict[vAbbr] : null;
+            }
+        }
+
+        /// <summary>
+        /// 日本語から省略語を取り出すメソッド
+        /// </summary>
+        /// <param name="japanese">日本語</param>
+        /// <returns>省略語</returns>
+        public string ToAbbreviation(string japanese) {
+            return FDict.FirstOrDefault(x => x.Value == japanese).Key;
+        }
+
+        /// <summary>
+        /// 日本語の位置を引数に与え、それが含まれる要素（Key、Value）をすべて取り出すメソッド
+        /// </summary>
+        /// <param name="wSubstring">日本語の位置</param>
+        /// <returns>それが含まれる要素</returns>
+        public IEnumerable<KeyValuePair<string, string>> FindAll(string wSubstring) {
+            foreach (var wItem in FDict) {
+                if (wItem.Value.Contains(wSubstring))
+                    yield return wItem;
+            }
+        }
+        // ディクショナリに登録されている用語の数を返すプロパティ
+        public int Count => FDict.Count;
+
+        // 省略語を削除するメソッド
+        public bool Remove(string vAbbr) {
+            return FDict.Remove(vAbbr);
+        }
+
+        /// <summary>
+        /// ３文字の省略語だけ取り出しコンソールに表示するメソッド
+        /// </summary>
+        public void DisplayThree() {
+            foreach (var wAbbr in FDict.Where(x => x.Key.Length == 3)) {
+                Console.WriteLine($"{wAbbr.Key}={wAbbr.Value}");
+            }
         }
     }
 }
+
