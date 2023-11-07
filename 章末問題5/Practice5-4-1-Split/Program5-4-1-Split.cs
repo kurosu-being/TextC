@@ -20,14 +20,13 @@ namespace Practice5_4_1_Split {
             Console.WriteLine($"作家  : {wNovelistT.Writer}");
             Console.WriteLine($"代表作: {wNovelistT.BestWork}");
             Console.WriteLine($"誕生年: {wNovelistT.Born}年");
-
         }
         /// <summary>
-        /// 対応するKeyを探すメソッド
+        /// Keyに対応する対応するValueを探すメソッド
         /// </summary>
-        /// <param name="vParts"></param>
-        /// <param name="vKey"></param>
-        /// <returns></returns>
+        /// <param name="vParts">受け取る文字列</param>
+        /// <param name="vKey">探すKey</param>
+        /// <returns>対応するKeyに対応するValue</returns>
         static string GetPartsValue(string[] vParts, string vKey) {
             foreach (string wPart in vParts) {
                 string[] wKeyValue = wPart.Split('=');
