@@ -8,15 +8,15 @@ namespace Practice5_4_1_Split {
         /// <summary>
         /// 作家の名前
         /// </summary>
-        public string Name { get; private set; }
+        public string Name { get; }
         /// <summary>
         /// 代表作
         /// </summary>
-        public string BestWork { get; private set; }
+        public string BestWork { get; }
         /// <summary>
         /// 誕生年
         /// </summary>
-        public int Born { get; private set; }
+        public int Born { get; }
         /// <summary>
         /// Novelistクラスのコンストラクタ
         /// </summary>
