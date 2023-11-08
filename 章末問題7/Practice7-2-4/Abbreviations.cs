@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Practice7_2_3 {
+namespace Practice7_2_4 {
     class Abbreviations {
         // ディクショナリの初期化
         private Dictionary<string, string> FDict = new Dictionary<string, string>();
@@ -65,7 +66,16 @@ namespace Practice7_2_3 {
         /// 省略語を削除するメソッド
         /// </summary>
         /// <param name="vAbbr">削除する省略語</param>
-        /// <returns>指定した省略後を削除したディクショナリ</returns> 
+        /// <returns>指定した省略後を削除したディクショナリ</returns>
         public bool Remove(string vAbbr) => FDict.Remove(vAbbr);
+
+        /// <summary>
+        /// ３文字の省略語だけ取り出しコンソールに表示するメソッド
+        /// </summary>
+        public void DisplayThree() {
+            foreach (var wAbbr in FDict.Where(x => x.Key.Length == 3)) {
+                Console.WriteLine($"{wAbbr.Key}={wAbbr.Value}");
+            }
+        }
     }
 }

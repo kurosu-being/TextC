@@ -66,8 +66,6 @@ namespace Practice7_2_1 {
         /// </summary>
         /// <param name="vAbbr">削除する省略語</param>
         /// <returns>指定した省略後を削除したディクショナリ</returns>
-        public bool Remove(string vAbbr) {
-            return FDict.Remove(vAbbr);
-        }
+        public bool Remove(string vAbbr) => FDict.Remove(vAbbr);
     }
 }

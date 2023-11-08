@@ -61,24 +61,6 @@ namespace Practice7_2_1 {
         /// ディクショナリに登録されている用語の数を返すプロパティ
         /// </summary>
         public int Count => FDict.Count;
-
-        /// <summary>
-        /// 省略語を削除するメソッド
-        /// </summary>
-        /// <param name="vAbbr">削除する省略語</param>
-        /// <returns>指定した省略後を削除したディクショナリ</returns>
-        public bool Remove(string vAbbr) {
-            return FDict.Remove(vAbbr);
-        }
-
-        /// <summary>
-        /// ３文字の省略語だけ取り出しコンソールに表示するメソッド
-        /// </summary>
-        public void DisplayThree() {
-            foreach (var wAbbr in FDict.Where(x => x.Key.Length == 3)) {
-                Console.WriteLine($"{wAbbr.Key}={wAbbr.Value}");
-            }
-        }
     }
 }
 
