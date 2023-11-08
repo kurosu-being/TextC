@@ -8,11 +8,11 @@ namespace Practice7_2_4 {
             Console.WriteLine("Abbreviations.txtのパスを入力してください(Abbreviations.txtはチケットに貼っています)");
             string wFilePath = Console.ReadLine();
             if (File.Exists(wFilePath)) {
-            var wAbbreviations = new Abbreviations(wFilePath);
+                var wAbbreviations = new Abbreviations(wFilePath);
 
-            //3文字の省略語を取り出し表示
-            Console.WriteLine("省略形が３文字のものを表示します");
-            wAbbreviations.DisplayThree();
+                //3文字の省略語を取り出し表示
+                Console.WriteLine("省略形が３文字のものを表示します");
+                wAbbreviations.DisplayThree();
             } else {
                 Console.WriteLine("存在しないパスです");
             }

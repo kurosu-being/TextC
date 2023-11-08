@@ -3,6 +3,9 @@ using System.IO;
 using System.Linq;
 
 namespace Practice7_2_1 {
+    /// <summary>
+    /// 省略語のクラス
+    /// </summary>
     class Abbreviations {
         // ディクショナリの初期化
         private Dictionary<string, string> FDict = new Dictionary<string, string>();

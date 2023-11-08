@@ -1,9 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
 namespace Practice7_2_1 {
+    /// <summary>
+    /// 省略語のクラス
+    /// </summary>
     class Abbreviations {
         // ディクショナリの初期化
         private Dictionary<string, string> FDict = new Dictionary<string, string>();
@@ -26,7 +28,7 @@ namespace Practice7_2_1 {
         }
 
         /// <summary>
-        ///インデクサ-省略語をキーに取る
+        ///省略語をキーに取るインデクサ
         /// </summary>
         /// <param name="vAbbr">省略語</param>
         /// <returns>正式名</returns>
