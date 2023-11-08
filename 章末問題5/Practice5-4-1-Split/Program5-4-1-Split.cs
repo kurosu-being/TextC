@@ -17,16 +17,16 @@ namespace Practice5_4_1_Split {
             //追加のお題（wNovelistを既に使っているのでwNovelistTに命名を変更しています）
             var wNovelistT = new Novelist(wSentence);
 
-            Console.WriteLine($"作家  : {wNovelistT.Writer}");
+            Console.WriteLine($"作家  : {wNovelistT.Name}");
             Console.WriteLine($"代表作: {wNovelistT.BestWork}");
             Console.WriteLine($"誕生年: {wNovelistT.Born}年");
         }
         /// <summary>
-        /// Keyに対応する対応するValueを探すメソッド
+        /// Keyに対応するValueを探すメソッド
         /// </summary>
         /// <param name="vParts">受け取る文字列</param>
         /// <param name="vKey">探すKey</param>
-        /// <returns>対応するKeyに対応するValue</returns>
+        /// <returns>Keyに対応するValue</returns>
         static string GetPartsValue(string[] vParts, string vKey) {
             foreach (string wPart in vParts) {
                 string[] wKeyValue = wPart.Split('=');

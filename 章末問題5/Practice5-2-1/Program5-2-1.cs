@@ -6,7 +6,7 @@ namespace Practice5_2_1 {
     class Program {
         static void Main(string[] args) {
             Console.WriteLine("整数を入力してください。3桁ごとにカンマ付きの数字文字列に変換します。: ");
-            string wMessage = int.TryParse(Console.ReadLine(), out int wNumber) 
+            string wMessage = int.TryParse(Console.ReadLine(), out int wNumber)
                 ? $"カンマ付きの数字文字列:{wNumber.ToString("#,0")}" : "無効な数字です。";
             Console.WriteLine(wMessage);
         }

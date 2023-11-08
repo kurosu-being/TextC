@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 
 namespace Practice5_4_1 {
-    /*　"Novelist=谷崎潤一郎;BestWork=春琴抄;Born=1886"という文字列から
+    /*　Practice5-4-1 "Novelist=谷崎潤一郎;BestWork=春琴抄;Born=1886"という文字列から
     以下の出力を得るコンソールアプリケーションを作成してください。
     作家  : 谷崎潤一郎
     代表作: 春琴抄
@@ -20,6 +20,12 @@ namespace Practice5_4_1 {
             Console.WriteLine($"誕生年: {wBorn}年");
         }
 
+        /// <summary>
+        /// 文章からKeyに対応するValueを探すメソッド
+        /// </summary>
+        /// <param name="vSentence">受け取る文章</param>
+        /// <param name="vKey">探すKey</param>
+        /// <returns>Keyに対応するValue</returns>
         static string GetValueFromSentence(string vSentence, string vKey) {
             /*正規表現について理解が不安な部分があるので、
             自分の考えを書き記します。間違いがある場合はご指摘頂けると幸いです。

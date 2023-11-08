@@ -11,9 +11,9 @@ namespace Practice5_1_1 {
             string[] wInputArray = wInput.Split(',');
             if (wInputArray.Length == 2) {
                 string wJudge = string.Compare(wInputArray[0].Trim(), wInputArray[1].Trim(), true) == 0
-                      ? "一致しています": "不一致です。";
+                      ? "一致しています" : "不一致です。";
                 Console.WriteLine(wJudge);
-            } else{
+            } else {
                 string wErrorMessage = string.IsNullOrEmpty(wInput)
                     ? "入力が空です。文字列を入力してください。" : "入力された文字列の数が指定と違います";
                 Console.WriteLine(wErrorMessage);
