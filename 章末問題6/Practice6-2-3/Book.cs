@@ -1,4 +1,7 @@
 ﻿namespace Practice6_2_3 {
+    /// <summary>
+    /// 本のクラス
+    /// </summary>
     public class Book {
         /// <summary>
         /// タイトル
