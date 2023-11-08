@@ -27,13 +27,6 @@ namespace Practice5_4_1 {
         /// <param name="vKey">探すKey</param>
         /// <returns>Keyに対応するValue</returns>
         static string GetValueFromSentence(string vSentence, string vKey) {
-            /*正規表現について理解が不安な部分があるので、
-            自分の考えを書き記します。間違いがある場合はご指摘頂けると幸いです。
-            使用した正規表現
-            (.*?) : '.' が任意の1文字を表し、*? という組み合わせで、文字列が部分一致することを示します。
-            (;|$) ;  ';'または文字列の終わりであることを示します
-
-            この表現によりwMatch に一致する部分を格納し、その値を wMatch.Groups[1].Value で取得しています。*/
             string wPattern = $"{vKey}=(.*?)(;|$)";
 
             Match wMatch = Regex.Match(vSentence, wPattern);
