@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Practice7_2_1 {
+namespace Practice7_2_3 {
     class Abbreviations {
         // ディクショナリの初期化
         private Dictionary<string, string> FDict = new Dictionary<string, string>();
@@ -81,4 +81,3 @@ namespace Practice7_2_1 {
         }
     }
 }
-

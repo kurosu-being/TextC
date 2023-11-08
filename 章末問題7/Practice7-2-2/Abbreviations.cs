@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -70,15 +69,5 @@ namespace Practice7_2_1 {
         public bool Remove(string vAbbr) {
             return FDict.Remove(vAbbr);
         }
-
-        /// <summary>
-        /// ３文字の省略語だけ取り出しコンソールに表示するメソッド
-        /// </summary>
-        public void DisplayThree() {
-            foreach (var wAbbr in FDict.Where(x => x.Key.Length == 3)) {
-                Console.WriteLine($"{wAbbr.Key}={wAbbr.Value}");
-            }
-        }
     }
 }
-
