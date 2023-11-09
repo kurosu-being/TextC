@@ -17,8 +17,8 @@ namespace Practice7_2_1 {
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public Abbreviations() {
-            var wLines = File.ReadAllLines("Abbreviations.txt");
+        public Abbreviations(string vFilePath) {
+            var wLines = File.ReadAllLines(vFilePath);
             FDict = wLines.Select(x => x.Split('=')).ToDictionary(x => x[0], x => x[1]);
         }
 
