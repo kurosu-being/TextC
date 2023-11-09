@@ -9,13 +9,11 @@ namespace Practice7_1_2 {
 
             wInputString = wInputString.ToUpper();
             var wCharCount = new SortedDictionary<char, int>();
-
             foreach (char wCharacter in wInputString) {
                 if (char.IsLetter(wCharacter)) {
                     wCharCount[wCharacter] = wCharCount.ContainsKey(wCharacter) ? wCharCount[wCharacter] + 1 : wCharCount[wCharacter] = 1;
                 }
             }
-
             foreach (var wKeyValuePair in wCharCount) {
                 Console.WriteLine($"'{wKeyValuePair.Key}': {wKeyValuePair.Value}");
             }

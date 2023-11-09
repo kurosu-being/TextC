@@ -8,8 +8,12 @@ namespace Practice7_2_4 {
     /// 省略語のクラス
     /// </summary>
     class Abbreviations {
-        // ディクショナリの初期化
         private Dictionary<string, string> FDict = new Dictionary<string, string>();
+
+        /// <summary>
+        /// ディクショナリに登録されている用語の数を返すプロパティ
+        /// </summary>
+        public int Count => FDict.Count;
 
         /// <summary>
         /// コンストラクタ
@@ -22,55 +26,42 @@ namespace Practice7_2_4 {
         /// <summary>
         /// 要素を追加するメソッド
         /// </summary>
-        /// <param name="vAbbr">要素のキー</param>
+        /// <param name="vKey">要素のキー</param>
         /// <param name="vJapanese">要素の値</param>
-        public void Add(string vAbbr, string vJapanese) {
-            FDict[vAbbr] = vJapanese;
-        }
+        public void Add(string vKey, string vJapanese) => FDict[vKey] = vJapanese;
 
         /// <summary>
-        ///インデクサ-省略語をキーに取る
+        ///省略語をキーに取るインデクサ
         /// </summary>
-        /// <param name="vAbbr">省略語</param>
-        /// <returns>正式名</returns>
-        public string this[string vAbbr] {
-            get {
-                return FDict.ContainsKey(vAbbr) ? FDict[vAbbr] : null;
-            }
-        }
+        /// <param name="vKey">省略語</param>
+        /// <returns>キーに対応する日本語</returns>
+        public string this[string vKey] => FDict.ContainsKey(vKey) ? FDict[vKey] : null;
 
         /// <summary>
         /// 日本語から省略語を取り出すメソッド
         /// </summary>
-        /// <param name="japanese">日本語</param>
+        /// <param name="vJapanese">日本語</param>
         /// <returns>省略語</returns>
-        public string ToAbbreviation(string japanese) {
-            return FDict.FirstOrDefault(x => x.Value == japanese).Key;
-        }
+        public string ToAbbreviation(string vJapanese) => FDict.FirstOrDefault(x => x.Value == vJapanese).Key;
 
         /// <summary>
         /// 日本語の位置を引数に与え、それが含まれる要素（Key、Value）をすべて取り出すメソッド
         /// </summary>
-        /// <param name="wSubstring">日本語の位置</param>
-        /// <returns>それが含まれる要素</returns>
-        public IEnumerable<KeyValuePair<string, string>> FindAll(string wSubstring) {
+        /// <param name="vSubstring">日本語の位置</param>
+        /// <returns>含まれる要素（Key、Value）</returns>
+        public IEnumerable<KeyValuePair<string, string>> FindAll(string vSubstring) {
             foreach (var wItem in FDict) {
-                if (wItem.Value.Contains(wSubstring))
+                if (wItem.Value.Contains(vSubstring))
                     yield return wItem;
             }
         }
 
         /// <summary>
-        /// ディクショナリに登録されている用語の数を返すプロパティ
-        /// </summary>
-        public int Count => FDict.Count;
-
-        /// <summary>
         /// 省略語を削除するメソッド
         /// </summary>
-        /// <param name="vAbbr">削除する省略語</param>
+        /// <param name="vKey">削除する省略語</param>
         /// <returns>指定した省略後を削除したディクショナリ</returns>
-        public bool Remove(string vAbbr) => FDict.Remove(vAbbr);
+        public bool Remove(string vKey) => FDict.Remove(vKey);
 
         /// <summary>
         /// ３文字の省略語だけ取り出しコンソールに表示するメソッド

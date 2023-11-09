@@ -18,13 +18,11 @@ namespace Practice7_1_1 {
 
             wInputString = wInputString.ToUpper();
             var wCharCount = new Dictionary<char, int>();
-
             foreach (char wCharacter in wInputString) {
                 if (char.IsLetter(wCharacter)) {
                     wCharCount[wCharacter] = wCharCount.ContainsKey(wCharacter) ? wCharCount[wCharacter] + 1 : 1;
                 }
             }
-
             foreach (var wKeyValuePair in wCharCount.OrderBy(x => x.Key)) {
                 Console.WriteLine($"'{wKeyValuePair.Key}':{wKeyValuePair.Value}");
             }
