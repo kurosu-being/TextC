@@ -1,0 +1,16 @@
+﻿using System;
+using System.Linq;
+
+namespace Practice5_3_4 {
+    //Practice5-3-4 4文字以下の単語を列挙してください。
+    class Program {
+        static void Main(string[] args) {
+            string wSentence = "Jackdaws love my big sphinx quartz";
+            string[] wWords = wSentence.Split(' ');
+            //4文字以下の単語をコンソールに列挙
+            foreach (var wWord in wWords.Where(x => x.Length <= 4)) {
+                Console.WriteLine(wWord);
+            }
+        }
+    }
+}
