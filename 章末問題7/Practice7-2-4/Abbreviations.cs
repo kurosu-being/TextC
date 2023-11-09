@@ -13,7 +13,7 @@ namespace Practice7_2_4 {
         /// <summary>
         /// ディクショナリに登録されている用語の数を返すプロパティ
         /// </summary>
-        public int Count => FDict.Count;
+        public int Count => this.FDict.Count;
 
         /// <summary>
         /// コンストラクタ
@@ -26,12 +26,12 @@ namespace Practice7_2_4 {
         /// <summary>
         /// 要素を追加するメソッド
         /// </summary>
-        /// <param name="vKey">要素のキー</param>
-        /// <param name="vJapanese">要素の値</param>
+        /// <param name="vKey">省略語</param>
+        /// <param name="vJapanese">日本語</param>
         public void Add(string vKey, string vJapanese) => FDict[vKey] = vJapanese;
 
         /// <summary>
-        ///省略語をキーに取るインデクサ
+        /// 省略語をキーに取るインデクサ
         /// </summary>
         /// <param name="vKey">省略語</param>
         /// <returns>キーに対応する日本語</returns>

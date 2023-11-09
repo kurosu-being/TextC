@@ -10,6 +10,11 @@ namespace Practice7_2_1 {
         private Dictionary<string, string> FDict = new Dictionary<string, string>();
 
         /// <summary>
+        /// ディクショナリに登録されている用語の数を返すプロパティ
+        /// </summary>
+        public int Count => this.FDict.Count;
+
+        /// <summary>
         /// コンストラクタ
         /// </summary>
         public Abbreviations() {
@@ -25,10 +30,10 @@ namespace Practice7_2_1 {
         public void Add(string vKey, string vJapanese) => FDict[vKey] = vJapanese;
 
         /// <summary>
-        ///省略語をキーに取るインデクサ
+        /// 省略語をキーに取るインデクサ
         /// </summary>
         /// <param name="vKey">省略語</param>
-        /// <returns>日本語</returns>
+        /// <returns>キーに対応する日本語</returns>
         public string this[string vKey] => FDict.ContainsKey(vKey) ? FDict[vKey] : null;
 
         /// <summary>
@@ -42,18 +47,13 @@ namespace Practice7_2_1 {
         /// 日本語の位置を引数に与え、それが含まれる要素（Key、Value）をすべて取り出すメソッド
         /// </summary>
         /// <param name="vSubstring">日本語の位置</param>
-        /// <returns>それが含まれる要素</returns>
+        /// <returns>含まれる要素（Key、Value）</returns>
         public IEnumerable<KeyValuePair<string, string>> FindAll(string vSubstring) {
             foreach (var wItem in FDict) {
                 if (wItem.Value.Contains(vSubstring))
                     yield return wItem;
             }
         }
-
-        /// <summary>
-        /// ディクショナリに登録されている用語の数を返すプロパティ
-        /// </summary>
-        public int Count => FDict.Count;
     }
 }
 
