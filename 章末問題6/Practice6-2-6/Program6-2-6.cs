@@ -22,7 +22,7 @@ namespace Practice6_2_6 {
                 ? "ページ数が400ページ以上の書籍を、価格が高い順に表示\n" + string.Join("\n", wTargetBooks.Select(x => $"書籍: {x.Title} 価格:{x.Price.ToString("#,0")}円"))
                 : "ページ数が400ページ以上の書籍は存在しません。";
 
-            Console.WriteLine(wResultMessage ?? "本が登録されていません。");
+            Console.WriteLine(wResultMessage ?? "コレクションの中身がnullです。");
         }
     }
 }

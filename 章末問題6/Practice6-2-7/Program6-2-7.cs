@@ -22,7 +22,7 @@ namespace Practice6_2_7 {
                 ? "タイトルに「C#」が含まれていてかつ500ページ以下の本のタイトル\n" + string.Join("\n", wTargetBooks.Select(x => $"「{x.Title}」"))
                 : "タイトルに「C#」が含まれていてかつ500ページ以下の本は存在しません。";
 
-            Console.WriteLine(wResultMessage ?? "本が登録されていません。");
+            Console.WriteLine(wResultMessage ?? "コレクションの中身がnullです。");
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Practice6_2_2 {
             };
 
             if (wBooks == null) {
-                Console.WriteLine("本が登録されていません。");
+                Console.WriteLine("コレクションの中身がnullです。");
                 return;
             }
             Console.WriteLine($"タイトルに\"C#\"が含まれる書籍の数: {wBooks.Count(x => x.Title.Contains("C#"))}冊");

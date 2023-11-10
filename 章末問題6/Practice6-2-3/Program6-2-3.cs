@@ -18,7 +18,7 @@ namespace Practice6_2_3 {
             };
 
             if (wBooks == null) {
-                Console.WriteLine("本が登録されていません。");
+                Console.WriteLine("コレクションの中身がnullです。");
                 return;
             }
             Console.WriteLine($"タイトルに「C#」が含まれる書籍の平均ページ数: {wBooks.Where(x => x.Title.Contains("C#")).Average(x => x.Pages)}P");
