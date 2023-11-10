@@ -7,7 +7,7 @@ namespace Practice6_1_3 {
         static void Main(string[] args) {
             var wNumbers = new int[] { 5, 10, 17, 9, 3, 21, 10, 40, 21, 3, 35 };
 
-            foreach (string wStringNumber in wNumbers.Select(x => x.ToString()).ToArray()) {
+            foreach (string wStringNumber in wNumbers.Select(x => x.ToString())) {
                 Console.WriteLine(wStringNumber);
             }
         }

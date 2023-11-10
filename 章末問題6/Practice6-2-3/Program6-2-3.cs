@@ -14,9 +14,13 @@ namespace Practice6_2_3 {
                 new Book ( "一人で学ぶ並列処理プログラミング", 4800, 464 ),
                 new Book ( "フレーズで覚えるC#入門", 5300, 604 ),
                 new Book ( "私でも分かったASP.NET MVC", 3200, 453 ),
-                new Book ( "C#プログラミングの常識", 2540, 348 ),
+                new Book ( "楽しいC#プログラミング教室", 2540, 348 ),
             };
 
+            if (wBooks == null) {
+                Console.WriteLine("本が登録されていません。");
+                return;
+            }
             Console.WriteLine($"タイトルに「C#」が含まれる書籍の平均ページ数: {wBooks.Where(x => x.Title.Contains("C#")).Average(x => x.Pages)}P");
         }
     }

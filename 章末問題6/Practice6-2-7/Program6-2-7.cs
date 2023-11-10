@@ -14,13 +14,15 @@ namespace Practice6_2_7 {
                 new Book ( "一人で学ぶ並列処理プログラミング", 4800, 464 ),
                 new Book ( "フレーズで覚えるC#入門", 5300, 604 ),
                 new Book ( "私でも分かったASP.NET MVC", 3200, 453 ),
-                new Book ( "C#プログラミングの常識", 2540, 348 ),
+                new Book ( "楽しいC#プログラミング教室", 2540, 348 ),
             };
 
-            var wTargetBooks = wBooks.Where(x => x.Title.Contains("C#") && x.Pages <= 500);
-            Console.WriteLine(wTargetBooks.Any()
+            var wTargetBooks = wBooks?.Where(x => x != null && x.Title.Contains("C#") && x.Pages <= 500);
+            string wResultMessage = wTargetBooks.Any() == true
                 ? "タイトルに「C#」が含まれていてかつ500ページ以下の本のタイトル\n" + string.Join("\n", wTargetBooks.Select(x => $"「{x.Title}」"))
-                : "タイトルに「C#」が含まれていてかつ500ページ以下の本は存在しません。");
+                : "タイトルに「C#」が含まれていてかつ500ページ以下の本は存在しません。";
+
+            Console.WriteLine(wResultMessage ?? "本が登録されていません。");
         }
     }
 }

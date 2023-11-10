@@ -11,7 +11,9 @@ namespace Practice6_1_1 {
             //ビーイングコーディング規約に合わせ問題分のnumbers→wNumbersに変更
             var wNumbers = new int[] { 5, 10, 17, 9, 3, 21, 10, 40, 21, 3, 35, };
 
-            Console.WriteLine(wNumbers.Max());
+            //追加問題　要素があるかどうかを判定する処理を追加
+            string wJudgeNumbers = wNumbers.Any() ? wNumbers.Max().ToString() : "要素がありません";
+            Console.WriteLine(wJudgeNumbers);
         }
     }
 }

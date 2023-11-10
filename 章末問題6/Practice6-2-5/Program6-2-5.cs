@@ -14,11 +14,11 @@ namespace Practice6_2_5 {
                 new Book ( "一人で学ぶ並列処理プログラミング", 4800, 464 ),
                 new Book ( "フレーズで覚えるC#入門", 5300, 604 ),
                 new Book ( "私でも分かったASP.NET MVC", 32000, 453 ),
-                new Book ( "C#プログラミングの常識", 25400, 348 ),
+                new Book ( "楽しいC#プログラミング教室", 2540, 348 ),
             };
 
             int wMaxPages = wBooks.Where(x => x.Price < 4000).Select(x => x.Pages).DefaultIfEmpty(0).Max();
-            string wTargetPageMessage = wMaxPages > 0 ? $"価格が4000円未満の本の中で最大ページ数: {wMaxPages}P" : "価格が4000円未満の本はありません";
+            string wTargetPageMessage = wMaxPages > 0 ? $"価格が4000円未満の本の中で最大ページ数: {wMaxPages}P" : "価格が4000円未満の本はありません。";
             Console.WriteLine(wTargetPageMessage);
         }
     }

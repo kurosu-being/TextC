@@ -14,7 +14,7 @@ namespace Practice6_2_4 {
                 new Book ( "一人で学ぶ並列処理プログラミング", 4800, 464 ),
                 new Book ( "フレーズで覚えるC#入門", 5300, 604 ),
                 new Book ( "私でも分かったASP.NET MVC", 3200, 453 ),
-                new Book ( "C#プログラミングの常識", 2540, 348 ),
+                new Book ( "楽しいC#プログラミング教室", 2540, 348 ),
             };
 
             string wTargetBookTitle = wBooks.FirstOrDefault(x => x.Price >= 4000) != null ? $"価格が4000円以上の本で最初に見つかった書籍のタイトル: {wBooks.FirstOrDefault(x => x.Price >= 4000).Title}" : "4000円以上の書籍はありません。";

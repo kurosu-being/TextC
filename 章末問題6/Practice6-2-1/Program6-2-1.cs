@@ -30,13 +30,13 @@ namespace Practice6_2_1 {
                 new Book ( "一人で学ぶ並列処理プログラミング", 4800, 464 ),
                 new Book ( "フレーズで覚えるC#入門", 5300, 604 ),
                 new Book ( "私でも分かったASP.NET MVC", 3200, 453 ),
-                new Book ( "C#プログラミングの常識", 2540, 348 ),
+                new Book ( "楽しいC#プログラミング教室", 2540, 348 ),
             };
 
             var wTargetBook = wBooks.FirstOrDefault(x => x.Title == "ワンダフル・C#ライフ");
             //価格はカンマ付き数字に変換しています
             string wBookInfomation = wTargetBook != null
-                ? $"書籍「{wTargetBook.Title}」の価格は {wTargetBook.Price.ToString("#,0")}円でページ数は{wTargetBook.Pages}Pです" : "指定したタイトルの本が見つかりませんでした.";
+                ? $"書籍「{wTargetBook.Title}」の価格は {wTargetBook.Price.ToString("#,0")}円でページ数は{wTargetBook.Pages}Pです" : "指定したタイトルの本が見つかりませんでした。";
             Console.WriteLine(wBookInfomation);
         }
     }
