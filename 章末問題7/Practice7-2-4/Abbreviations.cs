@@ -30,12 +30,17 @@ namespace Practice7_2_4 {
         /// <param name="vJapanese">日本語</param>
         public void Add(string vKey, string vJapanese) => FDict[vKey] = vJapanese;
 
-        ///// <summary>
-        ///// 省略語をキーに取るインデクサ
-        ///// </summary>
-        ///// <param name="vKey">省略語</param>
-        ///// <returns>キーに対応する日本語</returns>
-        //public string this[string vKey] => FDict.ContainsKey(vKey) ? FDict[vKey] : null;
+        /// <summary>
+        /// 省略語をキーに取るインデクサ
+        /// </summary>
+        /// <param name="vKey">省略語</param>
+        /// <returns>キーに対応する日本語</returns>
+        public string this[string vKey] {
+            get {
+                FDict.TryGetValue(vKey, out string wValue);
+                return wValue;
+            }
+        }
 
         /// <summary>
         /// 日本語から省略語を取り出すメソッド
