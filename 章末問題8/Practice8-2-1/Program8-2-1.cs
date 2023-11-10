@@ -5,9 +5,11 @@ namespace Practice8_2_1 {
     class Program {
         static void Main(string[] args) {
             var wToday = DateTime.Today;
-            DateTime wNextWeekFriday = NextWeek(wToday, DayOfWeek.Sunday);
+            DateTime wNextWeekFriday = NextWeek(wToday, DayOfWeek.Friday);
+
             Console.WriteLine(wNextWeekFriday);
         }
+
         /// <summary>
         /// 次の週の指定曜日を求めるメソッド
         /// </summary>
