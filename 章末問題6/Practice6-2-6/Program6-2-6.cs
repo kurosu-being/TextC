@@ -16,13 +16,18 @@ namespace Practice6_2_6 {
                 new Book("楽しいC#プログラミング教室", 2540, 348),
             };
 
-            var wTargetBooks = wBooks?.Where(x => x != null && x.Pages >= 400).OrderByDescending(x => x.Price).ToList();
+            if (wBooks == null) {
+                Console.WriteLine("コレクションの中身がnullです。");
+                return;
+            }
+
+            var wTargetBooks = wBooks?.Where(x => x.Pages >= 400).OrderByDescending(x => x.Price);
 
             string wResultMessage = wTargetBooks?.Any() == true
                 ? "ページ数が400ページ以上の書籍を、価格が高い順に表示\n" + string.Join("\n", wTargetBooks.Select(x => $"書籍: {x.Title} 価格:{x.Price.ToString("#,0")}円"))
                 : "ページ数が400ページ以上の書籍は存在しません。";
 
-            Console.WriteLine(wResultMessage ?? "コレクションの中身がnullです。");
+            Console.WriteLine(wResultMessage);
         }
     }
 }

@@ -21,7 +21,11 @@ namespace Practice6_2_3 {
                 Console.WriteLine("コレクションの中身がnullです。");
                 return;
             }
-            Console.WriteLine($"タイトルに「C#」が含まれる書籍の平均ページ数: {wBooks.Where(x => x.Title.Contains("C#")).Average(x => x.Pages)}P");
+
+            var wMatchingBook = wBooks.FirstOrDefault(x => x.Title?.Contains("C#") == true);
+            string wMessage = wMatchingBook != null ? $"タイトルに「C#」が含まれる書籍の平均ページ数: {wBooks.Average(x => x.Pages)}P" : "一致する書籍が存在しません。";
+
+            Console.WriteLine(wMessage);
         }
     }
 }

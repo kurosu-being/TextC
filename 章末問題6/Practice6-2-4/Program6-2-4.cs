@@ -17,7 +17,8 @@ namespace Practice6_2_4 {
                 new Book("楽しいC#プログラミング教室", 2540, 348),
             };
 
-            string wTargetBookTitle = wBooks.FirstOrDefault(x => x.Price >= 4000) != null ? $"価格が4000円以上の本で最初に見つかった書籍のタイトル: {wBooks.FirstOrDefault(x => x.Price >= 4000).Title}" : "4000円以上の書籍はありません。";
+            var wMatchBooks = wBooks.FirstOrDefault(x => x.Price >= 4000);
+            string wTargetBookTitle = wMatchBooks != null ? $"価格が4000円以上の本で最初に見つかった書籍のタイトル: {wMatchBooks.Title}" : "4000円以上の書籍はありません。";
             Console.WriteLine(wTargetBookTitle);
         }
     }
