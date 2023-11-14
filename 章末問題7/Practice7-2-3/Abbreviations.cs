@@ -49,9 +49,9 @@ namespace Practice7_2_3 {
         public string ToAbbreviation(string vJapanese) => FDict.FirstOrDefault(x => x.Value == vJapanese).Key;
 
         /// <summary>
-        /// 日本語の位置を引数に与え、それが含まれる要素（Key、Value）をすべて取り出すメソッド
+        /// 日本語の一部を引数に与え、それが含まれる要素（Key、Value）をすべて取り出すメソッド
         /// </summary>
-        /// <param name="vSubstring">日本語の位置</param>
+        /// <param name="vSubstring">日本語の一部</param>
         /// <returns>含まれる要素（Key、Value）</returns>
         public IEnumerable<KeyValuePair<string, string>> FindAll(string vSubstring) {
             foreach (var wItem in FDict) {

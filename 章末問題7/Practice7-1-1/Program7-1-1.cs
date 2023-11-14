@@ -16,13 +16,9 @@ namespace Practice7_1_1 {
         static void Main(string[] args) {
             string wInputString = "Cozy lummox gives smart squid who asks for job pen";
 
-            wInputString = wInputString.ToUpper();
-            var wCharCount = new Dictionary<char, int>();
-            foreach (char wCharacter in wInputString) {
-                if (char.IsLetter(wCharacter)) {
-                    wCharCount[wCharacter] = wCharCount.ContainsKey(wCharacter) ? wCharCount[wCharacter] + 1 : 1;
-                }
-            }
+
+            var wCharCount = wInputString.ToUpper().Where(char.IsLetter).GroupBy(x => x).ToDictionary(x => x.Key, x => x.Count());
+ 
             foreach (var wKeyValuePair in wCharCount.OrderBy(x => x.Key)) {
                 Console.WriteLine($"'{wKeyValuePair.Key}':{wKeyValuePair.Value}");
             }
