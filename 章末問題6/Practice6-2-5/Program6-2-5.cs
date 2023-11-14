@@ -8,13 +8,13 @@ namespace Practice6_2_5 {
         static void Main(string[] args) {
             var wBooks = new List<Book>
              {
-                new Book ("C#プログラミングの常識", 38000, 378 ),
-                new Book ("ラムダ式とLINQの極意",2500, 312 ),
-                new Book ( "ワンダフル・C#ライフ", 2900, 385 ),
-                new Book ( "一人で学ぶ並列処理プログラミング", 4800, 464 ),
-                new Book ( "フレーズで覚えるC#入門", 5300, 604 ),
-                new Book ( "私でも分かったASP.NET MVC", 32000, 453 ),
-                new Book ( "楽しいC#プログラミング教室", 2540, 348 ),
+                new Book("C#プログラミングの常識", 38000, 378),
+                new Book("ラムダ式とLINQの極意",2500, 312),
+                new Book("ワンダフル・C#ライフ", 2900, 385),
+                new Book("一人で学ぶ並列処理プログラミング", 4800, 464),
+                new Book("フレーズで覚えるC#入門", 5300, 604),
+                new Book("私でも分かったASP.NET MVC", 32000, 453),
+                new Book("楽しいC#プログラミング教室", 2540, 348),
             };
 
             int wMaxPages = wBooks.Where(x => x.Price < 4000).Select(x => x.Pages).DefaultIfEmpty(0).Max();
