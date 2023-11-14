@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
+
 
 namespace Practice6_2_2 {
     //Practice6-2-2 booksの中で、タイトルに"C#"が含まれている書籍が何冊あるかカウントするコードを書いてください。
