@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 
 
+
+
 namespace Practice6_2_2 {
     //Practice6-2-2 booksの中で、タイトルに"C#"が含まれている書籍が何冊あるかカウントするコードを書いてください。
     //追加問題 "C#" が大文字小文字、全角半角にかかわらずカウントされるように修正してみてください。

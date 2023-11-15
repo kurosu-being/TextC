@@ -14,7 +14,7 @@
         /// <summary>
         /// ページ数
         /// </summary>
-        public int Pages { get; }
+        public int PageNumber { get; }
         /// <summary>
         /// Bookのコンストラクタ
         /// </summary>
@@ -24,7 +24,7 @@
         public Book(string vTitle, int vPrice, int vPages) {
             this.Title = vTitle;
             this.Price = vPrice;
-            this.Pages = vPages;
+            this.PageNumber = vPages;
         }
     }
 }

@@ -18,8 +18,8 @@ namespace Practice6_2_4 {
             };
 
             var wMatchBooks = wBooks.FirstOrDefault(x => x.Price >= 4000);
-            string wTargetBookTitle = wMatchBooks != null ? $"価格が4000円以上の本で最初に見つかった書籍のタイトル: {wMatchBooks.Title}" : "4000円以上の書籍はありません。";
-            Console.WriteLine(wTargetBookTitle);
+            string wMessage = wMatchBooks != null ? $"価格が4000円以上の本で最初に見つかった書籍のタイトル: {wMatchBooks.Title}" : "4000円以上の書籍はありません。";
+            Console.WriteLine(wMessage);
         }
     }
 }

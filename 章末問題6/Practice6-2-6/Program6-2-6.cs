@@ -21,7 +21,7 @@ namespace Practice6_2_6 {
                 return;
             }
 
-            var wTargetBooks = wBooks?.Where(x => x.Pages >= 400).OrderByDescending(x => x.Price);
+            var wTargetBooks = wBooks?.Where(x => x.PageNumber >= 400).OrderByDescending(x => x.Price);
 
             string wResultMessage = wTargetBooks?.Any() == true
                 ? "ページ数が400ページ以上の書籍を、価格が高い順に表示\n" + string.Join("\n", wTargetBooks.Select(x => $"書籍: {x.Title} 価格:{x.Price.ToString("#,0")}円"))

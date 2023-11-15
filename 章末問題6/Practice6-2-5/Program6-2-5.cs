@@ -17,7 +17,7 @@ namespace Practice6_2_5 {
                 new Book("楽しいC#プログラミング教室", 2540, 348),
             };
 
-            int wMaxPages = wBooks.Where(x => x.Price < 4000).Select(x => x.Pages).DefaultIfEmpty(0).Max();
+            int wMaxPages = wBooks.Where(x => x.Price < 4000).Select(x => x.PageNumber).DefaultIfEmpty(0).Max();
             string wTargetPageMessage = wMaxPages > 0 ? $"価格が4000円未満の本の中で最大ページ数: {wMaxPages}P" : "価格が4000円未満の本はありません。";
             Console.WriteLine(wTargetPageMessage);
         }
