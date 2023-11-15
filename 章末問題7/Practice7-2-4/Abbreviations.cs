@@ -74,10 +74,5 @@ namespace Practice7_2_4 {
             var wThreeAbbr = FDict.Where(x => x.Key.Length == 3).Select(x => $"{x.Key}={x.Value}");
             return wThreeAbbr;
         }
-
-        public IEnumerable<string> GetThreeLetterAbbreviations() {
-            var wThreeLetterAbbrs = FDict.Where(x => x.Key.Length == 3).Select(x => $"{x.Key}={x.Value}");
-            return wThreeLetterAbbrs;
-        }
     }
 }
