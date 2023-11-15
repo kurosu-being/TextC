@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Practice7_1_2 {
     //Practice7-1-2 Practice7-1-1のプログラムを、SortedDictionary<TKey,TValue>を使って書き換えてください
@@ -11,11 +10,11 @@ namespace Practice7_1_2 {
             var wCharCount = new SortedDictionary<char, int>();
 
             foreach (char wCharacter in wInputString.ToUpper()) {
-                if (!char.IsLetter(wCharacter)){
+                if (!char.IsLetter(wCharacter)) {
                     continue;
                 }
                 wCharCount[wCharacter] = wCharCount.ContainsKey(wCharacter) ? ++wCharCount[wCharacter] : 1;
-                
+
             }
             foreach (var wKeyValuePair in wCharCount) {
                 Console.WriteLine($"'{wKeyValuePair.Key}': {wKeyValuePair.Value}");

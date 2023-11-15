@@ -7,7 +7,11 @@ namespace Practice7_2_3 {
         static void Main(string[] args) {
             Console.WriteLine("Abbreviations.txtのパスを入力してください(Abbreviations.txtはチケットに貼っています)");
             string wFilePath = Console.ReadLine();
-            if (File.Exists(wFilePath)) {
+
+            if (!File.Exists(wFilePath)){
+                Console.WriteLine("存在しないパスです");
+                return;
+            }
                 var wAbbreviations = new Abbreviations(wFilePath);
 
                 //いくつかの要素を追加
@@ -26,9 +30,6 @@ namespace Practice7_2_3 {
                 //削除後の要素数を取得
                 wCount = wAbbreviations.Count;
                 Console.WriteLine($"削除後の要素の数: {wCount}");
-            } else {
-                Console.WriteLine("存在しないパスです");
-            }
         }
     }
 }
