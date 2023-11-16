@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Practice6_2_1;
 
 namespace Practice6_2_7 {
     //Practice6-2-7 booksの中で、タイトルに"C#"が含まれていてかつ500ページ以下の本を見つけ、本のタイトルを表示するコードを書いてください。複数見つかった場合は、その全てを表示してください。

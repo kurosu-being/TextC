@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Practice6_2_1;
 
 namespace Practice6_2_4 {
     //Practice6-2-4 booksの中で、価格が4000円以上の本で最初に見つかった書籍のタイトルを表示するコードを書いてください。

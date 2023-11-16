@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Practice6_2_1;
 
 namespace Practice6_2_5 {
     //Practice6-2-5 booksの中で、価格が4000円未満の本の中で最大ページ数を求めるコードを書いてください。

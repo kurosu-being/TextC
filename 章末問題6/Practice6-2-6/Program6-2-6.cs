@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Practice6_2_1;
 
 namespace Practice6_2_6 {
     //Practice6-2-5 booksの中で、ページ数が400ページ以上の書籍を、価格が高い順に表示（タイトルと価格を表示）するコードを書いてください。

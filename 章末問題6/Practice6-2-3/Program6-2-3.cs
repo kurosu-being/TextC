@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Practice6_2_1;
 
 namespace Practice6_2_3 {
     //Practice6-2-3 booksの中で、タイトルに"C#"が含まれている書籍の平均ページ数を求めるコードを書いて下さい。
