@@ -11,8 +11,7 @@ namespace Practice9_1_1 {
             Console.WriteLine("C#のソースファイルのパスを入力してください(CountClass.txtはチケットに貼っています)");
             string wFilePath = Console.ReadLine();
 
-            var wFileInfo = new FileInfo(wFilePath);
-            if (!wFileInfo.Exists) {
+            if (!File.Exists(wFilePath)) {
                 Console.WriteLine("ファイルが見つかりませんでした。");
                 return;
             }
