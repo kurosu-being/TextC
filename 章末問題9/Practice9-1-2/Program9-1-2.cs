@@ -15,14 +15,7 @@ namespace Practice9_1_2 {
                 return;
             }
 
-            int wClassCount = 0;
-
-            using (var wReader = new StreamReader(wFilePath)) {
-                while (!wReader.EndOfStream) {
-                    int wCount = File.ReadAllLines(wFilePath, Encoding.UTF8).Count(x => x.Contains("class"));
-                    wClassCount = wCount;
-                }
-            }
+            int wClassCount = File.ReadAllLines(wFilePath, Encoding.UTF8).Count(line => line.Contains("class"));
 
             Console.WriteLine($"\"class\"キーワードが含まれる行数: {wClassCount}");
         }
