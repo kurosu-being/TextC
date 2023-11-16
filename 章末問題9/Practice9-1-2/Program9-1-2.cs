@@ -17,7 +17,7 @@ namespace Practice9_1_2 {
                 return;
             }
 
-            int wClassCount = File.ReadAllLines(wFilePath, Encoding.UTF8).Count(line => line.Contains("class"));
+            int wClassCount = File.ReadAllLines(wFilePath, Encoding.UTF8).Count(x=> x.Contains("class"));
 
             Console.WriteLine($"\"class\"キーワードが含まれる行数: {wClassCount}");
         }

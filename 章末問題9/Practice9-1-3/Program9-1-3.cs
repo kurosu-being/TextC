@@ -7,7 +7,7 @@ namespace Practice9_1_3 {
     //Practice9-1-3 Practice9-1-1のプログラムをFile.ReadlLinesメソッドを利用して書き換えてください。
     class Program {
         static void Main() {
-            Console.WriteLine("C#のソースファイルのパスを入力してください:");
+            Console.WriteLine("C#のソースファイルのパスを入力してください(CountClass.txtはチケットに貼っています)");
             string wFilePath = Console.ReadLine();
 
             var wFileInfo = new FileInfo(wFilePath);
