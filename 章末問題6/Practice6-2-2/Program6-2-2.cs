@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using Practice6_2_1;
 
 
@@ -22,7 +23,7 @@ namespace Practice6_2_2 {
                 new Book("一人で学ぶ並列処理プログラミング", 4800, 464),
                 new Book("フレーズで覚えるｃ#入門", 5300, 604),
                 new Book("私でも分かったASP.NET MVC", 3200, 453),
-                new Book("楽しいＣ#プログラミング教室", 2540, 348),
+                new Book("楽しいＣ♯プログラミング教室", 2540, 348),
             };
 
             if (wBooks == null) {
@@ -30,7 +31,11 @@ namespace Practice6_2_2 {
                 return;
             }
 
-            Console.WriteLine($"タイトルに\"C#\"が含まれる書籍の数: {wBooks.Count(x => x.Title.ToUpper().Normalize(NormalizationForm.FormKC).Contains("C#"))}冊");
+            string wPattern = @"[CＣ][#♯]";
+            
+            int wCount = wBooks.Count(book => Regex.IsMatch(book.Title, wPattern, RegexOptions.IgnoreCase));
+
+            Console.WriteLine($"タイトルに\"C#\"が含まれる書籍の数: {wCount}冊");
         }
     }
 }
