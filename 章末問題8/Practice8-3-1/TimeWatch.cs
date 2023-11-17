@@ -11,6 +11,12 @@ namespace Practice8_3_1 {
         /// </summary>
         public TimeWatch() {
             this.FStopwatch = new Stopwatch();
+            this.Start();
+        }
+        /// <summary>
+        /// ストップウォッチを始めるメソッド
+        /// </summary>
+        public void Start() {
             if (FIsRunning) {
                 return;
             }
@@ -18,7 +24,10 @@ namespace Practice8_3_1 {
             this.FStopwatch.Restart();
             FIsRunning = true;
         }
-
+        /// <summary>
+        /// ストップウォッチを止めるメソッド
+        /// </summary>
+        /// <returns>掛かった時間</returns>
         public TimeSpan Stop() {
             if (!FIsRunning) {
                 return TimeSpan.Zero;

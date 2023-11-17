@@ -9,10 +9,11 @@ namespace Practice8_3_1 {
         /// imeWatch_DateTimeのコンストラクタ
         /// </summary>
         public TimeWatch_DateTime() {
-            this.FStartTime = DateTime.MinValue;
-            this.FIsRunning = false;
+            this.Start();
         }
-
+        /// <summary>
+        /// ストップウォッチを始めるメソッド
+        /// </summary>
         public void Start() {
             if (FIsRunning) {
                 return;
@@ -21,7 +22,10 @@ namespace Practice8_3_1 {
             this.FStartTime = DateTime.Now;
             FIsRunning = true;
         }
-
+        /// <summary>
+        /// ストップウォッチを止めるメソッド
+        /// </summary>
+        /// <returns></returns>
         public TimeSpan Stop() {
             if (!FIsRunning) {
                 return TimeSpan.Zero;
