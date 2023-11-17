@@ -9,14 +9,14 @@ namespace Practice9_3_1 {
             string wFilePath = Console.ReadLine();
 
             if (wFilePath.Split(',').Length != 2) {
-                Console.WriteLine("正しい引数が提供されていません。最初の引数に元のファイル、次の引数に追記先のファイルを指定してください。");
+                Console.WriteLine("正しい数のパスが提供されていません。最初の引数に元のファイル、次の引数に追記先のファイルを指定してください。");
                 return;
             }
 
             string wSouceFilePath = wFilePath.Split(',')[0];
             string wAnotherFilePath = wFilePath.Split(',')[1];
-            if (!File.Exists(wSouceFilePath)) {
-                Console.WriteLine("指定された元のファイルが見つかりません。");
+            if (!File.Exists(wSouceFilePath) || !File.Exists(wAnotherFilePath)) {
+                Console.WriteLine("指定されたファイルが見つかりません。パスに間違いがないかご確認ください。");
                 return;
             }
 
