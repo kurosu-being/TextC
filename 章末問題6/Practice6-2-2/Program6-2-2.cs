@@ -14,8 +14,7 @@ namespace Practice6_2_2 {
     //追加問題 "C#" が大文字小文字、全角半角にかかわらずカウントされるように修正してみてください。
     class Program {
         static void Main(string[] args) {
-            var wBooks = new List<Book>
-          {
+            var wBooks = new List<Book>{
                 //確認の為C#の表記を大文字小文字半角全角を試しています
                 new Book("C#プログラミングの常識", 3800, 378),
                 new Book("ラムダ式とLINQの極意", 2500, 312),

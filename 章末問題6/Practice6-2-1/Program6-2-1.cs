@@ -23,8 +23,7 @@ namespace Practice6_2_1 {
         static void Main(string[] args) {
             //ビーイングコーディング規約に則りbooks→wBooksに変更
             //定義されたリストを、Bookクラスにコンストラクタを定義した形に変更
-            var wBooks = new List<Book>
-            {
+            var wBooks = new List<Book>{
                 new Book("C#プログラミングの常識", 3800, 378),
                 new Book("ラムダ式とLINQの極意", 2500, 312),
                 new Book("ワンダフル・C#ライフ", 2900, 385),

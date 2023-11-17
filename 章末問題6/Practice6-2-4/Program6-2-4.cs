@@ -7,8 +7,7 @@ namespace Practice6_2_4 {
     //Practice6-2-4 booksの中で、価格が4000円以上の本で最初に見つかった書籍のタイトルを表示するコードを書いてください。
     class Program {
         static void Main(string[] args) {
-            var wBooks = new List<Book>
-            {
+            var wBooks = new List<Book>{
                 new Book("C#プログラミングの常識", 3800, 378),
                 new Book("ラムダ式とLINQの極意",2500, 312),
                 new Book("ワンダフル・C#ライフ", 2900, 385),
