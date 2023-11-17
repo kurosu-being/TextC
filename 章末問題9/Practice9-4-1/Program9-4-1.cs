@@ -11,7 +11,7 @@ namespace Practice9_4_1 {
     つまり、元のファイル名がGreeting.txtならば、コピー先のファイル名はGreeting_bak.txtという名前にします。コピー先に同名のファイルがある場合は置き換えてください。*/
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine("1つ目のテキストファイルの最後に、2つ目のテキストファイルの内容を追加します。\n1つ目のファイルパス,2つ目のファイルパスという書き方で指定してください");
+            Console.WriteLine("指定したディレクトリ直下にあるファイルを別のディレクトリにコピーします。\nコピーしたいファイルパス,コピー先のディレクトリという形で入力してください。");
             string wFilePath = Console.ReadLine();
 
             if (wFilePath.Split(',').Length != 2) {
@@ -21,8 +21,8 @@ namespace Practice9_4_1 {
 
             string wSourceDirectory = wFilePath.Split(',')[0];
             string wTargetDirectory = wFilePath.Split(',')[1];
-            if (!File.Exists(wSourceDirectory) || !File.Exists(wTargetDirectory)) {
-                Console.WriteLine("指定されたファイルが見つかりません。パスに間違いがないかご確認ください。");
+            if (!Directory.Exists(wSourceDirectory) || !Directory.Exists(wTargetDirectory)) {
+                Console.WriteLine("指定されたディレクトリが見つかりません。パスに間違いがないかご確認ください。");
                 return;
             }
 
@@ -41,7 +41,7 @@ namespace Practice9_4_1 {
 
                 // コピー先に同名のファイルがなければコピーを実行
                 if (!File.Exists(wDestFilePath)) {
-                    File.Copy(wFilePath, wDestFilePath);
+                    File.Copy(wFile, wDestFilePath);
                     Console.WriteLine($"{wFile} を {wDestFilePath} にコピーしました。");
                 }
             }
