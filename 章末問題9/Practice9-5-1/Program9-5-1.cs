@@ -5,9 +5,10 @@ using System.IO;
 namespace Practice9_5_1 {
     class Program {
         static void Main(string[] args) {
-            string wDirectoryPath = @"C:\your\directory\path"; // ディレクトリのパスを指定してください
+            Console.WriteLine("ディレクトリおよびサブディレクトリの配下にあるファイルからファイルサイズが1Mバイトのファイル名を一覧します。\nパスを入力してください。");
+            string wFilePath = Console.ReadLine();
 
-            List<string> wLargeFiles = GetLargeFiles(wDirectoryPath);
+            List<string> wLargeFiles = GetLargeFiles(wFilePath);
 
             if (wLargeFiles.Count > 0) {
                 Console.WriteLine("1MB以上のファイル一覧:");
@@ -29,7 +30,7 @@ namespace Practice9_5_1 {
                 FileInfo[] wFiles = wDirectory.GetFiles("*", SearchOption.AllDirectories);
 
                 foreach (FileInfo wFile in wFiles) {
-                    if (wFile.Length >= 1024 * 1024) // 1MB以上のファイルサイズをチェック
+                    if (wFile.Length >= 1024 * 1024) 
                     {
                         wLargeFiles.Add(wFile.FullName);
                     }
