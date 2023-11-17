@@ -12,13 +12,22 @@ namespace Practice8_3_1 {
         static void Main(string[] args) {
             //コーディング規約に合わせtw→wTimeWatch、duration→wDurationに変更
             var wTimeWatch = new TimeWatch();
-            //wTimeWatch.Start();
 
             Console.WriteLine("処理を開始します。");
             var wList = new List<string> { "a", "b", "c", "d" };
             Console.WriteLine("処理が完了しました。");
 
             TimeSpan wDuration = wTimeWatch.Stop();
+            Console.WriteLine($"処理時間は {wDuration.TotalMilliseconds} ミリ秒でした。");
+
+            //DateTimeを使って実装したクラスTimeWatch_DateTimeを使用
+            var wTimeWatch2 = new TimeWatch_DateTime();
+
+            Console.WriteLine("処理を開始します。");
+            var wList2 = new List<string> { "a", "b", "c", "d" };
+            Console.WriteLine("処理が完了しました。");
+
+            TimeSpan wDuration2 = wTimeWatch2.Stop();
             Console.WriteLine($"処理時間は {wDuration.TotalMilliseconds} ミリ秒でした。");
         }
     }
