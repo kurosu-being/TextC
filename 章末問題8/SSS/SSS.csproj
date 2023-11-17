@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{79E7037B-825A-4E33-B3F9-626A484C4733}</ProjectGuid>
+    <ProjectGuid>{E49D129F-69E8-4A32-9F28-BFF13784D307}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Practice8_3_1</RootNamespace>
-    <AssemblyName>Practice8-3-1</AssemblyName>
+    <RootNamespace>SSS</RootNamespace>
+    <AssemblyName>SSS</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,10 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program8-3-1.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TimeWatch-DateTime.cs" />
-    <Compile Include="TimeWatch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

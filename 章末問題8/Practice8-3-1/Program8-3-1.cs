@@ -12,7 +12,7 @@ namespace Practice8_3_1 {
         static void Main(string[] args) {
             //コーディング規約に合わせtw→wTimeWatch、duration→wDurationに変更
             var wTimeWatch = new TimeWatch();
-            wTimeWatch.Start();
+            //wTimeWatch.Start();
 
             Console.WriteLine("処理を開始します。");
             var wList = new List<string> { "a", "b", "c", "d" };

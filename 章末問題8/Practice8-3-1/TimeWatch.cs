@@ -11,13 +11,7 @@ namespace Practice8_3_1 {
         /// </summary>
         public TimeWatch() {
             this.FStopwatch = new Stopwatch();
-            this.FIsRunning = false;
-        }
-        /// <summary>
-        /// 計測を開始するメソッド
-        /// </summary>
-        public void Start() {
-            //計測が開始されている場合は何もしない
+            // 計測が開始されている場合は何もしない
             if (FIsRunning) {
                 return;
             }
@@ -25,6 +19,18 @@ namespace Practice8_3_1 {
             this.FStopwatch.Restart();
             FIsRunning = true;
         }
+        ///// <summary>
+        ///// 計測を開始するメソッド
+        ///// </summary>
+        //public void Start() {
+        //    //計測が開始されている場合は何もしない
+        //    if (FIsRunning) {
+        //        return;
+        //    }
+
+        //    this.FStopwatch.Restart();
+        //    FIsRunning = true;
+        //}
 
         /// <summary>
         /// 計測を終了するメソッド
