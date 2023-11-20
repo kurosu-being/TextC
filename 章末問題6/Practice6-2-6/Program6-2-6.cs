@@ -23,28 +23,17 @@ namespace Practice6_2_6 {
             }
 
             var wTargetBooks = wBooks?.Where(x => x.PageNumber >= 400).OrderByDescending(x => x.Price).ToList();
-           
             var wSelectMessages = wTargetBooks.Select(x => $"書籍: {x.Title} 価格:{x.Price.ToString("#,0")}円");
+         
+            if (!wTargetBooks.Any()) {
+                Console.WriteLine("ページ数が400ページ以上の書籍は存在しません。");
+                return;
+            }
 
-            string wResultMessage = wTargetBooks.Any()
-               ? "ページ数が400ページ以上の書籍を、価格が高い順に表示\n" + string.Join("\n", wTargetBooks.Select(x => $"書籍: {x.Title} 価格:{x.Price.ToString("#,0")}円"))
-               : "ページ数が400ページ以上の書籍は存在しません。";
-
-            Console.WriteLine(wResultMessage);
-
-            //元のコード
-            //var wMatchingBook = wBooks.Where(x => x.Title != null && x.Title.Contains("C#")); ;
-            //string wMessage = wMatchingBook.Any() ? $"タイトルに「C#」が含まれる書籍の平均ページ数: {wMatchingBook.Average(x => x.PageNumber)}P" : "一致する書籍が存在しません。";
-
-            //if (!wTargetBooks.Any()) {
-            //    Console.WriteLine("ページ数が400ページ以上の書籍は存在しません。");
-            //    return;
-            //}
-
-            //Console.WriteLine("ページ数が400ページ以上の書籍を、価格が高い順に表示");
-            //foreach (var wMessage in wSelectMessages){
-            //    Console.WriteLine(wMessage);
-            //}
+            Console.WriteLine("ページ数が400ページ以上の書籍を、価格が高い順に表示");
+            foreach (var wMessage in wSelectMessages) {
+                Console.WriteLine(wMessage);
+            }
         }
     }
 }
