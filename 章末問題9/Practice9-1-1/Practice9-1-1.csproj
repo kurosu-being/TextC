@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CountClass.cs" />
     <Compile Include="Program9-1-1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

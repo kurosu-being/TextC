@@ -29,20 +29,17 @@ namespace Practice9_4_1 {
             string[] wFiles = Directory.GetFiles(wSourceDirectory);
 
             foreach (string wFile in wFiles) {
-                // ファイル名と拡張子を取得
                 string wFileName = Path.GetFileNameWithoutExtension(wFile);
                 string wExtension = Path.GetExtension(wFile);
 
-                // 新しいファイル名を作成
                 string wNewFileName = $"{wFileName}_Bak{wExtension}";
 
-                // コピー先のパスを作成
-                string wDestFilePath = Path.Combine(wTargetDirectory, wNewFileName);
+                string wNewFilePath = Path.Combine(wTargetDirectory, wNewFileName);
 
                 // コピー先に同名のファイルがなければコピーを実行
-                if (!File.Exists(wDestFilePath)) {
-                    File.Copy(wFile, wDestFilePath);
-                    Console.WriteLine($"{wFile} を {wDestFilePath} にコピーしました。");
+                if (!File.Exists(wNewFilePath)) {
+                    File.Copy(wFile, wNewFilePath);
+                    Console.WriteLine($"{wFile} を {wNewFilePath} にコピーしました。");
                 }
             }
 

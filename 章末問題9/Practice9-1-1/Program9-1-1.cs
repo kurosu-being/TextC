@@ -8,7 +8,7 @@ namespace Practice9_1_1 {
     ・リテラル文字列やコメントの中にはclassという単語は含まれない */
     class Program {
         static void Main() {
-            Console.WriteLine("C#のソースファイルのパスを入力してください(CountClass.txtはチケットに貼っています)");
+            Console.WriteLine("C#のソースファイルのパスを入力してください(CountClass.csはチケットに貼っています)");
             string wFilePath = Console.ReadLine();
 
             if (!File.Exists(wFilePath)) {
