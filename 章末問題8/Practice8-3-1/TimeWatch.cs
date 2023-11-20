@@ -9,7 +9,7 @@ namespace Practice8_3_1 {
         private bool FIsRunning;
 
         /// <summary>
-        /// imeWatch_DateTimeのコンストラクタ
+        /// TimeWatchのコンストラクタ
         /// </summary>
         public TimeWatch() => this.Start();
         /// <summary>
