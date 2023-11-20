@@ -22,13 +22,25 @@ namespace Practice6_2_6 {
                 return;
             }
 
-            var wTargetBooks = wBooks?.Where(x => x.PageNumber >= 400).OrderByDescending(x => x.Price);
+            var wTargetBooks = wBooks?.Where(x => x.PageNumber >= 400).OrderByDescending(x => x.Price).ToList();
+            //不要なコード？
+            //var wSelectMessages = wTargetBooks.Select(x => $"書籍: {x.Title} 価格:{x.Price.ToString("#,0")}円").ToList();
 
-            string wResultMessage = wTargetBooks?.Any() == true
-                ? "ページ数が400ページ以上の書籍を、価格が高い順に表示\n" + string.Join("\n", wTargetBooks.Select(x => $"書籍: {x.Title} 価格:{x.Price.ToString("#,0")}円"))
-                : "ページ数が400ページ以上の書籍は存在しません。";
+            string wResultMessage = wTargetBooks.Any()
+               ? "ページ数が400ページ以上の書籍を、価格が高い順に表示\n" + string.Join("\n", wTargetBooks.Select(x => $"書籍: {x.Title} 価格:{x.Price.ToString("#,0")}円"))
+               : "ページ数が400ページ以上の書籍は存在しません。";
 
             Console.WriteLine(wResultMessage);
+            ////不要なコード？
+            //if (!wTargetBooks.Any()) {
+            //    Console.WriteLine("ページ数が400ページ以上の書籍は存在しません。");
+            //    return;
+            //}
+            ////不要なコード？
+            //Console.WriteLine("ページ数が400ページ以上の書籍を、価格が高い順に表示");
+            //foreach (var wMessage in wSelectMessages){
+            //    Console.WriteLine(wMessage);
+            //}
         }
     }
 }

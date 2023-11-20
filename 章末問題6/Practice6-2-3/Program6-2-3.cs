@@ -23,7 +23,7 @@ namespace Practice6_2_3 {
                 return;
             }
 
-            var wMatchingBook = wBooks.Where(x => x.Title != null && x.Title.Contains("C#"));;
+            var wMatchingBook = wBooks.Where(x => x.Title != null && x.Title.Contains("C#")).ToList();
             string wMessage = wMatchingBook.Any() ? $"タイトルに「C#」が含まれる書籍の平均ページ数: {wMatchingBook.Average(x => x.PageNumber)}P" : "一致する書籍が存在しません。";
 
             Console.WriteLine(wMessage);
