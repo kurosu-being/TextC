@@ -12,9 +12,9 @@ namespace Practice7_2_4 {
                 Console.WriteLine("存在しないパスです");
                 return;
             }
-                var wAbbreviations = new Abbreviations(wFilePath);
-                //3文字の省略語を取り出し表示
-                Console.WriteLine("省略形が３文字のものを表示します");
+            var wAbbreviations = new Abbreviations(wFilePath);
+            //3文字の省略語を取り出し表示
+            Console.WriteLine("省略形が３文字のものを表示します");
             foreach (var wAbbreviation in wAbbreviations.GetThreeAbbr()) {
                 Console.WriteLine(wAbbreviation);
             }
