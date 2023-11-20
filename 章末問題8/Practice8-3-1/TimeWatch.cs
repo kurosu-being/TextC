@@ -1,6 +1,9 @@
 ﻿using System;
 
 namespace Practice8_3_1 {
+    /// <summary>
+    /// ストップウォッチのクラス
+    /// </summary>
     class TimeWatch {
         private DateTime FStartTime;
         private bool FIsRunning;
