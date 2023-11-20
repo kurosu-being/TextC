@@ -6,7 +6,7 @@ namespace Practice9_2_1 {
     　出力するファイル名と同名のファイルがあった場合は、上書きしてください。*/
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine("パスを入力してください(いろは歌.txtはチケットに貼っています)");
+            Console.WriteLine("テキストファイル「いろは歌.txt」を読み込み、行の先頭に行番号を振り、その結果を別のテキストファイルに出力します。\nパスを入力してください(いろは歌.txtはチケットに貼っています)");
             string wFilePath = Console.ReadLine();
 
             if (!File.Exists(wFilePath)) {
