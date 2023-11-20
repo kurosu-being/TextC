@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace Practice8_3_1 {
     class TimeWatch {
-        private Stopwatch FStopwatch;
+        private DateTime FStartTime;
         private bool FIsRunning;
 
         /// <summary>
-        /// TimeWatchのコンストラクタ
+        /// imeWatch_DateTimeのコンストラクタ
         /// </summary>
-        public TimeWatch() {
-            this.FStopwatch = new Stopwatch();
-            this.Start();
-        }
+        public TimeWatch() => this.Start();
         /// <summary>
         /// ストップウォッチを始めるメソッド
         /// </summary>
@@ -21,21 +17,21 @@ namespace Practice8_3_1 {
                 return;
             }
 
-            this.FStopwatch.Restart();
+            this.FStartTime = DateTime.Now;
             FIsRunning = true;
         }
         /// <summary>
         /// ストップウォッチを止めるメソッド
         /// </summary>
-        /// <returns>掛かった時間</returns>
+        /// <returns></returns>
         public TimeSpan Stop() {
             if (!FIsRunning) {
                 return TimeSpan.Zero;
             }
 
-            this.FStopwatch.Stop();
+            TimeSpan wElapsed = DateTime.Now - this.FStartTime;
             FIsRunning = false;
-            return this.FStopwatch.Elapsed;
+            return wElapsed;
         }
     }
 }
