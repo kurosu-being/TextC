@@ -35,15 +35,14 @@ namespace Practice9_5_1 {
         static List<string> GetLargeFiles(string vDirectoryPath) {
             var wLargeFiles = new List<string>();
 
-                var wDirectory = new DirectoryInfo(vDirectoryPath);
+            var wDirectory = new DirectoryInfo(vDirectoryPath);
 
-                FileInfo[] wFiles = wDirectory.GetFiles("*", SearchOption.AllDirectories);
+            FileInfo[] wFiles = wDirectory.GetFiles("*", SearchOption.AllDirectories);
 
-                foreach (FileInfo wFile in wFiles) {
-                    if (wFile.Length >= 1024 * 1024) 
-                    {
-                        wLargeFiles.Add(wFile.Name);
-                    }
+            foreach (FileInfo wFile in wFiles) {
+                if (wFile.Length >= 1024 * 1024) {
+                    wLargeFiles.Add(wFile.Name);
+                }
             }
             return wLargeFiles;
         }

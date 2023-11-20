@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Practice9_4_1 {
     /*Practice9-4-1 指定したディレクトリ直下にあるファイルを別のディレクトリにコピーするプログラムを作成してください。

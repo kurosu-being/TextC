@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Practice9_1_1 {
+﻿namespace Practice9_1_1 {
+    /// <summary>
+    /// ファイル読み込みテストの為のクラス
+    /// </summary>
     class CountClass {
         string wA = "class";
         string wB = "class";
