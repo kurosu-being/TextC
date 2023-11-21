@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using Practice6_2_1;
 
@@ -31,7 +30,7 @@ namespace Practice6_2_2 {
             }
 
             string wPattern = @"[CＣ][#♯]";
-            
+
             int wCount = wBooks.Count(book => Regex.IsMatch(book.Title, wPattern, RegexOptions.IgnoreCase));
 
             Console.WriteLine($"タイトルに\"C#\"が含まれる書籍の数: {wCount}冊");
