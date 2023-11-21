@@ -1,4 +1,6 @@
-﻿namespace Practice6_2_1 {
+﻿using System;
+
+namespace Practice6_2_1 {
     /// <summary>
     /// 本のクラス
     /// </summary>
@@ -22,7 +24,7 @@
         /// <param name="vPrice">価格</param>
         /// <param name="vPages">ページ数</param>
         public Book(string vTitle, int vPrice, int vPages) {
-            this.Title = vTitle;
+            this.Title = vTitle ?? throw new ArgumentNullException(nameof(vTitle), "Title cannot be null.");
             this.Price = vPrice;
             this.PageNumber = vPages;
         }
