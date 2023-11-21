@@ -22,7 +22,7 @@ namespace Practice6_2_7 {
                 return;
             }
 
-            var wTargetBooks = wBooks.Where(x =>  x.Title.Contains("C#") && x.PageNumber <= 500);
+            var wTargetBooks = wBooks.Where(x =>  x.Title.Contains("C#") && x.PageNumber <= 500).ToList();
             string wResultMessage = wTargetBooks.Any()
                 ? "タイトルに「C#」が含まれていてかつ500ページ以下の本のタイトル\n" + string.Join("\n", wTargetBooks.Select(x => $"「{x.Title}」"))
                 : "タイトルに「C#」が含まれていてかつ500ページ以下の本は存在しません。";
