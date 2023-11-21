@@ -12,8 +12,11 @@ namespace Practice6_1_1 {
             var wNumbers = new int[] { 5, 10, 17, 9, 3, 21, 10, 40, 21, 3, 35, };
 
             //追加問題　要素があるかどうかを判定する処理を追加
-            string wJudgeNumbers = wNumbers.Any() ? wNumbers.Max().ToString() : "要素がありません";
-            Console.WriteLine(wJudgeNumbers);
+            if (wNumbers.Any()) {
+                Console.WriteLine(wNumbers.Max());
+            } else {
+                Console.WriteLine("要素がありません");
+            }
         }
     }
 }

@@ -12,8 +12,8 @@ namespace Practice6_1_4 {
                 return;
             }
             Console.WriteLine("小さい順に並べた最初の3つの要素:");
-            foreach (int wSortThreeNumber in wNumbers.OrderBy(x => x).Take(3)) {
-                Console.WriteLine(wSortThreeNumber);
+            foreach (int wNumber in wNumbers.OrderBy(x => x).Take(3)) {
+                Console.WriteLine(wNumber);
             }
         }
     }

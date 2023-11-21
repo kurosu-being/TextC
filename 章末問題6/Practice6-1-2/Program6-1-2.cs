@@ -7,10 +7,6 @@ namespace Practice6_1_2 {
         static void Main(string[] args) {
             var wNumbers = new int[] { 5, 10, 17, 9, 3, 21, 10, 40, 21, 3, 35 };
 
-            if (wNumbers == null) {
-                Console.WriteLine("コレクションの中身がnullです");
-                return;
-            }
             if (wNumbers.Length < 2) {
                 Console.WriteLine("コレクション数が1以下です");
                 return;
