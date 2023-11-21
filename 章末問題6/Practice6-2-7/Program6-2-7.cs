@@ -18,7 +18,7 @@ namespace Practice6_2_7 {
             };
 
             if (wBooks == null) {
-                Console.WriteLine("コレクションの中身がnullです。");
+                Console.WriteLine("本が登録されていません");
                 return;
             }
 

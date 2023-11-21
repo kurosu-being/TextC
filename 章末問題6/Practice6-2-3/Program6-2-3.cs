@@ -8,7 +8,6 @@ namespace Practice6_2_3 {
     class Program {
         static void Main(string[] args) {
             var wBooks = new List<Book>{
-                new Book(null, 345,345),
                 new Book("C#プログラミングの常識", 3800, 378),
                 new Book("ラムダ式とLINQの極意", 2500, 312),
                 new Book("ワンダフル・C#ライフ", 2900, 385),
@@ -19,7 +18,7 @@ namespace Practice6_2_3 {
             };
 
             if (wBooks == null) {
-                Console.WriteLine("コレクションの中身がnullです。");
+                Console.WriteLine("本が登録されていません");
                 return;
             }
             var wMatchingBooks = wBooks.Where(x => x.Title.Contains("C#")).ToList();
