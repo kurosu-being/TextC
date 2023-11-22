@@ -37,12 +37,7 @@ namespace Practice7_2_3 {
         /// </summary>
         /// <param name="vKey">省略語</param>
         /// <returns>キーに対応する日本語</returns>
-        public string this[string vKey] {
-            get {
-                FAbbreviationToJapanese.TryGetValue(vKey, out string wValue);
-                return wValue;
-            }
-        }
+        public string this[string vKey] => FAbbreviationToJapanese.TryGetValue(vKey, out string wValue) ? wValue : null;
 
         /// <summary>
         /// 日本語から省略語を取り出すメソッド
