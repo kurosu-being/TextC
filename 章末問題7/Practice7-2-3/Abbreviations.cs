@@ -23,7 +23,7 @@ namespace Practice7_2_3 {
         }
 
         /// <summary>
-        /// 要素を追加するメソッド
+        /// 省略語の日本語を追加するメソッド
         /// </summary>
         /// <param name="vKey">省略語</param>
         /// <param name="vJapanese">日本語</param>
