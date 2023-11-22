@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 
 namespace Practice7_2_3 {
     //Practice7-2-3 CountプロパティとRemoveメソッドを利用するコードを書いてください。
@@ -12,7 +13,11 @@ namespace Practice7_2_3 {
                 Console.WriteLine("存在しないパスです");
                 return;
             }
-            var wAbbreviations = new Abbreviations(wFilePath);
+
+            var wLines = File.ReadAllLines(wFilePath);
+            var wDict = wLines.Select(x => x.Split('=')).ToDictionary(x => x[0], x => x[1]);
+
+            var wAbbreviations = new Abbreviations(wDict);
 
             //いくつかの要素を追加
             wAbbreviations.Add("KM", "黒子 真紀");

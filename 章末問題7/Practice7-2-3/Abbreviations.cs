@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace Practice7_2_3 {
@@ -15,13 +14,17 @@ namespace Practice7_2_3 {
         public int Count => this.FDict.Count;
 
         /// <summary>
-        /// コンストラクタ
+        /// 引数なしのコンストラクタ
         /// </summary>
-        public Abbreviations(string vFilePath) {
-            var wLines = File.ReadAllLines(vFilePath);
-            FDict = wLines.Select(x => x.Split('=')).ToDictionary(x => x[0], x => x[1]);
+        public Abbreviations() {
         }
-
+        /// <summary>
+        ///データをセットするコンストラクタ
+        /// </summary>
+        /// <param name="vDict"></param>
+        public Abbreviations(Dictionary<string, string> vDict) {
+            this.FDict = vDict;
+        }
         /// <summary>
         /// 省略語の日本語を追加するメソッド
         /// </summary>
