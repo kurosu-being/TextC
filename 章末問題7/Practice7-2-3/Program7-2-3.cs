@@ -15,9 +15,9 @@ namespace Practice7_2_3 {
             }
 
             var wLines = File.ReadAllLines(wFilePath);
-            var wDict = wLines.Select(x => x.Split('=')).ToDictionary(x => x[0], x => x[1]);
+            var wAbbreviationToJapanese = wLines.Select(x => x.Split('=')).ToDictionary(x => x[0], x => x[1]);
 
-            var wAbbreviations = new Abbreviations(wDict);
+            var wAbbreviations = new Abbreviations(wAbbreviationToJapanese);
 
             //いくつかの要素を追加
             wAbbreviations.Add("KM", "黒子 真紀");
