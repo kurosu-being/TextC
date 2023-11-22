@@ -22,8 +22,8 @@ namespace Practice7_2_3 {
         ///データをセットするコンストラクタ
         /// </summary>
         /// <param name="vDict"></param>
-        public Abbreviations(Dictionary<string, string> vDict) {
-            this.FAbbreviationToJapanese = vDict;
+        public Abbreviations(IDictionary<string, string> vDict) {
+            this.FAbbreviationToJapanese = new Dictionary<string, string>(vDict);
         }
         /// <summary>
         /// 省略語の日本語を追加するメソッド
