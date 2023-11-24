@@ -6,7 +6,7 @@ namespace Practice7_2_3 {
     /// 省略語のクラス
     /// </summary>
     class Abbreviations {
-        readonly private Dictionary<string, string> FAbbreviationToJapanese = new Dictionary<string, string>();
+        private readonly Dictionary<string, string> FAbbreviationToJapanese = new Dictionary<string, string>();
 
         /// <summary>
         /// ディクショナリに登録されている用語の数を返すプロパティ
