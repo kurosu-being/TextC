@@ -16,11 +16,10 @@ namespace Practice7_1_1 {
         static void Main(string[] args) {
             string wInputString = "Cozy lummox gives smart squid who asks for job pen";
 
-
             Dictionary<char, int> wCharCount = wInputString.ToUpper().Where(char.IsLetter).GroupBy(x => x).ToDictionary(x => x.Key, x => x.Count());
 
-            foreach (var wKeyValuePair in wCharCount.OrderBy(x => x.Key)) {
-                Console.WriteLine($"'{wKeyValuePair.Key}':{wKeyValuePair.Value}");
+            foreach ((char wChar, int wCount) in wCharCount.OrderBy(x => x.Key)) {
+                Console.WriteLine($"'{wChar}':{wCount}");
             }
         }
     }
