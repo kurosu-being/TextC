@@ -7,7 +7,7 @@
     <ProjectGuid>{9327EC3A-069B-4D6D-BC3F-95B9DAF8B823}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Practice10_4_1</RootNamespace>
-    <AssemblyName>Practice10_4_1</AssemblyName>
+    <AssemblyName>Practice10-4-1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Program10-4-1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
