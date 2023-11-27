@@ -6,36 +6,36 @@ namespace Practice8_3_1 {
     /// </summary>
     class TimeWatch {
         private DateTime FStartTime;
-        private bool FIsRunning;
+        /// <summary>
+        /// ストップウォッチが実行中かどうかを示すプロパティ
+        /// </summary>
+        private bool IsRunning => this.FStartTime != default(DateTime);
 
         /// <summary>
         /// TimeWatchのコンストラクタ
         /// </summary>
         public TimeWatch() => this.Start();
+
         /// <summary>
         /// ストップウォッチを始めるメソッド
         /// </summary>
         public void Start() {
-            if (FIsRunning) {
-                return;
-            }
-
+            if (this.IsRunning) return;
             this.FStartTime = DateTime.Now;
-            FIsRunning = true;
         }
+
         /// <summary>
         /// ストップウォッチを止めるメソッド
         /// </summary>
         /// <returns></returns>
         public TimeSpan Stop() {
-            if (!FIsRunning) {
-                return TimeSpan.Zero;
+            try {
+                return this.IsRunning ? (DateTime.Now - this.FStartTime) : TimeSpan.Zero;
+            } finally {
+                this.FStartTime = default(DateTime);
             }
-
-            TimeSpan wElapsed = DateTime.Now - this.FStartTime;
-            FIsRunning = false;
-            return wElapsed;
         }
     }
 }
+
 
