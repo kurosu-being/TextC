@@ -65,7 +65,7 @@ namespace Practice7_2_4 {
         /// <summary>
         /// ３文字の省略語だけ取り出すメソッド
         /// </summary>
-        public IEnumerable<string> GetThreeAbbr() {
+        public IEnumerable<string> EnumerateThreeAbbr() {
             var wThreeAbbr = FAbbreviationToJapanese.Where(x => x.Key.Length == 3).Select(x => $"{x.Key}={x.Value}");
             return wThreeAbbr;
         }

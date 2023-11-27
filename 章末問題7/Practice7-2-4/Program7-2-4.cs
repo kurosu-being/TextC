@@ -15,7 +15,7 @@ namespace Practice7_2_4 {
             var wAbbreviations = new Abbreviations(wFilePath);
             //3文字の省略語を取り出し表示
             Console.WriteLine("省略形が３文字のものを表示します");
-            foreach (var wAbbreviation in wAbbreviations.GetThreeAbbr()) {
+            foreach (var wAbbreviation in wAbbreviations.EnumerateThreeAbbr()) {
                 Console.WriteLine(wAbbreviation);
             }
         }
