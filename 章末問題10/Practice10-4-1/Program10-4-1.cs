@@ -22,7 +22,7 @@ namespace Practice10_4_1 {
             //マッチングするパターン
             var wPattern = @"\s*=\s*";
             var wReplaseds = wLines.Select(x => Regex.Replace(x, wPattern, "=").ToLower());
-            var wPattern2 = @"version=v4.0"; 
+            var wPattern2 = @"version=v4.0";
             var wReplased2s = wReplaseds.Select(x => Regex.Replace(x, wPattern2, "version=v5.0"));
             foreach (var wReplace in wReplased2s) {
                 File.WriteAllLines(wFilePath, wReplased2s);
