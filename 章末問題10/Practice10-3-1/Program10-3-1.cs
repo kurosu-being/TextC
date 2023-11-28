@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Practice10_3_1 {
@@ -21,7 +20,7 @@ namespace Practice10_3_1 {
                 "We reorganized the timetable",
             };
 
-            var wPattern = @"\btime\b"; 
+            var wPattern = @"\btime\b";
 
             foreach (var wText in wTexts) {
                 MatchCollection wMatches = Regex.Matches(wText, wPattern, RegexOptions.IgnoreCase);
