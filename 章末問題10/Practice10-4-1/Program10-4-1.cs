@@ -19,7 +19,7 @@ namespace Practice10_4_1 {
             }
 
             if (!File.Exists(wFilePath)) {
-                Console.WriteLine("ファイルが存在しません。パスが正しいか確認してください");
+                Console.WriteLine("ファイルが存在しません。パスが正しいか確認してください。");
                 return;
             }
 
