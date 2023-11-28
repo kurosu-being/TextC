@@ -8,13 +8,16 @@ namespace Practice10_5_1 {
     class Program {
         static void Main(string[] args) {
             // HTMLファイルを読み込む
-            Console.WriteLine("HTMLファイルを読み込んでください。v");
+            Console.WriteLine("HTMLファイルを読み込んでください。");
             var wFilePath = Console.ReadLine();
+            if (string.IsNullOrEmpty(wFilePath)) {
+                Console.WriteLine("入力が空です");
+                return;
+            }
+
             if (!File.Exists(wFilePath)) {
                 Console.WriteLine("ファイルが存在しません。パスが正しいか確認してください");
-            }
-            if (string.IsNullOrEmpty(wFilePath)) {
-                Console.WriteLine("パスが空です");
+                return;
             }
 
             string wHtmlContent = File.ReadAllText(wFilePath);

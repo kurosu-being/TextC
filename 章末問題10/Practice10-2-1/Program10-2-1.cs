@@ -10,6 +10,11 @@ namespace Practice10_2_1 {
             Console.WriteLine("テキストファイルのパスを書いてください");
             var wFilePath = Console.ReadLine();
 
+            if (string.IsNullOrEmpty(wFilePath)) {
+                Console.WriteLine("入力が空です");
+                return;
+            }
+
             if (!File.Exists(wFilePath)) {
                 Console.WriteLine("ファイルが存在しません");
                 return;

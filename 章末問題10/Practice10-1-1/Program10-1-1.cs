@@ -7,6 +7,10 @@ namespace Practice10_1_1 {
         static void Main(string[] args) {
             Console.WriteLine("電話番号を含む文字列を半角で入力してください。");
             var wInput = Console.ReadLine();
+            if (string.IsNullOrEmpty(wInput)) {
+                Console.WriteLine("入力が空です");
+                return;
+            }
             var wMessage = JudgePhoneNumber(wInput) ? "電話番号です" : "電話番号ではありません";
             Console.WriteLine(wMessage);
         }
