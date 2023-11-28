@@ -21,7 +21,6 @@ namespace Practice10_3_1 {
                 "We reorganized the timetable",
             };
 
-            // マッチングするパターン
             var wPattern = @"\btime\b"; 
 
             foreach (var wText in wTexts) {
