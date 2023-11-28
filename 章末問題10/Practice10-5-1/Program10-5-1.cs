@@ -18,12 +18,11 @@ namespace Practice10_5_1 {
             }
 
             string wHtmlContent = File.ReadAllText(wFilePath);
-            string[] wLines = wHtmlContent.Split('\n'); // HTMLを行ごとに分割
+            string[] wLines = wHtmlContent.Split('\n');
 
             for (int i = 0; i < wLines.Length; i++) {
                 string wLine = wLines[i];
 
-                // 正規表現を使ってタグを小文字に変換
                 string wModifiedLine = Regex.Replace(wLine, @"<[^>]+>", x =>
                 {
                     string wTag = x.Value.ToLower();
@@ -31,10 +30,9 @@ namespace Practice10_5_1 {
                     return wTag;
                 });
 
-                wLines[i] = wModifiedLine; // 変更した行を再度配列に格納
+                wLines[i] = wModifiedLine;
             }
 
-            // 変更した各行を結合してHTMLを再構築
             string wModifiedHTML = string.Join("\n", wLines);
             Console.WriteLine("書き換えが完了しました");
         }

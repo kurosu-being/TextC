@@ -17,7 +17,7 @@ namespace Practice10_2_1 {
 
             string wText = File.ReadAllText(wFilePath);
 
-            List<string> wSubstrings = PickNumbers(wText);
+            List<string> wSubstrings = EnumerateSubstrings(wText);
 
             if (wSubstrings.Count > 0) {
                 Console.WriteLine("3文字以上の部分文字列:");
@@ -28,7 +28,13 @@ namespace Practice10_2_1 {
                 Console.WriteLine("3文字以上の部分文字列が見つかりませんでした。");
             }
         }
-        static List<string> PickNumbers(string vText) {
+
+        /// <summary>
+        /// 三文字以上の文字だけから成る部分文字列を抜き出すメソッド
+        /// </summary>
+        /// <param name="vText">原文</param>
+        /// <returns>三文字以上の文字だけから成る部分文字列</returns>
+        static List<string> EnumerateSubstrings(string vText) {
 
             var wMatches = Regex.Matches(vText, @"\b(?![0-9])\w{3,}\b");
             var wSubstrings = new List<string>();

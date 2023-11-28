@@ -10,6 +10,12 @@ namespace Practice10_1_1 {
             var wMessage = JudgePhoneNumber(wInput) ? "電話番号です" : "電話番号ではありません";
             Console.WriteLine(wMessage);
         }
+
+        /// <summary>
+        /// 電話番号か判別するメソッド
+        /// </summary>
+        /// <param name="vInput">原文</param>
+        /// <returns>判定</returns>
         static bool JudgePhoneNumber(string vInput) {
             string wPattern = @"^(090|080|070)-\d{4}-\d{4}$";
 
