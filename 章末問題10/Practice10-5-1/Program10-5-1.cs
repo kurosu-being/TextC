@@ -23,7 +23,7 @@ namespace Practice10_5_1 {
 
             var wModifiedHtmlContent = Regex.Replace(wHtmlContent, @"<[^>]+>", match => {
                 string wTag = match.Value.ToLower();
-                wTag = Regex.Replace(wTag, @"(\w+)(?=\s*=)", attribute => attribute.Value.ToLower());
+                wTag = Regex.Replace(wTag, @"(\w+)(?=\s*=)", x => x.Value.ToLower());
                 return wTag;
             });
 
