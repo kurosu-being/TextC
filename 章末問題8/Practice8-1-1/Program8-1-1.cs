@@ -11,13 +11,17 @@ namespace Practice8_1_1 {
     class Program {
         static void Main(string[] args) {
             var wDate = new DateTime(2019, 1, 15, 19, 48, 32);
+
+            Console.WriteLine(wDate.ToString("yyyy/M/d H:mm"));
+
+            Console.WriteLine(wDate.ToString("yyyy年MM月dd日 HH時mm分ss秒"));
+
             var wCulture = new CultureInfo("ja-JP");
-            wCulture.DateTimeFormat.Calendar = new JapaneseCalendar();
             var wJapanDay = wDate.ToString("ggyy年M月d日", wCulture);
+
+            wCulture.DateTimeFormat.Calendar = new JapaneseCalendar();
             var wDayOfWeek = wCulture.DateTimeFormat.GetDayName(wDate.DayOfWeek);
 
-            Console.WriteLine(wDate.ToString("f"));
-            Console.WriteLine(wDate.ToString("yyyy年MM月dd日 HH時mm分ss秒"));
             Console.WriteLine($"{wJapanDay}({wDayOfWeek})");
         }
     }
