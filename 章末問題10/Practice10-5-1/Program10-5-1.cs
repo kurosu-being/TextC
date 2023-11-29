@@ -7,7 +7,7 @@ namespace Practice10_5_1 {
     //属性が記述されて切る場合にも対応してください。属性の中には'<','>'は含まれていないものとします。
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine("HTMLファイルを読み込んでください。");
+            Console.WriteLine("HTMLファイルを読み込んでください。サンプルのHTMLファイルはチケットに貼ってあります。");
             var wFilePath = Console.ReadLine();
             if (string.IsNullOrEmpty(wFilePath)) {
                 Console.WriteLine("入力が空です");
@@ -20,14 +20,28 @@ namespace Practice10_5_1 {
             }
 
             string wHtmlContent = File.ReadAllText(wFilePath);
+            string wModifiedHtmlContent = ConvertToLowerHTML(wHtmlContent);
 
-            var wModifiedHtmlContent = Regex.Replace(wHtmlContent, @"<[^>]+>", match => {
+            try {
+                File.WriteAllText(wFilePath, wModifiedHtmlContent);
+                Console.WriteLine("ファイルの書き込みが完了しました");
+            } catch (Exception wEx) {
+                Console.WriteLine("ファイルの書き込み中にエラーが発生しました: " + wEx.Message);
+            }
+        }
+
+        /// <summary>
+        /// 属性のタグを小文字にするメソッド
+        /// </summary>
+        /// <param name="vHtmlContent">HTMLの原文</param>
+        /// <returns> 属性のタグを小文字にしたテキスト</returns>
+        static string ConvertToLowerHTML(string vHtmlContent) {
+            string wModifiedContent = Regex.Replace(vHtmlContent, @"<[^>]+>", match => {
                 string wTag = match.Value.ToLower();
                 wTag = Regex.Replace(wTag, @"(\w+)(?=\s*=)", x => x.Value.ToLower());
                 return wTag;
             });
-
-            Console.WriteLine("HTMLファイルの書き換えが完了しました");
+            return wModifiedContent;
         }
     }
 }
