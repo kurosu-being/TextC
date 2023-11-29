@@ -13,7 +13,7 @@ namespace Practice8_2_1 {
             var wToday = DateTime.Today;
             DateTime wNextWeekDay = GetNextWeek(wToday, wIntWeek);
 
-            Console.WriteLine(wNextWeekDay.ToString("yyyy/M/d"));
+            Console.WriteLine($"次の週の指定曜日の日にちは{wNextWeekDay.ToString("D")}です");
         }
 
         /// <summary>
