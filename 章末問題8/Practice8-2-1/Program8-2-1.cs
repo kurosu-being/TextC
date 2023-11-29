@@ -9,7 +9,7 @@ namespace Practice8_2_1 {
             if (!int.TryParse(wInput, out var wIntWeek) || wIntWeek < 0 || wIntWeek > 6) {
                 Console.WriteLine("入力が適切ではありません。半角で0～6の数字を入力してください");
                 return;
-            } 
+            }
             var wToday = DateTime.Today;
             DateTime wNextWeekDay = GetNextWeek(wToday, wIntWeek);
 
