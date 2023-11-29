@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace Practice11_1_1 {
@@ -26,12 +22,12 @@ namespace Practice11_1_1 {
 　　<firstplayed>1846</firstplayed>
 　</ballsport>
 </ballSports> */
-//Practice11-1-1 XMLファイルを読み込み、競技名とチームメンバーの数の一覧を表示してください。
+    //Practice11-1-1 XMLファイルを読み込み、競技名とチームメンバーの数の一覧を表示してください。
     class Program {
         static void Main(string[] args) {
             Console.WriteLine("XMLファイルのパスを入力してください。");
             var wInputFile = Console.ReadLine();
-            if (!File.Exists(wInputFile)){
+            if (!File.Exists(wInputFile)) {
                 Console.WriteLine("ファイルが存在しません。パスが正しいか確認してください。");
             }
             var wXdocument = XDocument.Load(wInputFile);
