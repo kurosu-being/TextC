@@ -14,7 +14,7 @@ namespace Practice11_1_3 {
             }
 
             var wXdocument = XDocument.Load(wInputFile);
-            var wMaxMembersSport = wXdocument.Root.Elements()
+            string wMaxMembersSport = wXdocument.Root.Elements()
                             .Where(x => (int)x.Element("teammembers") == wXdocument.Root.Elements().Max(y => (int)y.Element("teammembers")))
                             .Select(x => x.Element("name")?.Attribute("kanji")?.Value)
                             .FirstOrDefault();
