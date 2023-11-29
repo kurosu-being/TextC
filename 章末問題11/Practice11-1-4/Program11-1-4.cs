@@ -15,8 +15,7 @@ namespace Practice11_1_4 {
 
             var wXdocuments = XDocument.Load(wInputFile);
             var wElement = new XElement("ballsport",
-                           new XElement("name", "サッカー"),
-                           new XAttribute("kanji", "蹴球"),
+                           new XElement("name", "サッカー"),new XAttribute("kanji", "蹴球"),
                            new XElement("teammembers", "11"),
                            new XElement("firstplayed", "1873"));
 
