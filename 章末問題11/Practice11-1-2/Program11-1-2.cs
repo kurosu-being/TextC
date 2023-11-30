@@ -11,6 +11,7 @@ namespace Practice11_1_2 {
             var wInputFile = Console.ReadLine();
             if (!File.Exists(wInputFile)) {
                 Console.WriteLine("ファイルが存在しません。パスが正しいか確認してください。");
+                return;
             }
 
             Console.WriteLine("最初にプレーされた年の若い順に漢字の表記名を表示します");

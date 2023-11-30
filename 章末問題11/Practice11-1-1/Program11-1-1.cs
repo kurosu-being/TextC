@@ -29,6 +29,7 @@ namespace Practice11_1_1 {
             var wInputFile = Console.ReadLine();
             if (!File.Exists(wInputFile)) {
                 Console.WriteLine("ファイルが存在しません。パスが正しいか確認してください。");
+                return;
             }
             var wXdocument = XDocument.Load(wInputFile);
             foreach (var wGameName in wXdocument.Root.Elements()) {

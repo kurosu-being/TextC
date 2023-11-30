@@ -11,18 +11,27 @@ namespace Practice11_1_4 {
             var wInputFile = Console.ReadLine();
             if (!File.Exists(wInputFile)) {
                 Console.WriteLine("ファイルが存在しません。パスが正しいか確認してください。");
+                return;
             }
 
             var wXdocuments = XDocument.Load(wInputFile);
-            var wElement = new XElement("ballsport",
-                           new XElement("name", "サッカー"),new XAttribute("kanji", "蹴球"),
-                           new XElement("teammembers", "11"),
-                           new XElement("firstplayed", "1873"));
+            var wOption = new XElement("ballsport");
+            wOption.SetElementValue("name", "サッカー");
+            wOption.SetElementValue("kanji", "蹴球");
+            wOption.SetElementValue("teammembers", "11");
+            wOption.SetElementValue("firstplayed", "1873");
+            var wRoot = new XElement("ballSports", wOption);
 
-            wXdocuments.Root.Add(wElement);
-            wXdocuments.Save(wInputFile);
+            wXdocuments.Root.Add(wRoot);
+
+            Console.WriteLine("新しいXMLファイルの名前を入力してください。");
+            var wOutputFileName = Console.ReadLine();
+            var wOutputFile = Path.Combine(Path.GetDirectoryName(wInputFile), wOutputFileName + ".xml");
+
+            wXdocuments.Save(wOutputFile);
 
             Console.WriteLine("新しいXMLファイルが作成されました。");
         }
     }
 }
+
