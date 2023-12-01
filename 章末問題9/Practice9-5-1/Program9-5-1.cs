@@ -37,10 +37,8 @@ namespace Practice9_5_1 {
             var wLargeFiles = new List<string>();
             var wDirectory = new DirectoryInfo(vDirectoryPath);
 
-            foreach (FileInfo wFile in wDirectory.GetFiles("*", SearchOption.AllDirectories)) {
-                if (wFile.Length >= 1024 * 1024) {
+            foreach (FileInfo wFile in wDirectory.GetFiles("*", SearchOption.AllDirectories).Where(x => x.Length >= 1024 * 1024)) {
                     wLargeFiles.Add(wFile.Name);
-                }
             }
             return wLargeFiles;
         }
