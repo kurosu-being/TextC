@@ -15,7 +15,6 @@ namespace Practice9_2_1 {
                 return;
             }
 
-
             Console.WriteLine("次に保存先のディレクトリを指定してください");
             string wOutputDirectory = Console.ReadLine();
             if (!Directory.Exists(wOutputDirectory)) {
@@ -36,7 +35,7 @@ namespace Practice9_2_1 {
                     }
                 }
             }
-            Console.WriteLine("ファイルの書き込みが完了しました。");
+            Console.WriteLine("ファイルが出力されました。");
         }
     }
 }
