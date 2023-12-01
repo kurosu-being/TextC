@@ -7,18 +7,19 @@ namespace Practice9_4_1 {
     つまり、元のファイル名がGreeting.txtならば、コピー先のファイル名はGreeting_bak.txtという名前にします。コピー先に同名のファイルがある場合は置き換えてください。*/
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine("指定したディレクトリ直下にあるファイルを別のディレクトリにコピーします。\nコピーしたいファイルパス,コピー先のディレクトリという形で入力してください。");
-            string wFilePath = Console.ReadLine();
+            Console.WriteLine("指定したディレクトリ直下にあるファイルを別のディレクトリにコピーします。\nまずコピーしたいディレクトリパス,コピー先のディレクトリという形で入力してください。");
+            string wSourceDirectory = Console.ReadLine();
 
-            if (wFilePath.Split(',').Length != 2) {
-                Console.WriteLine("正しい数のパスが提供されていません。最初の引数に元のファイル、次の引数に追記先のファイルを指定してください。");
+            if (!Directory.Exists(wSourceDirectory)) {
+                Console.WriteLine("指定されたディレクトリが見つかりません。パスに間違いがないかご確認ください。");
                 return;
             }
 
-            string wSourceDirectory = wFilePath.Split(',')[0];
-            string wTargetDirectory = wFilePath.Split(',')[1];
-            if (!Directory.Exists(wSourceDirectory) || !Directory.Exists(wTargetDirectory)) {
-                Console.WriteLine("指定されたディレクトリが見つかりません。パスに間違いがないかご確認ください。");
+            Console.WriteLine("次にコピー先のディレクトリのパスを入力して下さい。");
+            string wTargetDirectory = Console.ReadLine();
+
+            if (!Directory.Exists(wTargetDirectory)) {
+                Console.WriteLine("コピー先のファイルが見つかりません。パスに間違いがないかご確認ください。");
                 return;
             }
 
@@ -32,10 +33,8 @@ namespace Practice9_4_1 {
 
                 string wNewFilePath = Path.Combine(wTargetDirectory, wNewFileName);
 
-                // コピー先に同名のファイルがなければコピーを実行
                 if (!File.Exists(wNewFilePath)) {
-                    File.Copy(wFile, wNewFilePath);
-                    Console.WriteLine($"{wFile} を {wNewFilePath} にコピーしました。");
+                    File.Copy(wFile, wNewFilePath, true);
                 }
             }
 
