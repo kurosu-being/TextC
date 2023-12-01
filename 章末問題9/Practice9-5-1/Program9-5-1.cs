@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Practice9_5_1 {
     //Practice9-5-1 指定したディレクトリおよびそのサブディレクトリの配下にあるファイルからファイルサイズが1Mバイト以上のファイル名の一覧を表示するプログラムを書いてください。
@@ -34,12 +35,9 @@ namespace Practice9_5_1 {
         /// <returns>ファイル名</returns>
         static List<string> GetLargeFiles(string vDirectoryPath) {
             var wLargeFiles = new List<string>();
-
             var wDirectory = new DirectoryInfo(vDirectoryPath);
 
-            FileInfo[] wFiles = wDirectory.GetFiles("*", SearchOption.AllDirectories);
-
-            foreach (FileInfo wFile in wFiles) {
+            foreach (FileInfo wFile in wDirectory.GetFiles("*", SearchOption.AllDirectories)) {
                 if (wFile.Length >= 1024 * 1024) {
                     wLargeFiles.Add(wFile.Name);
                 }
