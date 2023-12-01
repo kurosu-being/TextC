@@ -25,6 +25,7 @@ namespace Practice11_1_4 {
             wXdocuments.Root.Add(wRoot);
 
             Console.WriteLine("新しいXMLファイルの名前を入力してください。");
+
             var wOutputFileName = Console.ReadLine();
             var wOutputFile = Path.Combine(Path.GetDirectoryName(wInputFile), wOutputFileName + ".xml");
 
