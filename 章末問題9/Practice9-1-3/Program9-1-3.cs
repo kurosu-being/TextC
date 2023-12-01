@@ -21,8 +21,7 @@ namespace Practice9_1_3 {
                 while (!wReader.EndOfStream) {
                     string wLine = wReader.ReadLine();
 
-                    int wCount = File.ReadLines(wFilePath, Encoding.UTF8).Count(x => x.Contains("class"));
-                    wClassCount = wCount;
+                    wClassCount = File.ReadLines(wFilePath, Encoding.UTF8).Count(x => x.Contains("class"));
                 }
             }
 

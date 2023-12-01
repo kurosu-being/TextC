@@ -16,6 +16,8 @@ namespace Practice9_1_1 {
                 return;
             }
 
+
+
             int wClassCount = 0;
 
             using (var wReader = new StreamReader(wFilePath)) {

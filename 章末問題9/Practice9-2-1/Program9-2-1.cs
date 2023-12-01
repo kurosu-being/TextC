@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 
 namespace Practice9_2_1 {
     /*Practice9-2-1 テキストファイルを読み込み、行の先頭に行番号を振り、その結果を別のテキストファイルに出力するプログラムを書いてください。書式と出力先のファイル名は自由に決めてかまいません。
@@ -14,16 +15,27 @@ namespace Practice9_2_1 {
                 return;
             }
 
-            string wInputFileName = wFilePath;
-            string wOutputFileName = "output.txt";
 
-            using (var wStreamWriter = new StreamWriter(wOutputFileName)) {
-                string[] wLines = File.ReadAllLines(wInputFileName);
-                for (int i = 0; i < wLines.Length; i++) {
-                    wStreamWriter.WriteLine($"{i + 1}: {wLines[i]}");
-                }
+            Console.WriteLine("次に保存先のディレクトリを指定してください");
+            string wOutputDirectory = Console.ReadLine();
+            if (!Directory.Exists(wOutputDirectory)) {
+                Console.WriteLine("指定されたディレクトリが見つかりません。パスに間違いがないかご確認ください。");
+                return;
             }
 
+            string wOutputFileName = "output.txt";
+            string wOutputFilePath = Path.Combine(wOutputDirectory, wOutputFileName);
+
+            using (var wStreamReader = new StreamReader(wFilePath, Encoding.UTF8)) {
+                using (var wStreamWriter = new StreamWriter(wOutputFilePath, false, Encoding.UTF8)) {
+                    int wLineNumber = 1;
+                    string wLine;
+                    while ((wLine = wStreamReader.ReadLine()) != null) {
+                        wStreamWriter.WriteLine($"{wLineNumber}: {wLine}");
+                        wLineNumber++;
+                    }
+                }
+            }
             Console.WriteLine("ファイルの書き込みが完了しました。");
         }
     }
