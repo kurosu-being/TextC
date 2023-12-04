@@ -3,6 +3,5 @@
     /// ファイル読み込みテストの為のクラス
     /// </summary>
     class CountClass {
-
     }
 }
