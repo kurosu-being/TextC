@@ -18,10 +18,19 @@ namespace Practice9_1_1 {
                 return;
             }
 
-            var wCount = File.ReadLines(wFilePath,Encoding.UTF8).Count(x => x.Contains("class"));
+            int wClassCount = 0;
 
-            Console.WriteLine($"\"class\"キーワードが含まれる行数: {wCount}");
+            using (var wReader = new StreamReader(wFilePath)) {
+                while (!wReader.EndOfStream) {
+                    var wCount = wReader.ReadLine();
+                    string wLine = wReader.ReadLine();
+                    if (wLine.Contains("class")) {
+                        wClassCount++;
+                    }
+                }
+            }
 
+            Console.WriteLine($"\"class\"キーワードが含まれる行数: {wClassCount}");
         }
     }
 }

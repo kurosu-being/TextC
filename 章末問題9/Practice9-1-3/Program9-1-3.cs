@@ -15,17 +15,8 @@ namespace Practice9_1_3 {
                 return;
             }
 
-            int wClassCount = 0;
-
-            using (var wReader = new StreamReader(wFilePath)) {
-                while (!wReader.EndOfStream) {
-                    string wLine = wReader.ReadLine();
-
-                    wClassCount = File.ReadLines(wFilePath, Encoding.UTF8).Count(x => x.Contains("class"));
-                }
-            }
-
-            Console.WriteLine($"\"class\"キーワードが含まれる行数: {wClassCount}");
+            var wCount = File.ReadLines(wFilePath, Encoding.UTF8).Count(x => x.Contains("class"));
+            Console.WriteLine($"\"class\"キーワードが含まれる行数: {wCount}");
         }
     }
 }
