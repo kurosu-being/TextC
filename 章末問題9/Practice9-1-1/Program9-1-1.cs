@@ -1,7 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace Practice9_1_1 {
     /*Practice9-1-1 指定したC#のソースファイルを読み込み、キーワード"class"が含まれている行数をカウントするコンソールアプリケーションCountClassを作成してください。
@@ -15,6 +13,12 @@ namespace Practice9_1_1 {
 
             if (!File.Exists(wFilePath)) {
                 Console.WriteLine("ファイルが見つかりませんでした。");
+                return;
+            }
+
+            //追加問題
+            if (Path.GetExtension(wFilePath) != "cs") {
+                Console.WriteLine("csファイルではありません。C#のソースファイルのパスを入力してください." );
                 return;
             }
 
