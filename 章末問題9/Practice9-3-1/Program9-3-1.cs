@@ -6,7 +6,7 @@ namespace Practice9_3_1 {
     //Practice9-3-1あるテキストファイルの最後に別のテキストファイルの内容を追加するコンソールアプリケーションを書いてください。コマンドラインで2つのテキストファイルのパス名を指定できるようにしてください。
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine("1つ目のテキストファイルの末尾に、2つ目のテキストファイル内容を追加します。\nまず追加先のテキストファイルのパスを入力してください");
+            Console.WriteLine($"1つ目のテキストファイルの末尾に、2つ目のテキストファイル内容を追加します。{Environment.NewLine}まず追加先のテキストファイルのパスを入力してください");
             string wSourceFilePath = Console.ReadLine();
 
             if (!File.Exists(wSourceFilePath)) {
