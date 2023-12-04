@@ -28,7 +28,6 @@ namespace Practice9_4_1 {
             foreach (string wFile in wFiles) {
                 string wFileName = Path.GetFileNameWithoutExtension(wFile);
                 string wExtension = Path.GetExtension(wFile);
-
                 string wNewFileName = $"{wFileName}_bak{wExtension}";
 
                 string wNewFilePath = Path.Combine(wTargetDirectory, wNewFileName);
