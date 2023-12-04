@@ -23,6 +23,10 @@ namespace Practice9_4_1 {
                 return;
             }
 
+            if (wSourceDirectory == wTargetDirectory) {
+                Console.WriteLine("ディレクトリが同じです。別のディレクトリを選択して下さい");
+            }
+
             string[] wFiles = Directory.GetFiles(wSourceDirectory);
 
             foreach (string wFile in wFiles) {
