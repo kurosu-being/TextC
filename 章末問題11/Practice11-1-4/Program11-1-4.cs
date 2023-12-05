@@ -7,7 +7,7 @@ namespace Practice11_1_4 {
     //手間を惜しまずに調べることもプログラマーには必要なことです。
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine("XMLファイルのパスを入力してください。");
+            Console.WriteLine("同じディレクトリにサッカーの情報を追加して、新たなXMLファイルを作成します。XMLファイルのパスを入力してください。");
             var wInputFile = Console.ReadLine();
             if (!File.Exists(wInputFile)) {
                 Console.WriteLine("ファイルが存在しません。パスが正しいか確認してください。");

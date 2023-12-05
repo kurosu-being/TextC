@@ -25,7 +25,7 @@ namespace Practice11_1_1 {
     //Practice11-1-1 XMLファイルを読み込み、競技名とチームメンバーの数の一覧を表示してください。
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine("XMLファイルのパスを入力してください。");
+            Console.WriteLine("XMLファイルを読み込み、競技名とチームメンバーの数の一覧を表示します。XMLファイルのパスを入力してください。");
             var wInputFile = Console.ReadLine();
             if (!File.Exists(wInputFile)) {
                 Console.WriteLine("ファイルが存在しません。パスが正しいか確認してください。");
