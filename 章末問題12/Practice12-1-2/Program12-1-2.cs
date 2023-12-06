@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using Practice12_1_1;
 
 namespace Practice12_1_2 {
@@ -15,6 +16,11 @@ namespace Practice12_1_2 {
                 new Employee { ID = 903, Name = "L", HireDate = new DateTime(2023, 4, 2)  },
                 new Employee { ID = 999, Name = "M", HireDate = new DateTime(2023, 4, 3)  }
             };
+
+            using(var wWriter = XmlWriter.Create("employees.xml")) {
+                var wSerializer = new DataContractSerializer(wEmployees.GetType()); 
+                wSerializer.WriteObject(wWriter, wEmployees);
+            }
         }
     }
 }
