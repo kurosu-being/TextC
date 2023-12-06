@@ -28,10 +28,9 @@ namespace Practice9_1_1 {
 
             using (var wReader = new StreamReader(wFilePath)) {
                 while (!wReader.EndOfStream) {
-                    var wCount = wReader.ReadLine();
-                    string wLine = wReader.ReadLine();
+                    var wLine = wReader.ReadLine();
                     var wRegex = new Regex(@"\bclass\b");
-                    if (wRegex.IsMatch(wCount)) {
+                    if (wRegex.IsMatch(wLine)) {
                         wClassCount++;
                     }
                 }
