@@ -7,7 +7,7 @@ namespace Practice9_4_1 {
     つまり、元のファイル名がGreeting.txtならば、コピー先のファイル名はGreeting_bak.txtという名前にします。コピー先に同名のファイルがある場合は置き換えてください。*/
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine($"指定したディレクトリ直下にあるファイルを別のディレクトリにコピーします。{Environment.NewLine}まずコピーしたいディレクトリパス,コピー先のディレクトリという形で入力してください。");
+            Console.WriteLine($"指定したディレクトリ直下にあるファイルを別のディレクトリにコピーします。{Environment.NewLine}まずコピーしたいディレクトリパスを入力してください。");
             string wSourceDirectory = Console.ReadLine();
 
             if (!Directory.Exists(wSourceDirectory)) {
