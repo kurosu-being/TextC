@@ -17,6 +17,7 @@ namespace Practice12_1_2 {
                 var wSerializer = new DataContractSerializer(wEmployees.GetType());
                 wSerializer.WriteObject(wWriter, wEmployees);
             }
+            Console.WriteLine("Employeeクラスのオブジェクトをシリアライズしました。");
         }
     }
 }
