@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice9-4-1", "Practice9-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice9-5-1", "Practice9-5-1\Practice9-5-1.csproj", "{0FB5286B-F94E-4474-BEA4-5568F956D7BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice9-3-1(コマンドライン引数でファイルを指定)", "Practice9-3-1(コマンドライン引数でファイルを指定)\Practice9-3-1(コマンドライン引数でファイルを指定).csproj", "{99DB0420-94D2-484D-BB2D-7CCE60DF9415}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{0FB5286B-F94E-4474-BEA4-5568F956D7BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FB5286B-F94E-4474-BEA4-5568F956D7BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FB5286B-F94E-4474-BEA4-5568F956D7BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99DB0420-94D2-484D-BB2D-7CCE60DF9415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99DB0420-94D2-484D-BB2D-7CCE60DF9415}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99DB0420-94D2-484D-BB2D-7CCE60DF9415}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99DB0420-94D2-484D-BB2D-7CCE60DF9415}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

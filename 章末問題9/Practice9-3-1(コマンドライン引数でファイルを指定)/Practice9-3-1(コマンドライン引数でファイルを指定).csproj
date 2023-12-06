@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1E5BE055-9F5B-4966-B975-C12E5B979ED7}</ProjectGuid>
+    <ProjectGuid>{99DB0420-94D2-484D-BB2D-7CCE60DF9415}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Practice9_1_1</RootNamespace>
-    <AssemblyName>Practice9-1-1</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>Practice9_3_1_コマンドライン引数でファイルを指定_</RootNamespace>
+    <AssemblyName>Practice9-3-1%28コマンドライン引数でファイルを指定%29</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -43,9 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CountClass.cs" />
-    <Compile Include="FindSubclasses.cs" />
-    <Compile Include="Program9-1-1.cs" />
+    <Compile Include="Program9-3-1Tsuika.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
