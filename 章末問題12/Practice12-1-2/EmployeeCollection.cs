@@ -8,7 +8,7 @@ using Practice12_1_1;
 
 namespace Practice12_1_2 {
     /// <summary>
-    /// 従業員のクラス
+    /// 従業員のコレクションのクラス
     /// </summary>
     [XmlRoot("employees")]
     public class EmployeeCollection {

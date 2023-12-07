@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{423BEBBA-81D8-43D6-B714-6CA431EE1893}</ProjectGuid>
+    <ProjectGuid>{A395FBED-7F09-4AA7-8641-15771C591D30}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Practice12_1_4</RootNamespace>
-    <AssemblyName>Practice12-1-4</AssemblyName>
+    <RootNamespace>Practice12_2_1</RootNamespace>
+    <AssemblyName>Practice12-2-1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,7 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,22 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employee.cs" />
-    <Compile Include="Program12-1-4.cs" />
+    <Compile Include="Novelist.cs" />
+    <Compile Include="Program12-2-1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Practice12-1-1\Practice12-1-1.csproj">
-      <Project>{51e6e9a7-6eef-4225-bb88-5c8dcad176ad}</Project>
-      <Name>Practice12-1-1</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Practice12-1-2\Practice12-1-2.csproj">
-      <Project>{b8ebb287-4699-4bc2-83f2-fc73ea83c7e2}</Project>
-      <Name>Practice12-1-2</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
