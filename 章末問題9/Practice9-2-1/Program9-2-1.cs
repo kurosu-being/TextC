@@ -25,7 +25,7 @@ namespace Practice9_2_1 {
             string wOutputFileName = "output.txt";
             string wOutputFilePath = Path.Combine(wOutputDirectory, wOutputFileName);
 
-            using (var wStreamReader = new StreamReader(wFilePath, Encoding.UTF8)) {
+            using (var wStreamReader = new StreamReader(wFilePath, Encoding.UTF8))
                 using (var wStreamWriter = new StreamWriter(wOutputFilePath, false, Encoding.UTF8)) {
                     int wLineNumber = 1;
                     string wLine;
@@ -34,7 +34,7 @@ namespace Practice9_2_1 {
                         wLineNumber++;
                     }
                 }
-            }
+            
             Console.WriteLine("ファイルが出力されました。");
         }
     }

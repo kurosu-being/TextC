@@ -34,10 +34,7 @@ namespace Practice9_4_1 {
                 string wExtension = Path.GetExtension(wFile);
                 string wNewFileName = $"{wFileName}_bak{wExtension}";
                 string wNewFilePath = Path.Combine(wTargetDirectory, wNewFileName);
-
-                if (!File.Exists(wNewFilePath)) {
-                    File.Copy(wFile, wNewFilePath, true);
-                }
+                File.Copy(wFile, wNewFilePath, true);            
             }
 
             Console.WriteLine("ファイルのコピーが完了しました。");

@@ -5,10 +5,15 @@ using System.Text;
 namespace Practice9_3_1_コマンドライン引数でファイルを指定_ {
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine($"1つ目のテキストファイルの末尾に、2つ目のテキストファイル内容を追加します。コマンドライン引数で指定してください。");
+            Console.WriteLine("1つ目のテキストファイルの末尾に、2つ目のテキストファイル内容を追加します。コマンドライン引数で指定してください。");
 
             if (args.Length != 2) {
                 Console.WriteLine("引数が正しくありません。プログラムを終了します。");
+                return;
+            }
+
+            if (args.Length == 0) {
+                Console.WriteLine($"コマンドラインで引数を指定してください。書き方は{Environment.NewLine}MyProgram.exe arg1 arg2{Environment.NewLine}というようにします。");
                 return;
             }
 

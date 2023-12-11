@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Practice9_1_1 {
@@ -20,16 +19,17 @@ namespace Practice9_1_1 {
 
             //追加問題
             if (Path.GetExtension(wFilePath) != ".cs") {
-                Console.WriteLine("csファイルではありません。C#のソースファイルのパスを入力してください." );
+                Console.WriteLine("csファイルではありません。C#のソースファイルのパスを入力してください.");
                 return;
             }
 
             int wClassCount = 0;
+            var wRegex = new Regex(@"\bclass\b");
 
             using (var wReader = new StreamReader(wFilePath)) {
                 while (!wReader.EndOfStream) {
                     var wLine = wReader.ReadLine();
-                    var wRegex = new Regex(@"\bclass\b");
+
                     if (wRegex.IsMatch(wLine)) {
                         wClassCount++;
                     }
