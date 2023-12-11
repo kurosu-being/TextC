@@ -1,28 +1,28 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Practice12_2_1 {
-    /// <summary>
-    /// 作家のクラス
-    /// </summary>
+namespace Practice12_2_2 {
+    [Serializable]
     [XmlRoot("novelist")]
     public class Novelist {
-      
-    [XmlElement(ElementName = "name")]
+        [XmlElement(ElementName = "name")]
         public string Name { get; set; }
 
         [XmlElement(ElementName = "birth")]
-        public string BirthString 
-        {
-            get { return Birth.ToString("yyyy-MM-dd"); }
+        public string BirthString {
+            get { return Birth.ToString("yyyy-MM-ddTHH:mm:ssZ"); }
             set { Birth = DateTime.Parse(value); }
         }
 
         [XmlArray("masterpieces")]
-        [XmlArrayItem("title")] 
+        [XmlArrayItem("title")]
         public string[] Masterpieces { get; set; }
 
-        [XmlIgnore] 
+        [XmlIgnore]
         public DateTime Birth { get; set; }
     }
 }

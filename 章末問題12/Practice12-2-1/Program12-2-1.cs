@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -19,7 +18,7 @@ namespace Practice12_2_1 {
                          */
         static void Main() {
             Console.WriteLine("XMLファイルを逆シリアル化します。ファイルパスを入力してください");
-            string wFilePath =　Console.ReadLine();
+            string wFilePath = Console.ReadLine();
 
             if (!File.Exists(wFilePath)) {
                 Console.WriteLine("ファイルが見つかりません。ファイルパスが正しいか確認してください。");

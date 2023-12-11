@@ -12,7 +12,7 @@ namespace Practice12_1_4 {
                 new Employee { ID = 999, Name = "M", HireDate = new DateTime(2023, 4, 3)  }
             };
 
-            Console.WriteLine("EmployeeクラスのオブジェクトをXMLにシリアライズします。保存先のディレクトリを指定してください");
+            Console.WriteLine("EmployeeクラスのオブジェクトをJSONファイルにシリアライズします。保存先のディレクトリを指定してください");
             string wDirectoryPath = Console.ReadLine();
             string wFilePath = Path.Combine(wDirectoryPath, "employee.json");
 
