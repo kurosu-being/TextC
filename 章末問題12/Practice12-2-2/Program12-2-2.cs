@@ -29,8 +29,8 @@ namespace Practice12_2_2 {
                 File.WriteAllText(wJsonFilePath, wJson);
                 Console.WriteLine($"JSONファイルが作成されました: {wJsonFilePath}");
             }
-
         }
+
         /// <summary>
         /// XMLファイルを逆シリアル化するメソッド
         /// </summary>
@@ -47,12 +47,11 @@ namespace Practice12_2_2 {
         /// JSONファイルにシリアル化するメソッド
         /// </summary>
         /// <param name="vNovelist">Novelistオブジェクト</param>
-        /// <returns>JSONシリアライズした</returns>
+        /// <returns>JSONシリアライズしたファイル</returns>
         static string SerializeNovelistToJson(Novelist vNovelist) {
             var wSettings = new JsonSerializerSettings {
 
             };
-
             return JsonConvert.SerializeObject(vNovelist, Formatting.Indented, wSettings);
         }
     }

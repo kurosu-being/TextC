@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Practice12_1_1;
 using System.Xml.Serialization;
-using Practice12_1_1;
 
 namespace Practice12_1_2 {
     /// <summary>
@@ -12,8 +7,11 @@ namespace Practice12_1_2 {
     /// </summary>
     [XmlRoot("employees")]
     public class EmployeeCollection {
+        /// <summary>
+        /// 従業員のコレクション
+        /// </summary>
         [XmlElement(Type = typeof(Employee), ElementName = "employee")]
-        public Employee[] Employees { get; set;}     
-        }
+        public Employee[] Employees { get; set; }
     }
+}
 

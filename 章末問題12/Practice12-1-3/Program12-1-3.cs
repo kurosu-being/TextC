@@ -1,8 +1,7 @@
-﻿using Practice12_1_1;
-using System;
-using System.IO;
+﻿using System;
 using System.Runtime.Serialization;
 using System.Xml;
+using Practice12_1_1;
 
 namespace Practice12_1_3 {
     //Practice12-1-3 2で作成したファイルを読み込み、逆シリアル化してください。

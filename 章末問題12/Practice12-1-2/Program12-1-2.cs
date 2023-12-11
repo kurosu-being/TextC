@@ -1,7 +1,7 @@
-﻿using Practice12_1_1;
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 using System.Xml;
+using Practice12_1_1;
 
 namespace Practice12_1_2 {
     //Practice12-1-2 複数のEmployyeeオブジェクトが配列に格納されているとします。この配列をDataContractSerializerクラスを使ってXMLファイルにシリアル化してください。
