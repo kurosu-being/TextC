@@ -21,7 +21,7 @@ namespace Practice12_1_1 {
         /// <summary>
         /// 従業員のコンストラクタ
         /// </summary>
-        /// <returns></returns>
+        /// <returns>フォーマットに直した形</returns>
         public override string ToString() {
             return string.Format($"[ID={ID},Name={Name},HireDate={HireDate:d}]");
         }
