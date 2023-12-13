@@ -36,8 +36,8 @@ namespace Practice10_4_1 {
                 File.Move(wTempFilePath, wFilePath);
 
                 Console.WriteLine("ファイルが書き換えられました");
-            } catch (Exception wEx) {
-                Console.WriteLine($"エラーが発生しました: {wEx.Message}");
+            } catch (Exception ex) {
+                Console.WriteLine($"エラーが発生しました: {ex.Message}");
             }
         }
     }
