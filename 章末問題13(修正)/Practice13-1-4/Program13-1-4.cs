@@ -1,22 +1,22 @@
-﻿using System;
+﻿using Practice13_1_1_2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Practice13_1_1_2.Models;
 
-namespace Practice13_1_3 {
-    //Prqactice13-1-3 タイトルの最も長い書籍を求めてください。複数ある場合は、すべてを表示してください。
+namespace Practice13_1_4 {
+    //Prqactice13-1-4 タイトルの最も長い書籍を求めてください。複数ある場合は、すべてを表示してください。
     class Program {
         static void Main(string[] args) {
 
             using (var wDb = new BooksDbContext()) {
-                var wLongestBooks = EnumerateBooksLongestTitle(wDb);
+                var wOldestBooks = GetOldestThreeBooks(wDb);
 
-                if (!wLongestBooks.Any()) {
+                if (!wOldestBooks.Any()) {
                     Console.WriteLine("書籍が見つかりませんでした。");
                 }
 
-                foreach (var wBook in wLongestBooks) {
-                    Console.WriteLine($"書籍ID: {wBook.Id}, 書籍タイトル: {wBook.Title}, 出版年: {wBook.PublishedYear}, 著者名: {wBook.Author.Name}");
+                foreach (var wBook in wOldestBooks) {
+                    Console.WriteLine($"書籍タイトル: {wBook.Title} 著者名: {wBook.Author.Name}");
                 }
             }
         }
@@ -103,11 +103,16 @@ namespace Practice13_1_3 {
         /// </summary>
         /// <param name="vContext"></param>
         /// <returns>最もタイトルの長い書籍</returns>
-        static IEnumerable<Book> EnumerateBooksLongestTitle(BooksDbContext vContext) {
+        static IEnumerable<Book> DisplayBooksWithLongestTitle(BooksDbContext vContext) {
             var wMaxLength = vContext.Books.Max(x => x.Title.Length);
             return vContext.Books.Where(x => x.Title.Length == wMaxLength).ToList();
         }
+
+        /// <summary>
+        /// 発行年の古い順に指定した数の書籍を取得するメソッド
+        /// </summary>
+        static IEnumerable<Book> GetOldestThreeBooks(BooksDbContext vContext) {
+            return vContext.Books.OrderBy(x => x.PublishedYear).Take(3).ToList();
+        }
     }
 }
-
-
