@@ -9,7 +9,7 @@ namespace Practice13_1_3 {
         static void Main(string[] args) {
 
             using (var wDb = new BooksDbContext()) {
-                var wLongestBooks = DisplayBooksWithLongestTitle(wDb);
+                var wLongestBooks = EnumerateBooksLongestTitle(wDb);
 
                 if (!wLongestBooks.Any()) {
                     Console.WriteLine("書籍が見つかりませんでした。");
@@ -98,8 +98,12 @@ namespace Practice13_1_3 {
             }
         }
 
-        static IEnumerable<Book> DisplayBooksWithLongestTitle(BooksDbContext vContext) {
-
+        /// <summary>
+        /// 最もタイトルの長い書籍を取得するメソッド
+        /// </summary>
+        /// <param name="vContext"></param>
+        /// <returns></returns>
+        static IEnumerable<Book> EnumerateBooksLongestTitle(BooksDbContext vContext) {
             var wMaxLength = vContext.Books.Max(x => x.Title.Length);
             return vContext.Books.Where(x => x.Title.Length == wMaxLength).ToList();
         }
