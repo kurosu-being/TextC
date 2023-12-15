@@ -4,10 +4,9 @@ using System.Linq;
 using Practice13_1_1_2.Models;
 
 namespace Practice13_1_3 {
-    //Prqactice13-1-3 タイトルの最も長い書籍を求めてください。複数ある場合は、すべてを表示してください。
+    //Prqactice13-1-3 タイトルの最も長い書籍を求めてください。複数ある場合は、すべてを求めて表示してください。
     class Program {
         static void Main(string[] args) {
-
             using (var wDb = new BooksDbContext()) {
                 var wLongestBooks = EnumerateBooksLongestTitle(wDb);
 

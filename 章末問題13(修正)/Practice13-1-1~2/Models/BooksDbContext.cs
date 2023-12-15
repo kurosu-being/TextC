@@ -4,16 +4,19 @@
     using System.Linq;
 
     public class BooksDbContext : DbContext {
-        // コンテキストは、アプリケーションの構成ファイル (App.config または Web.config) から 'BooksDbContext' 
-        // 接続文字列を使用するように構成されています。既定では、この接続文字列は LocalDb インスタンス上
-        // の 'Practice13_1_1_2.Models.BooksDbContext' データベースを対象としています。 
-        // 
-        // 別のデータベースとデータベース プロバイダーまたはそのいずれかを対象とする場合は、
-        // アプリケーション構成ファイルで 'BooksDbContext' 接続文字列を変更してください。
+        /// <summary>
+        /// 書籍と著者のデータベースコンテキスト
+        /// </summary>
         public BooksDbContext()
             : base("name=BooksDbContext") {
-        }
+        }  
+        /// <summary>
+        /// Books テーブルへの DbSet
+        /// </summary>
         public DbSet<Book> Books { get; set; }
+        /// <summary>
+        /// Author テーブルへの DbSet
+        /// </summary>
         public DbSet<Author> Authors { get; set; }
         // モデルに含めるエンティティ型ごとに DbSet を追加します。Code First モデルの構成および使用の
         // 詳細については、http://go.microsoft.com/fwlink/?LinkId=390109 を参照してください。

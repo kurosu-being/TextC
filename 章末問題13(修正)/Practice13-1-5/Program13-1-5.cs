@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using Practice13_1_1_2.Models;
 
-namespace Practice13_1_4 {
-    //Prqactice13-1-4 発行歳の古い順に3札だけ書籍を取得し、そのタイトルと著者名を求めてください。
+namespace Practice13_1_5 {
+    //Practice13-1-5 著者ごとに書籍のタイトルと発行歳を表示してください。なお、著者は誕生日の遅い順に並べ替えてください。
     class Program {
         static void Main(string[] args) {
-            using (var wDb = new BooksDbContext()) {
-                var wOldestBooks = GetOldestThreeBooks(wDb);
+            using (var wContext = new BooksDbContext()) {
+                var wBooksByAuthor = GetBooksByAuthor(wContext);
 
-                if (!wOldestBooks.Any()) {
-                    Console.WriteLine("書籍が見つかりませんでした。");
-                }
-
-                foreach (var wBook in wOldestBooks) {
-                    Console.WriteLine($"書籍タイトル: {wBook.Title} 著者名: {wBook.Author.Name}");
+                foreach (var wAuthorGroup in wBooksByAuthor) {
+                    Console.WriteLine($"著者名: {wAuthorGroup.Key.Name}, 誕生日: {wAuthorGroup.Key.Birthday:D}");
+                    foreach (var wBook in wAuthorGroup.OrderByDescending(x => x.PublishedYear)) {
+                        Console.WriteLine($"書籍タイトル: {wBook.Title}, 発行年: {wBook.PublishedYear}年");
+                    }
                 }
             }
         }
@@ -113,5 +112,13 @@ namespace Practice13_1_4 {
         static IEnumerable<Book> GetOldestThreeBooks(BooksDbContext vContext) {
             return vContext.Books.OrderBy(x => x.PublishedYear).Take(3).ToList();
         }
+
+        /// <summary>
+        /// 著者ごとに書籍のタイトルと発行年を取得するメソッド
+        /// </summary>
+        static IEnumerable<IGrouping<Author, Book>> GetBooksByAuthor(BooksDbContext vContext) {
+            return vContext.Books.Include("Author").ToList().GroupBy(x => x.Author).OrderByDescending(group => group.Key.Birthday);
+        }
     }
 }
+

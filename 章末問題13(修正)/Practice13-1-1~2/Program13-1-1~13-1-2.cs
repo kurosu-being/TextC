@@ -14,7 +14,7 @@ namespace Practice13_1_1_2 {
         }
 
         /// <summary>
-        /// 書籍を挿入するメソッド（本文で利用したメソッド）
+        /// 書籍を挿入するメソッド（本文で作成したメソッド）
         /// </summary>
         static void InsertBooks() {
             using (var wDb = new BooksDbContext()) {
@@ -32,7 +32,7 @@ namespace Practice13_1_1_2 {
         }
 
         /// <summary>
-        /// 書籍を取得しコレクション化して返すメソッド
+        /// 書籍を取得しコレクション化して返すメソッド（本文で作成したメソッド）
         /// </summary>
         /// <returns>書籍のコレクション</returns>
         static IEnumerable<Book> GetBooks() {
@@ -42,7 +42,7 @@ namespace Practice13_1_1_2 {
         }
 
         /// <summary>
-        /// 全ての書籍を表示するメソッド
+        /// 全ての書籍を表示するメソッド（本文で作成したメソッド）
         /// </summary>
         static void DisplayAllBooks() {
             var wBooks = GetBooks();
