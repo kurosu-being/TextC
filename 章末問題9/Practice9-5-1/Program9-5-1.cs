@@ -15,7 +15,7 @@ namespace Practice9_5_1 {
                 return;
             }
 
-            List<string> wLargeFiles = GetFilesThan1M(wFilePath);
+            List<string> wLargeFiles = GetFilesLargerOrEqual1M(wFilePath);
 
             if (wLargeFiles.Count > 0) {
                 Console.WriteLine("1MB以上のファイル一覧:");
@@ -33,7 +33,7 @@ namespace Practice9_5_1 {
         /// </summary>
         /// <param name="vDirectoryPath">指定されたディレクトリ</param>
         /// <returns>ファイル名</returns>
-        static List<string> GetFilesThan1M(string vDirectoryPath) {
+        static List<string> GetFilesLargerOrEqual1M(string vDirectoryPath) {
             var wLargeFiles = new List<string>();
             var wDirectory = new DirectoryInfo(vDirectoryPath);
 
