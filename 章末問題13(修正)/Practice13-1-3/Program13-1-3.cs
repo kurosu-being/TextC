@@ -1,29 +1,39 @@
-﻿using Practice13_1_1_2.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Practice13_1_1_2.Models;
 
-namespace Practice13_1_1_2 {
-    //Practice13-1-1 本文で利用したデータベースを利用し、2名の著者と四冊の書籍を追加してください。
-    //Practice13-1-2 すべての書籍情報を著者名とともに表示するコードを書き、Practice13-1-1のデータが正しく追加されたか確認してください。
+namespace Practice13_1_3 {
+    //Prqactice13-1-3 タイトルの最も長い書籍を求めてください。複数ある場合は、すべてを表示してください。
     class Program {
         static void Main(string[] args) {
-            AddAuthors();
-            AddBooks();
-            DisplayAllBooks();
+
+            using (var wDb = new BooksDbContext()) {
+                var wLongestBooks = DisplayBooksWithLongestTitle(wDb);
+
+                if (!wLongestBooks.Any()) {
+                    Console.WriteLine("書籍が見つかりませんでした。");
+                }
+
+                foreach (var wBook in wLongestBooks) {
+                    Console.WriteLine($"書籍ID: {wBook.Id}, 書籍タイトル: {wBook.Title}, 出版年: {wBook.PublishedYear}, 著者名: {wBook.Author.Name}");
+                }
+            }
         }
 
         /// <summary>
-        /// 書籍を挿入するメソッド（本文で利用したメソッド）
+        /// 書籍を挿入するメソッド
         /// </summary>
         static void InsertBooks() {
             using (var wDb = new BooksDbContext()) {
-                var wBook1 = new Book { Title = "坊ちゃん", PublishedYear = 2003, Author = new Author {
-                    Birthday = new DateTime(1867, 2, 9), Gender = "M", Name = "夏目漱石", }
+                var wBook1 = new Book {
+                    Title = "坊ちゃん", PublishedYear = 2003, Author = new Author {
+                        Birthday = new DateTime(1867, 2, 9), Gender = "M", Name = "夏目漱石", }
                 };
                 wDb.Books.Add(wBook1);
-                var wBook2 = new Book { Title = "人間失格 ", PublishedYear = 1990, Author = new Author {
-                    Birthday = new DateTime(1909, 6, 19), Gender = "M", Name = "太宰治",
+                var wBook2 = new Book {
+                    Title = "人間失格 ", PublishedYear = 1990, Author = new Author {
+                        Birthday = new DateTime(1909, 6, 19), Gender = "M", Name = "太宰治",
                     }
                 };
                 wDb.Books.Add(wBook2);
@@ -32,7 +42,7 @@ namespace Practice13_1_1_2 {
         }
 
         /// <summary>
-        /// 書籍を取得しコレクション化して返すメソッド
+        /// 書籍を取得するメソッド
         /// </summary>
         /// <returns>書籍のコレクション</returns>
         static IEnumerable<Book> GetBooks() {
@@ -87,6 +97,13 @@ namespace Practice13_1_1_2 {
                 wDb.SaveChanges();
             }
         }
+
+        static IEnumerable<Book> DisplayBooksWithLongestTitle(BooksDbContext vContext) {
+
+            var wMaxLength = vContext.Books.Max(x => x.Title.Length);
+            return vContext.Books.Where(x => x.Title.Length == wMaxLength).ToList();
+        }
     }
 }
+
 
