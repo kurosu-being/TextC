@@ -7,11 +7,6 @@ namespace Practice9_3_1_コマンドライン引数でファイルを指定_ {
         static void Main(string[] args) {
             Console.WriteLine("1つ目のテキストファイルの末尾に、2つ目のテキストファイル内容を追加します。コマンドライン引数で指定してください。");
 
-            if (args.Length == 0) {
-                Console.WriteLine($"引数が指定されていません。コマンドラインで引数を指定してください。書き方は{Environment.NewLine}MyProgram.exe arg1 arg2{Environment.NewLine}というようにします。");
-                return;
-            }
-
             if (args.Length != 2) {
                 Console.WriteLine($"引数の数が正しくありません。コマンドラインで引数を2つ指定してください。書き方は{Environment.NewLine}MyProgram.exe arg1 arg2{Environment.NewLine}というようにします。");
                 return;
