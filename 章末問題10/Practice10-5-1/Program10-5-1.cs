@@ -36,7 +36,7 @@ namespace Practice10_5_1 {
         /// <param name="vHtmlContent">HTMLの原文</param>
         /// <returns> 属性のタグを小文字にしたテキスト</returns>
         static string ConvertToLowerHTML(string vHtmlContent) {
-            string wModifiedContent = Regex.Replace(vHtmlContent, @"<[^>]+>", match => {
+            string wModifiedContent = Regex.Replace(vHtmlContent, @"<(\/?\w+)\b", match => {
                 string wTag = match.Value.ToLower();
                 wTag = Regex.Replace(wTag, @"(\w+)(?=\s*=)", x => x.Value.ToLower());
                 return wTag;
