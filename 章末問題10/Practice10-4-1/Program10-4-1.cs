@@ -43,11 +43,11 @@ namespace Practice10_4_1 {
                 Console.WriteLine("ファイルが書き換えられました。");
 
             } catch (UnauthorizedAccessException ex) {
-                Console.WriteLine($"アクセス権限がありません: {ex.Message}");
+                Console.WriteLine($"アクセス権限がありません。必要な権限を取得してからプログラムを再実行してください: {ex.Message}");
             } catch (IOException ex) {
-                Console.WriteLine($"I/O エラーが発生しました: {ex.Message}");
+                Console.WriteLine($"データの入出力操作時に問題が発生しました。ファイルが他のプログラムで使用中でないか確認してください。{Environment.NewLine}または、デバイスの接続を確認し、再度実行してください。: {ex.Message}");
             } catch (Exception ex) {
-                Console.WriteLine($"エラーが発生しました: {ex.Message}");
+                Console.WriteLine($"エラーが発生しました。 問題が解決しない場合は、サポートに連絡してください。: {ex.Message}");
             }
         }
     }
