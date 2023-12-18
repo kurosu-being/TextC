@@ -44,7 +44,7 @@ namespace Practice10_2_1 {
         /// <returns>三文字以上の数字だけから成る部分文字列</returns>
         static List<int> EnumerateSubstrings(string vText) {
 
-            var wMatches = Regex.Matches(vText, @"\d{3,}");
+            var wMatches = Regex.Matches(vText, @"\b(\d{3,})\b");
             var wSubstrings = new List<int>();
 
             foreach (Match wMatch in wMatches) {
