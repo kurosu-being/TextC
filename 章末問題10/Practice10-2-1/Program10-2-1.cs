@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Practice10_2_1 {
@@ -26,7 +27,7 @@ namespace Practice10_2_1 {
 
                 List<int> wSubstrings = EnumerateSubstrings(wText);
 
-                if (wSubstrings.Count > 0) {
+                if (wSubstrings.Any()) {
                     Console.WriteLine("3文字以上の部分文字列:");
                     foreach (int wSubstring in wSubstrings) {
                         Console.WriteLine(wSubstring);
