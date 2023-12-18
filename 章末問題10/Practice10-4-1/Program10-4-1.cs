@@ -30,6 +30,11 @@ namespace Practice10_4_1 {
                     .Select(line => Regex.Replace(line, @"\s*=\s*", "=").ToLower())
                     .Select(line => Regex.Replace(line, @"version=v4.0", "version=v5.0"));
 
+                if (!wLines.Any(line => line.Contains("version=v5.0"))) {
+                    Console.WriteLine("置換する文字列が見つかりませんでした");
+                    return;
+                }
+
                 File.WriteAllLines(wTempFilePath, wLines, Encoding.UTF8);
 
                 File.Delete(wFilePath);
