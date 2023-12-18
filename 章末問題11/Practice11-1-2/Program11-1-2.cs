@@ -14,8 +14,6 @@ namespace Practice11_1_2 {
                 return;
             }
 
-            Console.WriteLine("最初にプレーされた年の若い順に漢字の表記名を表示します");
-
             var wXdocument = XDocument.Load(wInputFile);
             foreach (var wGame in wXdocument.Root.Elements().OrderBy(x => (int)x.Element("firstplayed"))) {
                 var wXname = wGame.Element("name");
