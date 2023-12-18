@@ -19,7 +19,11 @@ namespace Practice11_1_2 {
                 var wXname = wGame.Element("name");
                 XAttribute wXAttribute = wXname.Attribute("kanji");
 
-                Console.WriteLine($"漢字表記名「{wXAttribute?.Value}」");
+                if (string.IsNullOrEmpty(wXAttribute.Value)) {
+                    Console.WriteLine($"漢字表記名なし");
+                } else {
+                    Console.WriteLine($"漢字表記名「{wXAttribute.Value}」");
+                }
             }
         }
     }
