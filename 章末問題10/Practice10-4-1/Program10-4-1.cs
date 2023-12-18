@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,7 +9,7 @@ namespace Practice10_4_1 {
     //なお、入力ファイルの=の前後には任意の数の空白文字が入っていることもあります。出力時には、=の前後の空白は削除してください。"version"は"Version"である可能性もあります。
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine("version.txtを読み込んでください。version=\"v4.0\"と書かれた箇所を、version=\"v5.0\"に置き換えます。\nファイルのパスを入力してください。(version.txtはチケットに貼ってあります）");
+            Console.WriteLine("ファイルのパスを入力してください。version=\"v4.0\"と書かれた箇所を、version=\"v5.0\"に置き換え、同じファイルに保存します。");
             var wFilePath = Console.ReadLine();
 
             if (string.IsNullOrEmpty(wFilePath)) {
@@ -19,33 +18,31 @@ namespace Practice10_4_1 {
             }
 
             if (!File.Exists(wFilePath)) {
-                Console.WriteLine("ファイルが存在しません。パスが正しいか確認してください。");
+                Console.WriteLine("ファイルが存在しません。正しいパスを入力してください。");
                 return;
             }
 
             try {
-                var wTempFilePath = Path.GetTempFileName();
+                var wLines = File.ReadAllLines(wFilePath, Encoding.UTF8);
+                var wNewLines = new string[wLines.Length];
 
-                IEnumerable<string> wLines = File.ReadLines(wFilePath, Encoding.UTF8)
-                    .Select(line => Regex.Replace(line, @"\s*=\s*", "=").ToLower())
-                    .Select(line => Regex.Replace(line, @"version=v4.0", "version=v5.0"));
+                for (int i = 0; i < wLines.Length; i++) {
+                    string wModifiedLine = Regex.Replace(wLines[i], @"version\s*=\s*""v4\.0""", "version=\"v5.0\"", RegexOptions.IgnoreCase);
+                    wModifiedLine = Regex.Replace(wModifiedLine, @"\s*=\s*", "="); 
+                    wNewLines[i] = wModifiedLine;
+                }
 
-                if (!wLines.Any(line => line.Contains("version=v5.0"))) {
+                if (!wNewLines.Any(x => x.Contains("version=\"v5.0\""))) {
                     Console.WriteLine("置換する文字列が見つかりませんでした");
                     return;
                 }
 
-                File.WriteAllLines(wTempFilePath, wLines, Encoding.UTF8);
-
-                File.Delete(wFilePath);
-                File.Move(wTempFilePath, wFilePath);
-
-                Console.WriteLine("ファイルが書き換えられました");
+                File.WriteAllLines(wFilePath, wNewLines, Encoding.UTF8);
+                Console.WriteLine("ファイルが書き換えられました。");
             } catch (Exception ex) {
                 Console.WriteLine($"エラーが発生しました: {ex.Message}");
             }
         }
     }
 }
-
 
