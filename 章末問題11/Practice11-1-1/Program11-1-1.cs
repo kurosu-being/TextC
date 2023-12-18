@@ -32,10 +32,8 @@ namespace Practice11_1_1 {
                 return;
             }
             var wXdocument = XDocument.Load(wInputFile);
-            foreach (var wGameName in wXdocument.Root.Elements()) {
-                var wXname = wGameName.Element("name");
-                var wXTeamMember = wGameName.Element("teammembers");
-                Console.WriteLine($"競技名「{wXname.Value}」 チームメンバー:{wXTeamMember.Value}");
+            foreach (var wGame in wXdocument.Root.Elements()) {
+                Console.WriteLine($"競技名「{wGame.Element("name").Value}」 チームメンバー:{wGame.Element("teammembers").Value}");
             }
         }
     }

@@ -17,8 +17,8 @@ namespace Practice11_1_2 {
             Console.WriteLine("最初にプレーされた年の若い順に漢字の表記名を表示します");
 
             var wXdocument = XDocument.Load(wInputFile);
-            foreach (var wGameName in wXdocument.Root.Elements().OrderBy(x => (int)x.Element("firstplayed"))) {
-                var wXname = wGameName.Element("name");
+            foreach (var wGame in wXdocument.Root.Elements().OrderBy(x => (int)x.Element("firstplayed"))) {
+                var wXname = wGame.Element("name");
                 XAttribute wXAttribute = wXname.Attribute("kanji");
 
                 Console.WriteLine($"漢字表記名「{wXAttribute?.Value}」");
