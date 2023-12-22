@@ -34,12 +34,18 @@ namespace Practice14_1_1 {
         /// </summary>
         /// <param name="path">ファイルのパス</param>
         /// <param name="arguments">パラメータ</param>
-        static void LaunchProgram(string path, string arguments) {
-                Process.Start(path, arguments)?.WaitForExit(); 
+        static void LaunchProgram(string vPath, string vArguments) {
+            using (var wProcess = new Process()) {
+                wProcess.StartInfo.FileName = vPath;
+                wProcess.StartInfo.Arguments = vArguments;
+                wProcess.EnableRaisingEvents = true; // Exited イベントを利用するために有効化
+
+                wProcess.Exited += (sender, e) => {
+                    Console.WriteLine("プロセスが終了しました。");
+                };
+                wProcess.Start();
+            }
         }
     }
 }
-
-
-
 
