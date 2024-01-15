@@ -23,23 +23,23 @@ namespace Practice10_4_1 {
 
             try {
                 var wLines = File.ReadAllLines(wFilePath, Encoding.UTF8);
-                var wNewLines = new string[wLines.Length];
                 bool wWasReplaced = false;
 
                 for (int i = 0; i < wLines.Length; i++) {
                     string wModifiedLine = Regex.Replace(wLines[i], @"version\s*=\s*""v4\.0""", "version=\"v5.0\"", RegexOptions.IgnoreCase);
                     wModifiedLine = Regex.Replace(wModifiedLine, @"\s*=\s*", "=");
-                    wNewLines[i] = wModifiedLine;
-                    if (wModifiedLine.Contains("version=\"v5.0\"")) {
+                    if (wLines[i] != wModifiedLine) {
                         wWasReplaced = true;
                     }
+                    wLines[i] = wModifiedLine;
                 }
+
                 if (!wWasReplaced) {
                     Console.WriteLine("置換する文字列が見つかりませんでした");
                     return;
                 }
 
-                File.WriteAllLines(wFilePath, wNewLines, Encoding.UTF8);
+                File.WriteAllLines(wFilePath, wLines, Encoding.UTF8);
                 Console.WriteLine("ファイルが書き換えられました。");
 
             } catch (UnauthorizedAccessException ex) {
