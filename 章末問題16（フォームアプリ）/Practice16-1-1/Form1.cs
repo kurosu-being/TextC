@@ -38,8 +38,8 @@ namespace Practice16_1_1 {
             }
 
         }
-        private async Task ReadFileAsync(string filePath) {
-            using (var wStreamReader = new StreamReader(filePath)) {
+        private async Task ReadFileAsync(string vFilePath) {
+            using (var wStreamReader = new StreamReader(vFilePath)) {
                 // ファイルを非同期で行ごとに読み込む
                 while (!wStreamReader.EndOfStream) {
                     string wLine = await wStreamReader.ReadLineAsync();
