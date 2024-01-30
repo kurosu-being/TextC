@@ -60,10 +60,7 @@ class Program
 
     static bool ContainsAsyncAwait(string vFilePath) {
         try {
-            // ファイルの内容を文字列として読み込む
             string wContent = ReadAllTextAsync(vFilePath).Result;
-
-            // async および await のキーワードが含まれているかを検査
             return wContent.Contains("async") && wContent.Contains("await");
 
         } catch (UnauthorizedAccessException ex) {
