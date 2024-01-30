@@ -34,7 +34,7 @@ class Program
 
     static void SearchFiles(string vDirectoryPath, bool vParallel) {
         var wFilesWithAsyncAwaits = new List<string>();
-        var wStopwatch = new Stopwatch();
+        Stopwatch wStopwatch = new Stopwatch();
 
         wStopwatch.Start();
 
