@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 class Program
 /*Practice16-2-1 指定したディレクトリにあるC#のソースファイル（サブディレクトリを含む）の中を全て検索し、
@@ -25,9 +26,15 @@ class Program
         SearchFiles(wDirectoryPath, true);
     }
 
+    static async Task<string> ReadAllTextAsync(string vPath) {
+        using (var wReader = new StreamReader(vPath)) {
+            return await wReader.ReadToEndAsync();
+        }
+    }
+
     static void SearchFiles(string vDirectoryPath, bool vParallel) {
         var wFilesWithAsyncAwaits = new List<string>();
-        Stopwatch wStopwatch = new Stopwatch();
+        var wStopwatch = new Stopwatch();
 
         wStopwatch.Start();
 
@@ -54,10 +61,11 @@ class Program
     static bool ContainsAsyncAwait(string vFilePath) {
         try {
             // ファイルの内容を文字列として読み込む
-            string wContent = File.ReadAllText(vFilePath);
+            string wContent = ReadAllTextAsync(vFilePath).Result;
 
             // async および await のキーワードが含まれているかを検査
             return wContent.Contains("async") && wContent.Contains("await");
+
         } catch (UnauthorizedAccessException ex) {
             Console.WriteLine($"アクセス権限がありません: {ex.Message}");
             return false;
