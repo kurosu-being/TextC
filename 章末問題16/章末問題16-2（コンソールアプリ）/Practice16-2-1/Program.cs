@@ -26,15 +26,25 @@ class Program
         SearchFiles(wDirectoryPath, true);
     }
 
+    /// <summary>
+    /// 非同期でテキストファイルの内容を読み取るメソッド
+    /// </summary>
+    /// <param name="vPath">対象のパス</param>
+    /// <returns>ファイルの内容の文字列</returns>
     static async Task<string> ReadAllTextAsync(string vPath) {
         using (var wReader = new StreamReader(vPath)) {
             return await wReader.ReadToEndAsync();
         }
     }
 
+    /// <summary>
+    /// ファイルを検索して、asyncおよびawaitのキーワードを含むかどうかを確認するメソッド
+    /// </summary>
+    /// <param name="vDirectoryPath">指定のパス</param>
+    /// <param name="vParallel">並列処理を行うかのフラグ</param>
     static void SearchFiles(string vDirectoryPath, bool vParallel) {
         var wFilesWithAsyncAwaits = new List<string>();
-        Stopwatch wStopwatch = new Stopwatch();
+        var wStopwatch = new Stopwatch();
 
         wStopwatch.Start();
 
@@ -58,6 +68,11 @@ class Program
         Console.WriteLine($"処理時間: {wStopwatch.ElapsedMilliseconds} ミリ秒");
     }
 
+    /// <summary>
+    /// ファイルの中にasyncおよびawaitのキーワードが含まれているかどうかを確認するメソッド
+    /// </summary>
+    /// <param name="vFilePath">検査対象のファイルパス</param>
+    /// <returns>ファイルがasyncおよびawaitのキーワードを含む場合はtrue、それ以外の場合はfalse</returns>
     static bool ContainsAsyncAwait(string vFilePath) {
         try {
             string wContent = ReadAllTextAsync(vFilePath).Result;
