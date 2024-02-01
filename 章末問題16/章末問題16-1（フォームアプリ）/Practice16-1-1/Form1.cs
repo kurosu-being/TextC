@@ -38,9 +38,13 @@ namespace Practice16_1_1 {
             }
 
         }
+        /// <summary>
+        /// ファイルを非同期で行ごとに読み込みリストボックスに内容を追加するメソッド
+        /// </summary>
+        /// <param name="vFilePath">指定のファイルパス</param>
+        /// <returns>非同期操作を表すTask</returns>
         private async Task ReadFileAsync(string vFilePath) {
             using (var wStreamReader = new StreamReader(vFilePath)) {
-                // ファイルを非同期で行ごとに読み込む
                 while (!wStreamReader.EndOfStream) {
                     string wLine = await wStreamReader.ReadLineAsync();
                     listBox1.Invoke((Action)delegate { listBox1.Items.Add(wLine); });
