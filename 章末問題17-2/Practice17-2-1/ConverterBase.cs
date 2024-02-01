@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Practice17_2_1 {
+﻿namespace Practice17_2_1 {
     public abstract class ConverterBase {
         public abstract bool IsMyUnit(string vName);
         //メートルとの比率（この比率をかけるとメートルに変換できる）

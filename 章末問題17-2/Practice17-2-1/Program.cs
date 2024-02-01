@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Practice17_2_1 {
     //Practice17-2-1 テキストのStrategyパターンで示した距離換算プログラムに機能を追加し、マイルとキロメートルも扱えるようにしてください。
     class Program {
         static void Main(string[] args) {
-            while(true) {
+            while (true) {
                 var wFrom = GetConverter("変換元の単位を入力してください。");
                 var wTo = GetConverter("変換先の単位を入力してください。");
                 var wDistance = GetDistance(wFrom);
@@ -20,10 +16,10 @@ namespace Practice17_2_1 {
         }
 
         /// <summary>
-        /// 
+        /// 単位情報を変換するメソッド
         /// </summary>
-        /// <param name="vMessage"></param>
-        /// <returns></returns>
+        /// <param name="vMessage">入力された単位</param>
+        /// <returns>単位</returns>
         static ConverterBase GetConverter(string vMessage) {
             ConverterBase wConverter = null;
             do {
@@ -34,6 +30,11 @@ namespace Practice17_2_1 {
             return wConverter;
         }
 
+        /// <summary>
+        /// 距離を得るメソッド
+        /// </summary>
+        /// <param name="vFrom">入力された距離</param>
+        /// <returns>距離</returns>
         static double GetDistance(ConverterBase vFrom) {
             double? wValue = null;
             do {
