@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConverterBase.cs" />
+    <Compile Include="ConverterFactory.cs" />
     <Compile Include="DistanceConverter.cs" />
     <Compile Include="FeetConverter.cs" />
     <Compile Include="InchConverter.cs" />

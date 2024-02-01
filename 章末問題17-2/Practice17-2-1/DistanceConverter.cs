@@ -11,7 +11,13 @@ namespace Practice17_2_1 {
 
         //コンストラクタ
         public DistanceConverter(ConverterBase vFrom, ConverterBase vTo) {
-            From = vFrom
+            From = vFrom;
+            To = vTo;
+        }
+
+        public double Convert(double vValue) {
+            var wMeter = From.ToMeter(vValue);
+            return To.FromMeter(wMeter);
         }
     }
 }

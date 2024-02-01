@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practice17_2_1 {
     public abstract class ConverterBase {
+        public abstract bool IsMyUnit(string vName);
         //メートルとの比率（この比率をかけるとメートルに変換できる）
         protected abstract double Ratio { get; }
 
