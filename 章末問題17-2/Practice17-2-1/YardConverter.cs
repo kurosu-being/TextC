@@ -1,4 +1,5 @@
 ﻿namespace Practice17_2_1 {
+    //単位：ヤードのクラス
     public class YardConverter : ConverterBase {
         public override bool IsMyUnit(string vName) {
             return vName.ToLower() == "yard" || vName == UnitName;

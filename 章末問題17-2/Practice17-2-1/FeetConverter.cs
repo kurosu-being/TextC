@@ -1,4 +1,5 @@
 ﻿namespace Practice17_2_1 {
+    //単位：フィートのクラス
     public class FeetConverter : ConverterBase {
         public override bool IsMyUnit(string vName) {
             return vName.ToLower() == "feet" || vName == UnitName;

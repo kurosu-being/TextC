@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 
 namespace Practice17_2_1 {
+    //単位の変換に関する機能を提供するクラス
     static class ConverterFactory {
         //あらかじめインスタンスを生成し、配列に入れておく
         private static ConverterBase[] FConverters = new ConverterBase[]{

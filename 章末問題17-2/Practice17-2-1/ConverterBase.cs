@@ -1,4 +1,5 @@
 ﻿namespace Practice17_2_1 {
+    //コンバーターのベース機能を持つクラス
     public abstract class ConverterBase {
         public abstract bool IsMyUnit(string vName);
         //メートルとの比率（この比率をかけるとメートルに変換できる）

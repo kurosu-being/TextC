@@ -1,4 +1,5 @@
 ﻿namespace Practice17_2_1 {
+    //単位：マイルのクラス
     public class MileConverter : ConverterBase {
         public override bool IsMyUnit(string vName) {
             return vName.ToLower() == "mile" || vName == UnitName;
