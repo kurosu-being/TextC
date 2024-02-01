@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Practice17_2_1 {
-    class DistanceConverter {
+    public class DistanceConverter {
         public ConverterBase From { get; private set;}
         public ConverterBase To { get; private set; }
 
