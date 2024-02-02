@@ -51,13 +51,13 @@ namespace Practice11_2_1 {
                 // XMLファイルを読み込む
                 var wDocument = XDocument.Load(wInputFile);
 
-                foreach (var wOrdElement in wDocument.Descendants("word")) {
-                    var wKanjiValue = wOrdElement.Element("kanji")?.Value ?? "";
-                    var wYomiValue = wOrdElement.Element("yomi")?.Value ?? "";
+                foreach (var wWordElement in wDocument.Descendants("word")) {
+                    var wKanjiValue = wWordElement.Element("kanji")?.Value ?? "";
+                    var wYomiValue = wWordElement.Element("yomi")?.Value ?? "";
 
-                    wOrdElement.RemoveNodes();
-                    wOrdElement.SetAttributeValue("kanji", wKanjiValue);
-                    wOrdElement.SetAttributeValue("yomi", wYomiValue);
+                    wWordElement.RemoveNodes();
+                    wWordElement.SetAttributeValue("kanji", wKanjiValue);
+                    wWordElement.SetAttributeValue("yomi", wYomiValue);
                 }
 
                 Console.WriteLine("新しいXMLファイルの名前を入力してください。");

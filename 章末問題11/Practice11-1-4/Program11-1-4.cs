@@ -29,11 +29,16 @@ namespace Practice11_1_4 {
             Console.WriteLine("新しいXMLファイルの名前を入力してください。");
 
             var wOutputFileName = Console.ReadLine();
+            
 
+            if (Path.HasExtension(wOutputFileName) && Path.GetExtension(wOutputFileName) == ".xml") {
+                var wOutputFile = Path.Combine(Path.GetDirectoryName(wInputFile), wOutputFileName);
+                wXdocuments.Save(wOutputFile);
+            } else {
+                var wOutputFile = Path.Combine(Path.GetDirectoryName(wInputFile), wOutputFileName + ".xml");
+                wXdocuments.Save(wOutputFile);
 
-            var wOutputFile = Path.Combine(Path.GetDirectoryName(wInputFile), wOutputFileName + ".xml");
-
-            wXdocuments.Save(wOutputFile);
+            }
 
             Console.WriteLine("新しいXMLファイルが作成されました。");
         }
