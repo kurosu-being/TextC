@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TextFileProcessor;
 
 namespace LineCounter {
+    /// <summary>
+    /// 全角数字を半角数字に変換する機能を持ったクラス
+    /// </summary>
     class ToHankakuNumber : TextProcessor {
-
         //継承したInitializeクラス(0を入れたフィールド変数を用意)
         protected override void Initialize(string vFileName) {
         }
@@ -19,11 +17,11 @@ namespace LineCounter {
         }
 
         // 派生クラスで実際の変換ロジックを実装
-        protected override string ConvertFullWidthDigitsToHalfWidth(string input) {
-            char[] wConvertedChars = new char[input.Length];
+        protected override string ConvertFullWidthDigitsToHalfWidth(string vInput) {
+            char[] wConvertedChars = new char[vInput.Length];
 
-            for (int i = 0; i < input.Length; i++) {
-                char wCurrentChar = input[i];
+            for (int i = 0; i < vInput.Length; i++) {
+                char wCurrentChar = vInput[i];
 
                 if (IsFullWidthDigit(wCurrentChar)) {
                     // 全角数字を半角数字に変換
@@ -37,13 +35,13 @@ namespace LineCounter {
         }
 
         // 文字が全角数字かどうかを判定するメソッド
-        private bool IsFullWidthDigit(char c) {
-            return char.IsDigit(c) && c >= '０' && c <= '９';
+        private bool IsFullWidthDigit(char vChar) {
+            return char.IsDigit(vChar) && vChar >= '０' && vChar <= '９';
         }
 
         // 全角数字を半角数字に変換するメソッド
-        private char ConvertToHalfWidthDigit(char c) {
-            return (char)(c - '０' + '0');
+        private char ConvertToHalfWidthDigit(char vChar) {
+            return (char)(vChar - '０' + '0');
         }
 
         //継承したTerminateメソッド
