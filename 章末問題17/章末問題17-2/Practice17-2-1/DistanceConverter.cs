@@ -1,7 +1,13 @@
 ﻿namespace Practice17_2_1 {
     //距離の変換に関する機能を提供するクラス
     public class DistanceConverter {
+        /// <summary>
+        /// 変換元
+        /// </summary>
         public ConverterBase From { get; private set; }
+        /// <summary>
+        /// 変換後
+        /// </summary>
         public ConverterBase To { get; private set; }
 
         //コンストラクタ

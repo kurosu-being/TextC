@@ -14,7 +14,7 @@ namespace Practice17_2_1 {
         };
 
         /// <summary>
-        /// 単位を判定し、ポリモーフィズムで単位名を返す
+        /// 単位を判定し、単位名を返す
         /// </summary>
         /// <param name="vName">指定された文字列</param>
         /// <returns>単位名</returns>
