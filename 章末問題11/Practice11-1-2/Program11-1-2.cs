@@ -20,7 +20,7 @@ namespace Practice11_1_2 {
                 XAttribute wXAttribute = wXname.Attribute("kanji");
 
                 if (string.IsNullOrEmpty(wXAttribute.Value)) {
-                    Console.WriteLine($"漢字表記名なし");
+                    Console.WriteLine($"なし");
                 } else {
                     Console.WriteLine($"漢字表記名「{wXAttribute.Value}」");
                 }
