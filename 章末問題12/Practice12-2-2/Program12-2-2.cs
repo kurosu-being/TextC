@@ -50,7 +50,6 @@ namespace Practice12_2_2 {
         /// <returns>JSONシリアライズしたファイル</returns>
         static string SerializeNovelistToJson(Novelist vNovelist) {
             var wSettings = new JsonSerializerSettings {
-
             };
             return JsonConvert.SerializeObject(vNovelist, Formatting.Indented, wSettings);
         }

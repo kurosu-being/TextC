@@ -25,5 +25,12 @@ namespace Practice12_1_1 {
         public override string ToString() {
             return string.Format($"[ID={ID},Name={Name},HireDate={HireDate:d}]");
         }
+
+        //コンストラクタ
+        public Employee(int vID, string vName, DateTime vHireDate) {
+            this.ID = vID;
+            this.Name = vName;
+            this.HireDate = vHireDate;
+        }
     }
 }

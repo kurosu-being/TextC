@@ -8,7 +8,7 @@ namespace Practice12_1_1 {
     この時、XMLの要素数(タグ名)はすべて小文字にしてください。*/
     class Program {
         static void Main(string[] args) {
-            var wEmployeeK = new Employee { ID = 953, Name = "K", HireDate = new DateTime(2023, 4, 1) };
+            var wEmployeeK = new Employee (953, "K", new DateTime(2023, 4, 1) );
 
             Console.WriteLine("EmployeeクラスのオブジェクトをXMLにシリアライズします。保存先のディレクトリを指定してください");
             string wDirectoryPath = Console.ReadLine();

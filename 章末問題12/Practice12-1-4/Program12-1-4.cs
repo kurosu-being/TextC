@@ -7,9 +7,9 @@ namespace Practice12_1_4 {
     class Program {
         static void Main(string[] args) {
             var wEmployees = new Employee[] {
-                new Employee { ID = 953, Name = "K", HireDate = new DateTime(2023, 4, 1)  },
-                new Employee { ID = 903, Name = "L", HireDate = new DateTime(2023, 4, 2)  },
-                new Employee { ID = 999, Name = "M", HireDate = new DateTime(2023, 4, 3)  }
+                new Employee(953, "K", new DateTime(2023, 4, 1)),
+                new Employee(903, "L", new DateTime(2023, 4, 2)),
+                new Employee(999, "M", new DateTime(2023, 4, 3))
             };
 
             Console.WriteLine("EmployeeクラスのオブジェクトをJSONファイルにシリアライズします。保存先のディレクトリを指定してください");

@@ -23,5 +23,12 @@ namespace Practice12_1_4 {
         /// </summary>
         [DataMember(Name = "hiredate")]
         public DateTime HireDate { get; set; }
+
+        //コンストラクタ
+        public Employee(int vID, string vName, DateTime vHireDate) {
+            this.ID = vID;
+            this.Name = vName;
+            this.HireDate = vHireDate;
+        }
     }
 }
