@@ -55,6 +55,7 @@ namespace Practice17_3_1 {
             return (char)(vChar - '０' + '0');
         }
 
+        //継承したTerminateメソッド
         public void Terminate() {
         }
     }
