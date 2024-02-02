@@ -31,8 +31,8 @@ namespace Practice11_1_1 {
                 Console.WriteLine("ファイルが存在しません。パスが正しいか確認してください。");
                 return;
             }
-            var wXdocument = XDocument.Load(wInputFile);
-            foreach (var wGame in wXdocument.Root.Elements()) {
+
+            foreach (XElement wGame in XDocument.Load(wInputFile).Root.Elements()) {
                 Console.WriteLine($"競技名「{wGame.Element("name").Value}」 チームメンバー:{wGame.Element("teammembers").Value}");
             }
         }

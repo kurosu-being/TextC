@@ -16,8 +16,10 @@ namespace Practice11_1_4 {
 
             var wXdocuments = XDocument.Load(wInputFile);
             var wOption = new XElement("ballsport");
-            wOption.SetElementValue("name", "サッカー");
-            wOption.SetElementValue("kanji", "蹴球");
+            var wName = new XElement("name", "サッカー");
+            wName.SetAttributeValue("kanji", "蹴球");
+
+            wOption.Add(wName);
             wOption.SetElementValue("teammembers", "11");
             wOption.SetElementValue("firstplayed", "1873");
             var wRoot = new XElement("ballSports", wOption);
@@ -27,6 +29,8 @@ namespace Practice11_1_4 {
             Console.WriteLine("新しいXMLファイルの名前を入力してください。");
 
             var wOutputFileName = Console.ReadLine();
+
+
             var wOutputFile = Path.Combine(Path.GetDirectoryName(wInputFile), wOutputFileName + ".xml");
 
             wXdocuments.Save(wOutputFile);
