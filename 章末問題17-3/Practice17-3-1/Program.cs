@@ -6,6 +6,10 @@
             var wProcessor = new TextFileProcessor(wToHankakuService);
 
             wProcessor.Run(args[0]);
+            //他クラスのオブジェクトで検証
+            var wLineCounter = new LineCounter();
+            var wProcessor2 = new TextFileProcessor(wLineCounter);
+            wProcessor2.Run(args[1]);
         }
     }
 }
