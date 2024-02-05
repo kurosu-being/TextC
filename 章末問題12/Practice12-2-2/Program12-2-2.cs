@@ -24,7 +24,8 @@ namespace Practice12_2_2 {
             Novelist wNovelist = DeserializeNovelistFromXml(wFilePath);
 
             if (wNovelist != null) {
-                string wJson = SerializeNovelistToJson(wNovelist);
+                var wSettings = new JsonSerializerSettings();
+                var wJson = JsonConvert.SerializeObject(wNovelist, Formatting.Indented, wSettings);
                 string wJsonFilePath = Path.ChangeExtension(wFilePath, ".json");
                 File.WriteAllText(wJsonFilePath, wJson);
                 Console.WriteLine($"JSONファイルが作成されました: {wJsonFilePath}");
@@ -41,17 +42,6 @@ namespace Practice12_2_2 {
                 var wSerializer = new XmlSerializer(typeof(Novelist));
                 return wSerializer.Deserialize(wReader) as Novelist;
             }
-        }
-
-        /// <summary>
-        /// JSONファイルにシリアル化するメソッド
-        /// </summary>
-        /// <param name="vNovelist">Novelistオブジェクト</param>
-        /// <returns>JSONシリアライズしたファイル</returns>
-        static string SerializeNovelistToJson(Novelist vNovelist) {
-            var wSettings = new JsonSerializerSettings {
-            };
-            return JsonConvert.SerializeObject(vNovelist, Formatting.Indented, wSettings);
         }
     }
 }

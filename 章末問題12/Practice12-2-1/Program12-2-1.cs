@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 
 namespace Practice12_2_1 {
     class Program {
-        //Practice12-2-1 XmlSerializerクラスw使って以下のXMLファイルを逆シリアル化し、Novelistオブジェクトを作製して下さい。Novelistクラスには、必要ならば適切な属性を付加して下さい。
+        //Practice12-2-1 XmlSerializerクラスを使って以下のXMLファイルを逆シリアル化し、Novelistオブジェクトを作製して下さい。Novelistクラスには、必要ならば適切な属性を付加して下さい。
         /*@"<?xml version=""1.0"" encoding=""utf-8"" ?>
                          <novelist>
                              <name>アーサー・C・クラーク</name>
