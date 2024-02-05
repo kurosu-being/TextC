@@ -1,6 +1,9 @@
 ﻿namespace Practice13_1_1_2.Models {
     using System.Data.Entity;
 
+    /// <summary>
+    /// DbContextクラス
+    /// </summary>
     public class BooksDbContext : DbContext {
         /// <summary>
         /// 書籍と著者のデータベースコンテキスト
