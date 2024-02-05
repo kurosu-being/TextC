@@ -8,7 +8,7 @@ namespace Practice13_1_4 {
     class Program {
         static void Main(string[] args) {
             using (var wDb = new BooksDbContext()) {
-                var wOldestBooks = GetOldestThreeBooks(wDb);
+                var wOldestBooks = GetOldestThreeBooks(wDb.Books, 3);
 
                 if (!wOldestBooks.Any()) {
                     Console.WriteLine("書籍が見つかりませんでした。");
@@ -95,18 +95,23 @@ namespace Practice13_1_4 {
         /// <summary>
         /// 最もタイトルの長い書籍を取得するメソッド
         /// </summary>
-        /// <param name="vContext"></param>
+        /// <param name="vBooks">書籍のコレクション</param>
         /// <returns>最もタイトルの長い書籍</returns>
-        static IEnumerable<Book> DisplayBooksWithLongestTitle(BooksDbContext vContext) {
-            var wMaxLength = vContext.Books.Max(x => x.Title.Length);
-            return vContext.Books.Where(x => x.Title.Length == wMaxLength).ToList();
+        static IEnumerable<Book> EnumerateBooksLongestTitle(IEnumerable<Book> vBooks) {
+            if (vBooks == null || !vBooks.Any()) {
+                Console.WriteLine("コレクションが存在しません");
+                return Enumerable.Empty<Book>();
+            }
+
+            var wMaxLength = vBooks.Max(x => x.Title.Length);
+            return vBooks.Where(x => x.Title.Length == wMaxLength);
         }
 
         /// <summary>
         /// 発行年の古い順に指定した数の書籍を取得するメソッド
         /// </summary>
-        static IEnumerable<Book> GetOldestThreeBooks(BooksDbContext vContext) {
-            return vContext.Books.OrderBy(x => x.PublishedYear).Take(3).ToList();
+        static IEnumerable<Book> GetOldestThreeBooks(IEnumerable<Book> vBooks, int vCount) {
+            return vBooks.OrderBy(x => x.PublishedYear).Take(vCount);
         }
     }
 }

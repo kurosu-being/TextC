@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Practice13_1_1_2.Models {
     /// <summary>
@@ -38,6 +35,8 @@ namespace Practice13_1_1_2.Models {
             this.Gender = vGender;
             this.Books = vBooks;
         }
+        //コンストラクタ
+        public Author() { }
     }
 }
 

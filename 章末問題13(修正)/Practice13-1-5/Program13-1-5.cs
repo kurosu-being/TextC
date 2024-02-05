@@ -112,7 +112,7 @@ namespace Practice13_1_5 {
         /// 著者ごとに書籍のタイトルと発行年を取得するメソッド
         /// </summary>
         static IEnumerable<IGrouping<Author, Book>> GetBooksByAuthor(BooksDbContext vContext) {
-            return vContext.Books.Include("Author").ToList().GroupBy(x => x.Author).OrderByDescending(group => group.Key.Birthday);
+            return vContext.Books.Include("Author").ToList().GroupBy(x => x.Author).OrderByDescending(y => y.Key.Birthday);
         }
     }
 }

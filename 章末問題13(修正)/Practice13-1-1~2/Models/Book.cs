@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Practice13_1_1_2.Models {
+﻿namespace Practice13_1_1_2.Models {
     /// <summary>
     /// Bookクラス
     /// </summary>
@@ -27,12 +21,13 @@ namespace Practice13_1_1_2.Models {
         public virtual Author Author { get; set; }
 
         //コンストラクタ
-        public Book (int vId, string vTitle, int vPublishYear, Author vAuthor){
+        public Book(int vId, string vTitle, int vPublishYear, Author vAuthor) {
             this.Id = vId;
             this.Title = vTitle;
             this.PublishedYear = vPublishYear;
             this.Author = vAuthor;
         }
-
+        //コンストラクタ
+        public Book() { }
     }
 }
