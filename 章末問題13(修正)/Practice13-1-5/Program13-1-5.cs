@@ -20,16 +20,11 @@ namespace Practice13_1_5 {
         }
 
         /// <summary>
-        /// 書籍を挿入するメソッド
+        /// 書籍を挿入するメソッド（本文で作成したメソッド）
         /// </summary>
-        static void InsertBooks() {
-            using (var wDb = new BooksDbContext()) {
-                var wBook1 = new Book(7, "坊ちゃん", 2003, new Author(5, "夏目漱石", new DateTime(1867, 2, 9), "M", new List<Book>()));
-                wDb.Books.Add(wBook1);
-
-                var wBook2 = new Book(8, "人間失格", 1990, new Author(6, "太宰治", new DateTime(1909, 6, 19), "M", new List<Book>()));
-                wDb.Books.Add(wBook2);
-
+        static void InsertBooks(BooksDbContext dbContext, List<Book> booksToAdd) {
+            using (var wDb = dbContext ?? new BooksDbContext()) {
+                wDb.Books.AddRange(booksToAdd);
                 wDb.SaveChanges();
             }
         }
@@ -94,25 +89,42 @@ namespace Practice13_1_5 {
         /// <summary>
         /// 最もタイトルの長い書籍を取得するメソッド
         /// </summary>
-        /// <param name="vContext"></param>
+        /// <param name="vBooks">書籍のコレクション</param>
         /// <returns>最もタイトルの長い書籍</returns>
-        static IEnumerable<Book> DisplayBooksWithLongestTitle(BooksDbContext vContext) {
-            var wMaxLength = vContext.Books.Max(x => x.Title.Length);
-            return vContext.Books.Where(x => x.Title.Length == wMaxLength).ToList();
+        static IEnumerable<Book> EnumerateBooksLongestTitle(IEnumerable<Book> vBooks) {
+            if (vBooks == null || !vBooks.Any()) {
+                Console.WriteLine("コレクションが存在しません");
+                return Enumerable.Empty<Book>();
+            }
+
+            var wMaxLength = vBooks.Max(x => x.Title.Length);
+            return vBooks.Where(x => x.Title.Length == wMaxLength);
         }
 
         /// <summary>
         /// 発行年の古い順に指定した数の書籍を取得するメソッド
         /// </summary>
-        static IEnumerable<Book> GetOldestThreeBooks(BooksDbContext vContext) {
-            return vContext.Books.OrderBy(x => x.PublishedYear).Take(3).ToList();
+        static IEnumerable<Book> GetOldestThreeBooks(IEnumerable<Book> vBooks, int vCount) {
+            return vBooks.OrderBy(x => x.PublishedYear).Take(vCount);
         }
 
         /// <summary>
         /// 著者ごとに書籍のタイトルと発行年を取得するメソッド
         /// </summary>
         static IEnumerable<IGrouping<Author, Book>> GetBooksByAuthor(BooksDbContext vContext) {
-            return vContext.Books.Include("Author").ToList().GroupBy(x => x.Author).OrderByDescending(y => y.Key.Birthday);
+            var wBooksWithAuthor = vContext.Books
+                                    .Include("Author")
+                                    .Where(book => book.Author != null) 
+                                    .ToList();
+
+            if (wBooksWithAuthor.Count == 0) {
+                Console.WriteLine("書籍が見つかりませんでした。");
+                return Enumerable.Empty<IGrouping<Author, Book>>();
+            }
+
+            return wBooksWithAuthor
+                           .GroupBy(book => book.Author)
+                           .OrderByDescending(group => group.Key.Birthday);
         }
     }
 }

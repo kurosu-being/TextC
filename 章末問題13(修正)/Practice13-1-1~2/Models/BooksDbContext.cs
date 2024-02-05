@@ -1,7 +1,5 @@
 ﻿namespace Practice13_1_1_2.Models {
-    using System;
     using System.Data.Entity;
-    using System.Linq;
 
     public class BooksDbContext : DbContext {
         /// <summary>
@@ -9,7 +7,7 @@
         /// </summary>
         public BooksDbContext()
             : base("name=BooksDbContext") {
-        }  
+        }
         /// <summary>
         /// Books テーブルへの DbSet
         /// </summary>
