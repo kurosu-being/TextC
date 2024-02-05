@@ -9,7 +9,7 @@ namespace Practice13_1_1_2 {
     class Program {
         static void Main(string[] args) {
             // 著者を追加
-            List<Author> wAuthorsToAdd = new List<Author> {
+            var wAuthorsToAdd = new List<Author> {
             new Author(1, "与謝野晶子", new DateTime(1878, 12, 7), "F", new List<Book>()),
             new Author(2, "宮沢賢治", new DateTime(1896, 8, 27), "M", new List<Book>()),
             new Author(3, "菊池寛", new DateTime(1888, 12, 26), "M", new List<Book>()),
@@ -18,7 +18,7 @@ namespace Practice13_1_1_2 {
             AddAuthors(wAuthorsToAdd);
 
             // 書籍を追加
-            List<Book> wBooksToAdd = new List<Book> {
+            var wBooksToAdd = new List<Book> {
             new Book(1, "みだれ髪", 2000, wAuthorsToAdd[0]),
             new Book(2, "銀河鉄道の夜", 1989, wAuthorsToAdd[1]),
             new Book(3, "真珠婦人", 2002, wAuthorsToAdd[2]),
