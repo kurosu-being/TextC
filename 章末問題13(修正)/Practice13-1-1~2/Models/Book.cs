@@ -26,5 +26,13 @@ namespace Practice13_1_1_2.Models {
         /// </summary>
         public virtual Author Author { get; set; }
 
+        //コンストラクタ
+        public Book (int vId, string vTitle, int vPublishYear, Author vAuthor){
+            this.Id = vId;
+            this.Title = vTitle;
+            this.PublishedYear = vPublishYear;
+            this.Author = vAuthor;
+        }
+
     }
 }

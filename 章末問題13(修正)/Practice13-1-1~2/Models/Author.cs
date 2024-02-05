@@ -29,7 +29,15 @@ namespace Practice13_1_1_2.Models {
         /// 作品
         /// </summary>
         public virtual ICollection<Book> Books { get; set; }
-        public Author() { }
+
+        //コンストラクタ
+        public Author(int vId, string vName, DateTime vBirthday, string vGender, ICollection<Book> vBooks) {
+            this.Id = vId;
+            this.Name = vName;
+            this.Birthday = vBirthday;
+            this.Gender = vGender;
+            this.Books = vBooks;
+        }
     }
 }
 
