@@ -18,11 +18,5 @@
         /// Author テーブルへの DbSet
         /// </summary>
         public DbSet<Author> Authors { get; set; }
-        // モデルに含めるエンティティ型ごとに DbSet を追加します。Code First モデルの構成および使用の
-        // 詳細については、http://go.microsoft.com/fwlink/?LinkId=390109 を参照してください。
-
-        // public virtual DbSet<MyEntity> MyEntities { get; set; }
     }
-
-
 }
