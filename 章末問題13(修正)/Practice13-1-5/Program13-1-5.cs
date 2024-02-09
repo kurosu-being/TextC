@@ -123,8 +123,8 @@ namespace Practice13_1_5 {
             }
 
             return wBooksWithAuthor
-                           .GroupBy(book => book.Author)
-                           .OrderByDescending(group => group.Key.Birthday);
+                           .GroupBy(x => x.Author)
+                           .OrderByDescending(y => y.Key.Birthday);
         }
     }
 }
