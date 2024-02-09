@@ -117,7 +117,7 @@ namespace Practice13_1_5 {
                                     .Where(x => x.Author != null) ;
                                     
 
-            if (wBooksWithAuthor.Any()) {
+            if (!wBooksWithAuthor.Any()) {
                 Console.WriteLine("書籍が見つかりませんでした。");
                 return Enumerable.Empty<IGrouping<Author, Book>>();
             }
