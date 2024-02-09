@@ -23,9 +23,9 @@ namespace Practice13_1_4 {
         /// <summary>
         /// 書籍を挿入するメソッド（本文で作成したメソッド）
         /// </summary>
-        static void InsertBooks(BooksDbContext dbContext, List<Book> booksToAdd) {
+        static void InsertBooks(BooksDbContext dbContext, List<Book> vBooksToAdd) {
             using (var wDb = dbContext ?? new BooksDbContext()) {
-                wDb.Books.AddRange(booksToAdd);
+                wDb.Books.AddRange(vBooksToAdd);
                 wDb.SaveChanges();
             }
         }
@@ -44,8 +44,8 @@ namespace Practice13_1_4 {
         /// 書籍を表示するメソッド
         /// </summary>
         /// <param name="books">表示する書籍のコレクション</param>
-        static void DisplayBooks(IEnumerable<Book> books) {
-            foreach (var wBook in books) {
+        static void DisplayBooks(IEnumerable<Book> vBooks) {
+            foreach (var wBook in vBooks) {
                 Console.WriteLine($"{wBook.Title} ({wBook.PublishedYear}年)");
             }
             Console.ReadLine();
@@ -54,9 +54,9 @@ namespace Practice13_1_4 {
         /// <summary>
         /// 著者を追加するメソッド
         /// </summary>
-        private static void AddAuthors(List<Author> authorsToAdd) {
+        private static void AddAuthors(List<Author> vAuthorsToAdd) {
             using (var wDb = new BooksDbContext()) {
-                wDb.Authors.AddRange(authorsToAdd);
+                wDb.Authors.AddRange(vAuthorsToAdd);
                 wDb.SaveChanges();
             }
         }
@@ -64,9 +64,9 @@ namespace Practice13_1_4 {
         /// <summary>
         /// 書籍を追加するメソッド
         /// </summary>
-        private static void AddBooks(List<Book> booksToAdd) {
+        private static void AddBooks(List<Book> vBooksToAdd) {
             using (var wDb = new BooksDbContext()) {
-                wDb.Books.AddRange(booksToAdd);
+                wDb.Books.AddRange(vBooksToAdd);
                 wDb.SaveChanges();
             }
         }

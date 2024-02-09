@@ -114,10 +114,10 @@ namespace Practice13_1_5 {
         static IEnumerable<IGrouping<Author, Book>> GetBooksByAuthor(BooksDbContext vContext) {
             var wBooksWithAuthor = vContext.Books
                                     .Include("Author")
-                                    .Where(book => book.Author != null) 
-                                    .ToList();
+                                    .Where(x => x.Author != null) ;
+                                    
 
-            if (wBooksWithAuthor.Count == 0) {
+            if (wBooksWithAuthor.Any()) {
                 Console.WriteLine("書籍が見つかりませんでした。");
                 return Enumerable.Empty<IGrouping<Author, Book>>();
             }
