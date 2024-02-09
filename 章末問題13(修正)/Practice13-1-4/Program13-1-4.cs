@@ -23,8 +23,8 @@ namespace Practice13_1_4 {
         /// <summary>
         /// 書籍を挿入するメソッド（本文で作成したメソッド）
         /// </summary>
-        static void InsertBooks(BooksDbContext dbContext, List<Book> vBooksToAdd) {
-            using (var wDb = dbContext ?? new BooksDbContext()) {
+        static void InsertBooks(BooksDbContext vDbContext, List<Book> vBooksToAdd) {
+            using (var wDb = vDbContext ?? new BooksDbContext()) {
                 wDb.Books.AddRange(vBooksToAdd);
                 wDb.SaveChanges();
             }
@@ -43,7 +43,7 @@ namespace Practice13_1_4 {
         /// <summary>
         /// 書籍を表示するメソッド
         /// </summary>
-        /// <param name="books">表示する書籍のコレクション</param>
+        /// <param name="vBooks">表示する書籍のコレクション</param>
         static void DisplayBooks(IEnumerable<Book> vBooks) {
             foreach (var wBook in vBooks) {
                 Console.WriteLine($"{wBook.Title} ({wBook.PublishedYear}年)");

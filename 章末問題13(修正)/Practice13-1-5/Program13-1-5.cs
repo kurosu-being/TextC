@@ -22,9 +22,9 @@ namespace Practice13_1_5 {
         /// <summary>
         /// 書籍を挿入するメソッド（本文で作成したメソッド）
         /// </summary>
-        static void InsertBooks(BooksDbContext dbContext, List<Book> booksToAdd) {
-            using (var wDb = dbContext ?? new BooksDbContext()) {
-                wDb.Books.AddRange(booksToAdd);
+        static void InsertBooks(BooksDbContext vDbContext, List<Book> vBooksToAdd) {
+            using (var wDb = vDbContext ?? new BooksDbContext()) {
+                wDb.Books.AddRange(vBooksToAdd);
                 wDb.SaveChanges();
             }
         }
